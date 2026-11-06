@@ -108,7 +108,8 @@
           部分词库 / 插画 / 录音取自
           <a href="https://github.com/designfuchen/word-atlas" target="_blank" rel="noopener">Word Atlas</a> ·
           部分例句来自 <a href="https://tatoeba.org" target="_blank" rel="noopener">Tatoeba</a> ·
-          语音由 edge-tts 合成 · 教材词表版权归原出版方，仅供个人学习
+          语音由 edge-tts 合成 · 教材词表版权归原出版方，仅供个人学习 ·
+          <a href="javascript:void(0)" id="donateLink" class="donate">☕ 捐助</a>
         </p>
       </div>
     </section>
@@ -392,6 +393,19 @@
     <!-- 连击里程碑浮层：×10 / ×20 / ×50 时弹出 -->
     <div id="milestone" aria-hidden="true"></div>
 
+    <!-- 捐助弹窗 -->
+    <div id="donateMask" class="dmask" aria-hidden="true">
+      <div class="dbox" role="dialog" aria-label="捐助">
+        <button id="donateClose" class="dclose" aria-label="关闭">✕</button>
+        <b>请作者喝杯咖啡 ☕</b>
+        <div class="dqs">
+          <figure><img src="img/wx_qr.png" alt="微信收款码"><figcaption>微信</figcaption></figure>
+          <figure><img src="img/ali_qr.png" alt="支付宝收款码"><figcaption>支付宝</figcaption></figure>
+        </div>
+        <small>量力而行，感谢每一份支持～</small>
+      </div>
+    </div>
+
     <script src="vendor/ts-fsrs.umd.js"></script>
     <script src="profile.js"></script>
     <script src="search.js"></script>
@@ -407,6 +421,17 @@
           navigator.serviceWorker.register('sw.js').catch(function () {});
         });
       }
+      /* 捐助弹窗 */
+      (function () {
+        var mask = document.getElementById('donateMask');
+        if (!mask) return;
+        function open() { mask.classList.add('on'); mask.setAttribute('aria-hidden', 'false'); }
+        function close() { mask.classList.remove('on'); mask.setAttribute('aria-hidden', 'true'); }
+        document.getElementById('donateLink').addEventListener('click', open);
+        document.getElementById('donateClose').addEventListener('click', close);
+        mask.addEventListener('click', function (e) { if (e.target === mask) close(); });
+        addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+      })();
     </script>
   </body>
 </html>

@@ -248,6 +248,37 @@ h1 {
 .credit { font-size: 11px; line-height: 1.7; color: #3f4859; max-width: 760px; }
 .credit a { color: #59637a; text-decoration: none; border-bottom: 1px dotted rgba(120, 132, 150, 0.5); }
 .credit a:hover { color: #9aa4b6; border-bottom-color: rgba(154, 164, 182, 0.7); }
+.credit a.donate { color: #f5b942; border-bottom-color: rgba(245, 185, 66, 0.45); }
+.credit a.donate:hover { color: #ffd166; border-bottom-color: #ffd166; }
+
+/* ---------- 捐助弹窗 ---------- */
+.dmask {
+  position: fixed; inset: 0; z-index: 90;
+  background: rgba(4, 5, 8, 0.72);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.dmask.on { display: flex; }
+.dbox {
+  position: relative; width: 100%; max-width: 430px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+  padding: 22px 24px 18px; text-align: center;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
+}
+.dbox > b { display: block; font-size: 16px; color: var(--text); margin-bottom: 16px; }
+.dbox .dqs { display: flex; gap: 18px; justify-content: center; }
+.dbox figure { margin: 0; }
+.dbox .dqs img {
+  display: block; width: min(150px, 38vw); height: min(150px, 38vw);
+  background: #fff; border-radius: 10px; padding: 6px;
+}
+.dbox figcaption { font-size: 12px; color: #8b94a7; margin-top: 6px; }
+.dbox small { display: block; margin-top: 12px; font-size: 11px; color: #59637a; }
+.dclose {
+  position: absolute; top: 8px; right: 10px; padding: 4px;
+  background: none; border: 0; font-size: 16px; color: #59637a; cursor: pointer;
+}
+.dclose:hover { color: var(--text); }
 
 /* ---------- HUD ---------- */
 .hud {
