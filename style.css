@@ -1,0 +1,1361 @@
+:root {
+  --bg: #0a0b0f;
+  --panel: #12141a;
+  --line: #232732;
+  --text: #eef1f6;
+  --dim: #7b8496;
+  --amber: #ffb545;
+  --ok: #58e08a;
+  --bad: #ff5f6d;
+  --n: #2f5fa8;
+  --v: #a12d3c;
+  --adj: #6b4fa0;
+  --adv: #2c7d55;
+  --pron: #a9761f;
+  --aux: #1f7a8c;
+  --det: #47536b;
+  --prep: #7a5327;
+  --conj: #4a5aa8;
+  --num: #7a5b3a;
+  --int: #8f3f4a;
+  --phr: #2e6b78;
+  --pat: #6d4a7f;
+  --abbr: #5b6472;
+  --name: #8a6a3d;
+  --unk: #39404e;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  background: radial-gradient(1200px 700px at 50% -10%, #171a24 0%, #0a0b0f 55%, #06070a 100%);
+  color: var(--text);
+  font-family: "Inter", -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* Tab 浏览时的焦点环：琥珀色描边，所有按钮/输入框统一 */
+:where(button, input, select, a, summary):focus-visible {
+  outline: 2px solid rgba(255, 181, 69, 0.85);
+  outline-offset: 2px;
+}
+
+.screen {
+  position: fixed;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px max(20px, env(safe-area-inset-left));
+  gap: 14px;
+}
+.screen.is-on { display: flex; }
+
+/* 从主屏幕图标全屏启动时，内容要避开状态栏 / 底部小黑条 */
+@media (display-mode: standalone), all and (display-mode: standalone) {
+  .screen {
+    padding-top: calc(24px + env(safe-area-inset-top));
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+}
+
+/* 开始页内容可能超高：可滚动且保持居中 */
+#start {
+  overflow-y: auto; justify-content: flex-start; -webkit-overflow-scrolling: touch; gap: 20px;
+  /* 顶部一抹琥珀光晕 + 右下一抹冷光，破一破大面积纯黑 */
+  background:
+    radial-gradient(900px 480px at 50% -60px, rgba(255, 181, 69, 0.30), rgba(255, 181, 69, 0.10) 45%, transparent 76%),
+    radial-gradient(900px 560px at 86% 112%, rgba(96, 125, 255, 0.14), transparent 72%);
+}
+/* 纵向 flex 里高度不够时默认会把子元素压扁，这里一律禁止收缩，让它溢出后可滚 */
+#start > * { flex: 0 0 auto; }
+#start::before, #start::after { content: ""; display: block; flex: 0 0 1px; margin-block: auto; }
+
+/* ---------- 开始页 ---------- */
+.brand {
+  position: absolute;
+  top: 20px;              /* 与右上角档案按钮同高，垂直居中对齐 */
+  left: 28px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--dim);
+}
+.brand .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 14px var(--amber);
+}
+
+/* 右上角档案切换：男 / 女各存一份进度 */
+.profiles {
+  position: absolute;
+  top: 22px; right: 18px;
+  display: flex; gap: 8px;
+  z-index: 6;
+}
+.pbtn {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  font-size: 19px; line-height: 1;
+  display: grid; place-items: center;
+  cursor: pointer;
+  filter: grayscale(1);
+  opacity: 0.5;
+  transition: 0.16s;
+  -webkit-tap-highlight-color: transparent;
+}
+.pbtn:hover { opacity: 0.8; }
+.pbtn.is-on {
+  filter: none;
+  opacity: 1;
+  border-color: var(--amber);
+  background: #1c1a14;
+  box-shadow: 0 0 0 1px rgba(255, 181, 69, 0.3) inset, 0 8px 26px -14px rgba(255, 181, 69, 0.9);
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  text-align: center;
+  font-weight: 800;
+}
+/* 首页主标题：主次两行 + 大字行的文字倒影（铭文水光） */
+.h1-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  padding-bottom: 0.5em;    /* 给倒影留位置（倒影不占布局空间） */
+}
+.h1-hero .pre {
+  font-size: 0.58em;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;      /* 抵消最后一字的字距，保持视觉居中 */
+  color: var(--dim);
+}
+.h1-hero .main {
+  white-space: nowrap;
+  -webkit-box-reflect: below -0.3em linear-gradient(to bottom, rgba(0,0,0,0.22), transparent 42%);
+}
+.h1-hero em { font-style: normal; color: var(--amber); text-shadow: 0 0 22px rgba(255,181,69,0.35); }
+.sub { color: var(--dim); font-size: 16px; text-align: center; max-width: 560px; line-height: 1.7; text-wrap: balance; }
+/* 主标题下的英文题铭：衬线斜体，弱于中文主句 */
+.en-sub {
+  color: var(--dim);
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  max-width: 640px;
+  line-height: 1.6;
+  margin-top: -10px;
+  text-wrap: balance;
+}
+
+.group { width: min(680px, 100%); margin-top: 14px; }
+.label {
+  font-size: 14px; letter-spacing: 0.1em; color: #98a2b5;
+  text-transform: uppercase; margin-bottom: 10px; text-align: center;
+}
+/* 开始页的分组标签：两侧各一条细线，代替底色做分段 */
+#start .label { display: flex; align-items: center; justify-content: center; gap: 12px; white-space: nowrap; }
+#start .label::before,
+#start .label::after {
+  content: ""; flex: 1 1 24px; max-width: 150px; min-width: 14px; height: 1px;
+  background: linear-gradient(90deg, rgba(35,39,50,0), var(--line));
+}
+#start .label::after { background: linear-gradient(90deg, var(--line), rgba(35,39,50,0)); }
+
+.modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.mode {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 12px;
+  color: var(--text);
+  cursor: pointer;
+  display: flex; flex-direction: column; gap: 4px; align-items: center;
+  transition: 0.16s;
+  font-family: inherit;
+}
+.mode b { font-size: 17px; }
+.mode small { color: var(--dim); font-size: 13px; }
+.mode:hover { border-color: #3a4152; }
+.mode.is-on { border-color: var(--amber); background: #1c1a14; box-shadow: 0 0 0 1px rgba(255, 181, 69, 0.25) inset; }
+.mode.is-on b { color: var(--amber); }
+
+.levels { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+/* 密集胶囊行（备用）：比难度胶囊更小更密 */
+.levels.small { gap: 6px; }
+.levels.small .chip { height: 27px; padding: 0 10px; font-size: 12.5px; }
+.levels.small .chip small { font-size: 10.5px; margin-left: 3px; }
+
+/* 难度 + 题量：手机上照旧竖排；900px 以上变成两列网格（见文件末尾） */
+.pgrid { display: flex; flex-direction: column; align-items: center; width: 100%; }
+/* 开始 / 背单词：手机竖排，桌面并排 */
+.cta { display: flex; flex-direction: column; align-items: center; gap: 16px; width: 100%; }
+/* 第一行：开始 + 复习待复习（后者有待复习词才出现）；第二行留给 背单词 / 专项练习 及后续新增 */
+.cta-top { display: flex; align-items: stretch; gap: 8px; width: 100%; }
+.cta-top .primary { flex: 1; }
+.cta-top .mini { height: auto; margin: 0; }
+/* 连击里程碑：×10 / ×20 / ×50 时弹出的浮层 */
+#milestone {
+  position: fixed; left: 50%; top: 16%;
+  transform: translateX(-50%) scale(0.6);
+  font-size: 32px; font-weight: 800; letter-spacing: 0.04em;
+  color: var(--amber); text-shadow: 0 0 28px rgba(255, 181, 69, 0.5);
+  opacity: 0; pointer-events: none; z-index: 70; white-space: nowrap;
+}
+#milestone.go { animation: milepop 1.15s ease forwards; }
+@keyframes milepop {
+  0% { opacity: 0; transform: translateX(-50%) scale(0.6); }
+  16% { opacity: 1; transform: translateX(-50%) scale(1.14); }
+  30% { transform: translateX(-50%) scale(1); }
+  76% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-30px); }
+}
+
+.srsinfo {
+  /* 已练 / 待复习 / 未练：套一个和「复习待复习」按钮同款的描边胶囊 */
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 30px; padding: 5px 16px; margin: 0;
+  border: 1px solid rgba(255, 181, 69, 0.28); border-radius: 999px;
+  background: rgba(255, 181, 69, 0.04);
+  font-size: 13px; color: #8b95a8; letter-spacing: 0.02em;
+}
+.srsinfo:empty { display: none; }
+
+/* 页脚：说明一行 + 来源与许可一行（CC BY 要求署名，必须留在页面上） */
+.footwrap {
+  position: absolute; left: 0; right: 0; bottom: 16px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 0 20px; text-align: center;
+}
+.foot { font-size: 12px; color: #4c5566; }
+.credit { font-size: 11px; line-height: 1.7; color: #3f4859; max-width: 760px; }
+.credit a { color: #59637a; text-decoration: none; border-bottom: 1px dotted rgba(120, 132, 150, 0.5); }
+.credit a:hover { color: #9aa4b6; border-bottom-color: rgba(154, 164, 182, 0.7); }
+
+/* ---------- HUD ---------- */
+.hud {
+  width: 100%; max-width: 1100px;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; gap: 12px;
+  padding: 4px 4px 0;
+}
+.hud-left { display: flex; align-items: center; gap: 12px; color: var(--dim); font-size: 13px; }
+.count b { color: var(--text); font-size: 15px; }
+.bar { width: 90px; height: 3px; background: #22262f; border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--amber); transition: width 0.3s; }
+.hud-right { justify-self: end; color: var(--dim); font-size: 13px; font-variant-numeric: tabular-nums; }
+.hud-right span { color: var(--text); font-weight: 700; }
+
+.combo {
+  display: flex; align-items: baseline; gap: 8px;
+  font-weight: 900; letter-spacing: 0.02em;
+  color: #4a4436; opacity: 0.5;
+  transition: 0.2s;
+}
+.combo .perfect { font-size: 12px; letter-spacing: 0.3em; }
+.combo em { font-style: normal; font-size: 30px; }
+.combo.hot { color: var(--amber); opacity: 1; text-shadow: 0 0 26px rgba(255, 181, 69, 0.5); }
+.combo.pop em { animation: pop 0.32s ease-out; }
+@keyframes pop { 0% { transform: scale(1); } 45% { transform: scale(1.35); } 100% { transform: scale(1); } }
+
+/* ---------- 词块 ---------- */
+.stage {
+  flex: 1;
+  width: 100%; max-width: 1120px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: clamp(18px, 4vh, 40px);
+  cursor: text;
+  min-height: 0;
+}
+.blocks {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; align-items: flex-end;
+  gap: clamp(10px, 1.4vw, 20px) clamp(12px, 1.8vw, 26px);
+  padding: 8px;
+}
+
+.chunk { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+.phones, .tags, .zhs { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+.phones span {
+  font-size: clamp(11px, 1.1vw, 14px);
+  color: #9aa4b6;
+  background: #14171f;
+  border: 1px solid #20242e;
+  border-radius: 7px;
+  padding: 3px 8px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  white-space: nowrap;
+}
+.tags span {
+  font-size: clamp(10px, 0.95vw, 12px);
+  color: #8f98a9;
+  background: #12151c;
+  border-radius: 999px;
+  padding: 3px 9px;
+}
+.zhs span { font-size: clamp(11px, 1.1vw, 14px); color: #b9c2d2; white-space: nowrap; }
+
+.words {
+  display: flex;
+  font-size: clamp(24px, 4.4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.28;
+  padding: 0.12em 0.34em 0.18em;
+  border-radius: 12px;
+  background: var(--c, var(--unk));
+  box-shadow: 0 12px 30px -18px #000;
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+  position: relative;
+}
+.words .w + .w { margin-left: 0.24em; }
+.words:hover { filter: brightness(1.12); }
+.words:active { transform: translateY(1px) scale(0.995); }
+/* 点击语块发音时的反馈：一圈琥珀色涟漪，表明“这一块正在读” */
+.words.speaking { animation: wspk 0.44s ease-out; }
+@keyframes wspk {
+  0% { box-shadow: 0 0 0 0 rgba(255, 181, 69, 0.6), 0 12px 30px -18px #000; }
+  100% { box-shadow: 0 0 0 12px rgba(255, 181, 69, 0), 0 12px 30px -18px #000; }
+}
+
+.ch { color: rgba(255, 255, 255, 0.34); transition: color 0.08s; }
+.ch.ok { color: #fff; text-shadow: 0 0 18px rgba(255, 255, 255, 0.25); }
+.ch.bad { color: #ffd7d9; background: rgba(255, 95, 109, 0.85); border-radius: 4px; }
+/* 光标：画在「当前这个字母」前面（三模式统一），绝对定位不占宽，不挤动后面的字 */
+.ch.caret { position: relative; }
+.ch.caret::after {
+  content: "";
+  position: absolute;
+  left: -0.06em;
+  /* 行高 1.28 时字形垂直居中：大写字母顶约在 0.27em、基线约在 0.99em，
+     光标取 0.26em ~ 1.00em，正好与字母（含下伸部）同高 */
+  top: 0.26em;
+  width: 2px; height: 0.74em;
+  border-radius: 1px;
+  background: var(--amber);
+  animation: blink 1s steps(2) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.chunk.hidden .ch { color: rgba(255, 255, 255, 0.16); }
+.chunk.muted .phones { opacity: 0; visibility: hidden; }
+.chunk.muted .zhs { opacity: 0.35; }
+
+/* 中译英 / 听写：未打出的字母 → 下划线空位
+   这两个模式用等宽字体，一个字母一格：下划线长度完全一致，打字时排版也不左右跳 */
+.blocks[data-mode="recall"] .words,
+.blocks[data-mode="listen"] .words {
+  font-family: ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+  letter-spacing: 0;
+}
+.words .ch.blank {
+  color: transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55));
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: calc(100% - 0.2em) 0.06em;
+}
+/* 这两个模式下打出来的字母要比空位更亮（盖过 .chunk.hidden .ch 的压暗） */
+.words .ch.ok { color: #fff; text-shadow: 0 0 18px rgba(255, 255, 255, 0.25); }
+.words .ch.bad { color: #ffd7d9; background: rgba(255, 95, 109, 0.85); border-radius: 4px; }
+
+.zh {
+  font-size: clamp(15px, 1.7vw, 21px);
+  color: #aeb8c8;
+  text-align: center;
+  max-width: 780px;
+  line-height: 1.7;
+  min-height: 1.7em;
+}
+.zh.dim { color: transparent; }
+
+.tools { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+
+.tips {
+  width: 100%; max-width: 1100px;
+  display: flex; justify-content: space-between;
+  font-size: 12px; color: #5a6375;
+  padding: 6px 4px 2px;
+}
+.kbd { font-variant-numeric: tabular-nums; }
+
+/* 抽题规则行：两个胶囊 + 语法点下拉同排（#orders 只做 JS 重渲染容器，不参与布局） */
+.orow #orders { display: contents; }
+
+/* 语法点自绘下拉：触发按钮 + 弹出菜单 */
+.gsel-wrap { position: relative; flex-shrink: 0; }
+.gsel {
+  height: 34px;
+  max-width: 200px;
+  padding: 0 30px 0 15px;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--amber);
+  background: #1c1a14
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ffb545' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
+    no-repeat right 12px center;
+  border: 1px solid var(--amber);
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(255, 181, 69, 0.25) inset;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.gsel:focus { box-shadow: 0 0 0 1px rgba(255, 181, 69, 0.25) inset, 0 0 0 3px rgba(255, 181, 69, 0.18); }
+
+/* 菜单：深色面板，选项为胶囊，选中金色，零句虚线置灰 */
+.gmenu {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 80;
+  min-width: 190px; max-height: 330px; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 6px;
+  background: #14171f;
+  border: 1px solid #333947;
+  border-radius: 14px;
+  box-shadow: 0 18px 46px -18px rgba(0, 0, 0, 0.75);
+}
+.gitem {
+  font: inherit; font-size: 13px; font-weight: 600; line-height: 1;
+  text-align: left; white-space: nowrap;
+  padding: 8px 12px; border-radius: 999px;
+  background: transparent; border: 1px solid transparent;
+  color: #8b93a5; cursor: pointer;
+  transition: background-color 0.12s, color 0.12s;
+  -webkit-tap-highlight-color: transparent;
+}
+.gitem:hover { color: var(--text); background: #1b1f29; }
+.gitem.is-on { color: var(--amber); border-color: var(--amber); background: #1c1a14; }
+.gitem:disabled { color: #55607a; border-style: dashed; background: transparent; cursor: default; }
+
+#typer {
+  position: fixed;
+  left: 0; bottom: 0;
+  width: 100%; height: 40px;
+  opacity: 0;
+  border: 0;
+  pointer-events: none;
+  font-size: 16px;
+}
+
+/* ---------- 结果页 ---------- */
+#result h2 { font-size: clamp(64px, 14vw, 128px); font-weight: 900; color: var(--amber); line-height: 1; }
+.stats { display: flex; gap: 34px; margin-top: 12px; text-align: center; }
+.stats dt { font-size: 11px; letter-spacing: 0.14em; color: var(--dim); text-transform: uppercase; }
+.stats dd { font-size: 20px; font-weight: 800; margin-top: 6px; }
+
+/* ---------- 背单词 ---------- */
+/* 电脑上卡片按内容长高；万一内容超出窗口，整屏可滚动（手机仍是卡片内滚动）
+   顶对齐是为了内容超屏时 HUD 不被居中裁掉 */
+#words { overflow-y: auto; justify-content: flex-start; }
+
+.wstage {
+  flex: 1 0 auto; /* 可撑满剩余空间，但内容超出时不被压缩（压缩会导致内容上溢盖住 HUD） */
+  width: 100%; max-width: 760px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: clamp(14px, 3vh, 26px);
+}
+
+.wcard {
+  width: min(560px, 100%);
+  /* 桌面：高度跟着内容走，不滚动、不裁切（短词有最小高度托底）
+     手机端在 @media (max-width:620px) 里改回固定高度 + 内部滚动 */
+  min-height: clamp(320px, 44vh, 400px);
+  flex: 0 0 auto; /* 内容多时卡片自己长高，不被 flex 压缩 */
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 30px 28px;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center;
+  justify-content: safe center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 30px 70px -40px #000;
+  transition: border-color 0.2s;
+}
+.wcard.revealed { border-color: #3a4152; }
+.wcard[hidden] { display: none; }
+/* 卡片内容包一层：短内容随卡片居中，长内容顶对齐（safe center 溢出时不裁顶） */
+.wbody {
+  width: 100%;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+
+.wfrom { font-size: 12px; letter-spacing: 0.16em; color: #4d5666; text-transform: uppercase; }
+/* 单词配图（来自 word-atlas，CC BY 4.0） */
+.wimg {
+  width: clamp(92px, 17vw, 124px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 16px;
+  background: #0b0d12;
+  box-shadow: 0 12px 32px -14px #000;
+}
+.wimg[hidden] { display: none; }
+.wcard.has-img .wword { font-size: clamp(36px, 6.2vw, 56px); }
+.wword {
+  font-size: clamp(44px, 8.4vw, 76px);
+  font-weight: 800; letter-spacing: -0.02em;
+  line-height: 1.1; text-align: center;
+  word-break: break-word;
+}
+.wipa { font-size: 18px; color: var(--dim); min-height: 24px; font-variant-numeric: tabular-nums; }
+
+/* HUD 里的「待复习 N」可点：进入只复习模式 */
+.due-link {
+  background: none; border: 0; padding: 0;
+  color: var(--amber); font: inherit; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.due-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+/* 「★高频」开关：关着时压暗，开着时保持琥珀色 */
+.fr-link { opacity: 0.5; }
+.fr-link.is-on { opacity: 1; font-weight: 700; }
+.due-link:active { opacity: 0.7; }
+
+/* 翻面：绕 Y 轴两段式翻转（出去 90° → 换内容 → 转回来） */
+.wcard.flipping { animation: wflipout 0.17s ease-in forwards; }
+.wcard.flip-in { animation: wflipin 0.24s ease-out; }
+@keyframes wflipout { to { transform: rotateY(-90deg); opacity: 0.35; } }
+@keyframes wflipin { from { transform: rotateY(90deg); opacity: 0.35; } to { transform: none; opacity: 1; } }
+
+/* 翻面前不占位（display:none），翻面时再展开，避免隐形释义把卡片撑高/顶偏 */
+.wans {
+  margin-top: 10px; width: 100%;
+  display: none; flex-direction: column; align-items: center; gap: 8px;
+  pointer-events: none;
+}
+.wcard.revealed .wans { display: flex; animation: wfade 0.2s ease; }
+@keyframes wfade { from { opacity: 0; transform: translateY(6px); } }
+.wpos { font-size: 14px; color: var(--amber); letter-spacing: 0.06em; }
+.wzh { font-size: 24px; font-weight: 700; text-align: center; line-height: 1.5; }
+.wex { text-align: center; color: #cdd5e4; font-size: 18px; line-height: 1.65; max-width: 480px; }
+.wex b { color: #b9c2d3; font-weight: 600; display: block; }
+.wex span { display: block; }
+.wex2 { font-size: 16px; opacity: 0.8; }
+/* 常用搭配（来自 word-atlas） */
+.wcol {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px;
+  max-width: 480px; font-size: 13.5px; line-height: 1.6;
+}
+.wcol span { color: #a8b3c7; }
+.wcol i { font-style: normal; color: #5b6577; margin-left: 5px; }
+/* 词形变化（复数 / 三单·过去式·过去分词·现在分词 / 比较级·最高级） */
+.wforms {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline;
+  gap: 3px 10px; max-width: 480px; font-size: 13.5px; line-height: 1.6;
+  border-top: 1px dashed #2a3040; padding-top: 8px; margin-top: 2px;
+}
+.wforms b {
+  color: var(--amber); font-weight: 600; font-size: 12px; letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+.wforms em { font-style: normal; color: #4d5666; font-size: 12px; margin-right: 2px; }
+.wforms span { color: #a8b3c7; }
+.wforms i { font-style: normal; color: #5b6577; font-size: 11.5px; margin-right: 4px; }
+/* 易混词辨析 */
+.wdisc {
+  max-width: 480px; font-size: 13.5px; line-height: 1.6; text-align: center;
+  color: var(--amber); opacity: 0.9;
+  border-top: 1px dashed #2a3040; padding-top: 8px; margin-top: 2px;
+}
+
+/* 操作区固定高度：翻面前/翻面后、卡片/拼写 之间切换时卡片位置不跳 */
+.wactions {
+  width: 100%; height: 58px;
+  display: flex; align-items: center; justify-content: center;
+}
+.wactions > .primary { margin-top: 0; }
+.wactions .wgrade { margin: 0; }
+
+.wgrade { display: none; gap: 10px; }
+.wgrade.on { display: flex; }
+
+.wdone { display: none; flex-direction: column; align-items: center; gap: 10px; }
+.wdone.on { display: flex; }
+.wdone h2 { font-size: 34px; font-weight: 800; }
+.wmiss { font-size: 15px; color: var(--dim); text-align: center; line-height: 1.7; max-width: 520px; }
+.wmiss b { color: var(--bad); font-weight: 700; }
+
+/* ---------- 背单词：模式切换 ---------- */
+.wmodes { display: flex; gap: 8px; }
+
+/* ---------- 背单词：拼写补全 ---------- */
+/* 尺寸与卡片模式完全一致（高度在 .wcard 里统一固定），这里只管排列顺序 */
+.wcard.spell { cursor: default; }
+/* 释义当题面，挪到最上面；音标/例句会泄底先藏起来，答完再放例句 */
+.wcard.spell .wans { order: -1; display: flex; pointer-events: auto; margin: 0; }
+.wcard.spell .wex, .wcard.spell .wex2, .wcard.spell .wcol, .wcard.spell .wdisc,
+.wcard.spell .wforms { display: none; }
+/* 拼写模式也显示音标：当读音提示用（不给字母答案） */
+.wcard.spell .wipa { color: #7d8798; letter-spacing: 0.01em; }
+.wcard.spell.done .wex { display: block; }
+.wcard.spell.done .wex2 { display: block; }
+.wcard.spell.done .wcol { display: flex; }
+.wcard.spell.done .wdisc { display: block; }
+.wcard.spell.done .wforms { display: flex; }
+/* 答完后详解（例句/搭配/辨析，含释义）整体排到最后：结果与对错反馈始终在可视区 */
+.wcard.spell.done .wans { order: 6; margin: 6px 0 0; }
+.wcard.spell .wword { font-size: clamp(36px, 6.8vw, 60px); letter-spacing: 0.01em; }
+.wcard.spell.has-img .wword { font-size: clamp(30px, 5.6vw, 46px); }
+.wcard.spell .wsay { order: 4; margin-top: 2px; }
+.wspell { order: 3; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.wspell[hidden] { display: none; }
+#wInput {
+  width: min(360px, 92%);
+  background: #0b0d12; color: var(--text);
+  border: 1px solid var(--line); border-radius: 12px;
+  padding: 9px 14px; font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 24px; font-weight: 700; letter-spacing: 0.22em; text-align: center;
+  outline: none; transition: border-color 0.15s;
+}
+#wInput::placeholder { letter-spacing: 0.04em; font-size: 15px; font-weight: 500; color: #4d5666; }
+#wInput:focus { border-color: var(--amber); }
+#wInput:disabled { opacity: 0.5; }
+.wfeed { min-height: 22px; font-size: 15px; color: var(--dim); text-align: center; }
+.wfeed.ok { color: var(--ok); font-weight: 700; }
+.wfeed.bad { color: var(--bad); font-weight: 700; }
+
+/* 词内字母：缺的字母画下划线，打进去的显示字，答完按对错上色 */
+.wword .sl { display: inline-block; position: relative; }
+.wword .sl.sep { min-width: 0.3em; }
+.wword .sl.gap { color: transparent; }
+.wword .sl.gap::after {
+  content: ""; position: absolute; left: 8%; right: 8%; bottom: 0.05em;
+  height: 0.07em; border-radius: 2px; background: rgba(255, 255, 255, 0.5);
+}
+.wword .sl.gap.cur::after { background: var(--amber); animation: blink 1s steps(2) infinite; }
+.wword .sl.fill { color: var(--text); }
+.wword .sl.fill.hint { color: var(--amber); }
+.wword .sl.fill.good { color: var(--ok); }
+.wword .sl.fill.bad { color: var(--bad); text-decoration: underline wavy var(--bad); }
+
+/* ============ 按钮系统 ============
+   全站按钮只保留 3 个尺寸 + 4 个层级，避免各处各写一套：
+     尺寸：lg 50 / md 38 / sm 31
+     层级：primary 实心金 · 描边 · ghost 弱化 · accent 金色描边
+   选中态（is-on）统一为：金边 + 深金底 + 金字
+*/
+.primary, .secondary, .tool, .wsay, .chip, .wmode, .wtip, .mini, .gbtn, .etype, .ekind {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  border: 1px solid var(--btn-line, var(--line));
+  border-radius: 999px;
+  background: var(--btn-bg, transparent);
+  color: var(--btn-fg, var(--text));
+  font-family: inherit; font-weight: 600; line-height: 1;
+  white-space: nowrap; cursor: pointer;
+  flex-shrink: 0; /* 父级是 flex 时不要被压扁（手机上高度不够会把按钮压成一条线） */
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+/* hidden 属性必须赢过任何作者 display 设置（如 .wcol 的 flex），否则残留内容会显示出来 */
+[hidden] { display: none !important; }
+.primary:active, .secondary:active, .tool:active, .wsay:active,
+.chip:active, .wmode:active, .wtip:active, .mini:active, .gbtn:active, .etype:active, .ekind:active { transform: translateY(1px); }
+
+/* --- 尺寸 --- */
+.primary, .secondary, .gbtn { height: 54px; padding: 0 32px; font-size: 16.5px; }
+.tool, .wsay { height: 40px; padding: 0 16px; font-size: 14.5px; }
+.chip, .wmode, .wtip, .mini, .etype, .ekind { height: 34px; padding: 0 15px; font-size: 13.5px; }
+
+/* --- 主按钮：一屏只强调一个 --- */
+.primary {
+  --btn-bg: var(--amber); --btn-line: var(--amber); --btn-fg: #17120a;
+  font-weight: 800;
+  box-shadow: 0 10px 34px -14px rgba(255, 181, 69, 0.8);
+}
+.primary:hover { --btn-bg: #ffc76b; }
+
+/* --- 描边按钮：与主按钮同高，弱一级 --- */
+.secondary { --btn-bg: transparent; --btn-line: #333947; --btn-fg: var(--text); font-weight: 700; }
+.secondary:hover { --btn-line: var(--amber); --btn-fg: var(--amber); --btn-bg: rgba(255, 181, 69, 0.06); }
+
+/* --- 常规操作按钮 --- */
+.tool, .wsay, .gbtn { --btn-bg: #14171f; --btn-line: var(--line); --btn-fg: #c3cad8; }
+.tool:hover, .wsay:hover, .gbtn:hover { --btn-line: #3a4152; --btn-fg: var(--text); }
+.gbtn { font-weight: 700; }
+.gbtn small { color: var(--dim); font-weight: 500; font-size: 11px; }
+.gbtn[data-g="0"]:hover { --btn-line: var(--bad); --btn-fg: var(--bad); }
+.gbtn[data-g="2"]:hover { --btn-line: var(--ok); --btn-fg: var(--ok); }
+
+/* --- 弱化按钮：跳过 / 结束 / 回首页 --- */
+.tool.ghost { --btn-bg: transparent; --btn-line: transparent; --btn-fg: var(--dim); }
+.tool.ghost:hover { --btn-line: var(--line); --btn-fg: var(--text); }
+
+/* --- 强调描边：提示 / 复习（不用虚线，与其它按钮同一套边） --- */
+.accent, .wtip, .mini {
+  --btn-bg: transparent; --btn-line: rgba(255, 181, 69, 0.45); --btn-fg: var(--amber);
+}
+.accent:hover, .wtip:hover, .mini:hover {
+  --btn-line: var(--amber); --btn-bg: rgba(255, 181, 69, 0.08);
+}
+
+/* --- 选择芯片：默认描边，选中统一金边金字 --- */
+.chip, .wmode { --btn-bg: transparent; --btn-line: var(--line); --btn-fg: var(--dim); }
+.chip:hover, .wmode:hover { --btn-line: #3a4152; --btn-fg: var(--text); }
+.chip.is-empty, .chip.is-empty:hover {
+  border-style: dashed; color: #55607a; background: transparent;
+  cursor: default; transform: none;
+}
+.chip small { font-size: 11px; opacity: 0.75; margin-left: 4px; letter-spacing: 0.02em; }
+.chip.is-on, .wmode.is-on {
+  --btn-bg: #1c1a14; --btn-line: var(--amber); --btn-fg: var(--amber);
+  font-weight: 700;
+  box-shadow: 0 0 0 1px rgba(255, 181, 69, 0.25) inset;
+}
+
+/* --- 禁用 --- */
+.primary:disabled, .tool:disabled, .wtip:disabled {
+  --btn-bg: transparent; --btn-line: var(--line); --btn-fg: var(--dim);
+  box-shadow: none; opacity: 0.55; cursor: default; transform: none;
+}
+
+/* ---------- 小屏 ---------- */
+@media (max-width: 620px) {
+  .hud { grid-template-columns: 1fr auto; }
+  .hud-left .bar { width: 54px; }
+  .hud-right { display: none; }
+  /* 背单词的统计在手机上要保留：待复习/新词 数量得看得见、可点 */
+  #words .hud-right { display: block; font-size: 11px; min-width: 0; }
+  #words .hud-right .wlv, #words .hud-right .d1 { display: none; } /* 窄屏去掉级别名，防溢出 */
+  .combo em { font-size: 22px; }
+  .blocks { gap: 10px 12px; }
+  .words { border-radius: 10px; }
+  .zhs { display: none; }
+  .tags span { padding: 2px 7px; }
+  .tips .kbd { display: none; }
+
+  /* 开始页：手机上压紧，尽量让「开始」落在首屏内；实在放不下就滚动 */
+  #start { padding: 64px 14px 22px; gap: 9px; } /* 顶部留出右上角三个档案头像的位置 */
+  #start h1 { font-size: 25px; line-height: 1.25; }
+  #start .sub { font-size: 12.5px; line-height: 1.55; max-width: 320px; }
+  #start .en-sub { font-size: 12px; max-width: 340px; margin-top: -6px; }
+  /* 手机上品牌只留「句铭」，SENTENCEINSCRIPTION 太长会顶到档案按钮 */
+  .brand-en { display: none; }
+  .brand { left: 16px; }
+  #start .group { margin-top: 0; }
+  #start .label { margin-bottom: 7px; font-size: 12px; letter-spacing: 0.06em; }
+  #start .srsinfo { font-size: 11.5px; min-height: 28px; padding: 4px 13px; margin: 3px 0; }
+  #start .foot { font-size: 10px; }
+  #start .credit { font-size: 9.5px; line-height: 1.65; }
+  .footwrap { position: static; margin-top: 6px; padding: 0; gap: 4px; }
+
+  /* 三个模式收成一行卡片，省掉近 120px 高度 */
+  .modes { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .modes .mode { flex-direction: column; justify-content: center; padding: 10px 6px; gap: 2px; }
+  .modes .mode b { font-size: 13px; }
+  .modes .mode small { font-size: 9.5px; line-height: 1.25; text-align: center; }
+  /* 手机上卡片固定高度 + 内部滚动：一屏内位置稳定，不撑破版面 */
+  .wcard {
+    height: clamp(300px, 52vh, 420px); min-height: 0;
+    overflow-y: auto; overscroll-behavior: contain;
+    scrollbar-width: thin; scrollbar-color: #2f3543 transparent;
+    padding: 22px 18px;
+  }
+  .wcard::-webkit-scrollbar { width: 6px; }
+  .wcard::-webkit-scrollbar-thumb { background: #2f3543; border-radius: 3px; }
+  .wcard::-webkit-scrollbar-track { background: transparent; }
+  /* 小屏拼写题面收紧留白，尽量一屏放下 */
+  .wcard.spell .wbody { gap: 5px; }
+  .wcard.spell .wimg { width: clamp(78px, 13vw, 100px); }
+  .wcard.spell .wzh { font-size: 18px; }
+  .wcard.spell .wspell { gap: 6px; }
+  .wactions { height: 52px; }
+  /* 小屏整体缩一档，仍是同一套按钮 */
+  .primary, .secondary { height: 46px; padding: 0 24px; font-size: 14.5px; }
+  .gbtn { height: 44px; padding: 0 18px; font-size: 13.5px; }
+  .tool, .wsay { height: 36px; padding: 0 12px; font-size: 13px; }
+  .gbtn small { display: none; }
+}
+
+/* ---------- 档案密码锁 ---------- */
+.pbtn { position: relative; }
+.pbtn.is-locked::after {
+  content: "🔒";
+  position: absolute;
+  right: -3px; bottom: -3px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: #0d0f14;
+  border: 1px solid var(--line);
+  font-size: 9px; line-height: 14px;
+  display: grid; place-items: center;
+  filter: none;
+}
+
+.lockmask {
+  position: fixed; inset: 0;
+  z-index: 60;
+  display: grid; place-items: center;
+  padding: 24px;
+  background: rgba(4, 5, 8, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.lockmask[hidden] { display: none !important; }
+
+.lockbox {
+  width: min(340px, 100%);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 26px 22px 20px;
+  box-shadow: 0 30px 80px -30px #000;
+  display: flex; flex-direction: column; gap: 10px;
+  animation: lockIn 0.16s ease-out;
+}
+@keyframes lockIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.lockttl { font-size: 17px; font-weight: 650; text-align: center; }
+.locksub { font-size: 12.5px; color: var(--dim); text-align: center; line-height: 1.5; margin-bottom: 2px; }
+.lockinput {
+  height: 46px; width: 100%;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #0d0f14;
+  color: var(--text);
+  font-size: 16px;
+  letter-spacing: 2px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.lockinput::placeholder { letter-spacing: 0; color: #5b6472; }
+.lockinput:focus { border-color: #46506a; }
+.lockerr { font-size: 12.5px; color: var(--bad); text-align: center; }
+.lockbtns { display: flex; gap: 10px; margin-top: 4px; }
+.lockbtns > button { flex: 1; height: 44px; padding: 0 12px; font-size: 14.5px; }
+.locklink {
+  margin-top: 2px;
+  background: none; border: 0;
+  color: var(--dim);
+  font-size: 12.5px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  padding: 6px;
+}
+.locklink:hover { color: var(--text); }
+
+/* ---------- 大屏（电脑）----------
+   同一套版式，只把字号整体放大一档：11~13px 的小字在显示器上偏小。
+   手机（≤620px）完全不受影响，平板（621~899px）维持原样。 */
+@media (min-width: 900px) {
+  /* 开始页 */
+  #start { gap: 24px; }
+  #start h1 { margin-bottom: 12px; }
+  .brand { font-size: 17px; }
+  /* 开始页整体上提：上方留白 ≈ 下方的 2/5，别让标题吊在正中 */
+  #start::before { flex: 0.42 0 1px; margin-block: 0; }
+  #start::after  { flex: 1 0 1px;    margin-block: 0; }
+  .pbtn { width: 40px; height: 40px; font-size: 20px; }
+  /* 内容列加宽：680 → 880，两侧空白 380 → 280 */
+  h1 { font-size: clamp(34px, 3.8vw, 56px); }
+  .sub { font-size: 17.5px; max-width: 640px; }
+  .en-sub { font-size: 17px; }
+  .label { font-size: 15px; letter-spacing: 0.08em; text-align: center; margin-bottom: 14px; }
+  .group { width: min(880px, 100%); margin-top: 20px; }
+  .levels { justify-content: center; }
+  .mode { padding: 20px 16px; }
+  .mode b { font-size: 19px; }
+  .mode small { font-size: 14.5px; }
+  .srsinfo { font-size: 14px; min-height: 36px; padding: 8px 22px; margin: 16px 0 6px; }
+  .foot { font-size: 13px; max-width: 880px; }
+  .credit { font-size: 11.5px; max-width: 1000px; }
+  /* 页脚两行是绝对定位，底部留白要够，别压到「开始」那一行 */
+  #start { padding-bottom: 62px; }
+
+  /* 难度 + 题量并排：省一行高度，宽度也用上 */
+  .pgrid {
+    display: grid; grid-template-columns: auto auto;  /* 列宽随内容，两组合起来居中 */
+    gap: 26px 72px; width: min(880px, 100%);
+    justify-content: center; align-items: start;
+    margin-top: 20px;  /* 与 .group 一致：难度 → 题量行的间隔 = 难度 → 模式的 44px */
+  }
+  .pgrid .group { width: auto; margin-top: 0; text-align: center; }
+
+  /* 动作两行：开始+复习 / 背单词+专项练习（后续新增按钮放第二行） */
+  .cta { margin-top: 4px; gap: 24px; }  /* 对齐 #start 实际节奏：srsinfo→开始=24px（容器gap14+srsinfo下边距6+cta上边距4） */
+  .cta-top { max-width: 430px; margin: 0 auto; gap: 12px; }  /* 与下方 cta-row 等宽对齐，开始按钮不再凸出一截 */
+  .cta .primary { min-width: 250px; }
+  .cta .secondary { margin-top: 0; }
+
+  /* 练习页 */
+  .hud-left, .hud-right { font-size: 14.5px; }
+  .count b { font-size: 17px; }
+  .combo .perfect { font-size: 13px; }
+  .combo em { font-size: 34px; }
+  .words { font-size: clamp(26px, 4.6vw, 60px); }
+  .zh { font-size: clamp(16px, 1.7vw, 24px); }
+  .tips { font-size: 13.5px; }
+
+  /* 按钮统一 +1 档 */
+  .primary, .secondary, .gbtn { height: 58px; padding: 0 34px; font-size: 18px; }
+  .tool, .wsay { height: 44px; padding: 0 18px; font-size: 15.5px; }
+  .chip, .wmode, .wtip, .mini { height: 37px; padding: 0 15px; font-size: 14.5px; }
+
+  /* 结果页 */
+  .stats dt { font-size: 12px; }
+  .stats dd { font-size: 22px; }
+
+  /* 背单词 */
+  .wcard { width: min(680px, 100%); min-height: clamp(360px, 46vh, 440px); padding: 36px 34px; }
+  .wfrom { font-size: 13px; }
+  .wimg { width: clamp(104px, 17vw, 140px); }
+  .wipa { font-size: 20px; }
+  .wpos { font-size: 15.5px; }
+  .wzh { font-size: 26px; }
+  .wex { font-size: 19.5px; max-width: 560px; }
+  .wex2 { font-size: 17.5px; }
+  .wcol, .wdisc, .wforms { font-size: 17px; max-width: 560px; }
+  .wfeed { font-size: 16px; }
+  .wmiss { font-size: 16.5px; }
+  .wdone h2 { font-size: 36px; }
+  #wInput { font-size: 26px; }
+  #wInput::placeholder { font-size: 15px; }
+
+  /* 密码框 */
+  .lockbox { width: min(380px, 100%); }
+  .lockttl { font-size: 18px; }
+  .locksub { font-size: 13.5px; }
+  .lockinput { height: 48px; font-size: 17px; }
+  .lockerr, .locklink { font-size: 13.5px; }
+  .lockbtns > button { height: 46px; font-size: 15px; }
+}
+
+/* ---------- 应试题 · 语法填空 ---------- */
+.cta-row { display: flex; gap: 10px; width: min(430px, 100%); }
+.cta-row .secondary { flex: 1 1 0; padding: 0 10px; white-space: nowrap; }
+
+#exam .hud { grid-template-columns: 1fr auto; }
+
+.exstage {
+  width: min(960px, 100%);
+  flex: 1 1 auto;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 18px; padding: 10px 0; overflow-y: auto;
+}
+.exhint { font-size: 12.5px; letter-spacing: 0.08em; color: var(--dim); }
+
+.ecard {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px 28px;
+  transition: border-color 0.18s;
+}
+.ecard[hidden] { display: none; }
+.ecard.is-ok { border-color: rgba(88, 224, 138, 0.5); }
+.ecard.is-bad { border-color: rgba(255, 95, 109, 0.55); }
+
+.esent {
+  font-family: "Inter", -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 23px; line-height: 2.25; color: var(--text);
+  word-break: break-word;
+  text-align: center;
+}
+/* 题面词块：照首页一句一屏的词性色块（词性色由 exam.js 查词库写入 --c） */
+.ewd {
+  display: inline-block;
+  font-weight: 800; letter-spacing: -0.015em; line-height: 1.4;
+  padding: 0.08em 0.34em 0.14em; margin: 0 3px;
+  border-radius: 10px;
+  background: var(--c, var(--unk)); color: #fff;
+  box-shadow: 0 10px 24px -18px #000;
+  white-space: nowrap;
+}
+/* 纯标点走自然文本（exam.js 直接插文本节点），无需样式 */
+.eblank {
+  display: inline-block;
+  font-family: inherit; font-size: inherit; font-weight: 800; line-height: 1.4;
+  color: var(--amber);
+  background: rgba(255, 181, 69, 0.12);
+  border: 0; border-bottom: 2px solid var(--amber);
+  border-radius: 10px 10px 4px 4px;
+  padding: 0.08em 0.3em 0.12em; margin: 0 3px;
+  text-align: center; outline: none;
+  caret-color: var(--amber);
+  transition: background 0.15s, color 0.15s;
+}
+.eblank:focus { background: rgba(255, 181, 69, 0.22); }
+.eblank:disabled { opacity: 1; -webkit-text-fill-color: currentColor; }
+.is-ok .eblank { color: #fff; background: var(--ok); border-bottom-color: rgba(0, 0, 0, 0.25); }
+.is-bad .eblank { color: #fff; background: var(--bad); border-bottom-color: rgba(0, 0, 0, 0.25); }
+.ebase { color: var(--dim); font-size: 0.72em; font-weight: 400; margin: 0 3px; }
+.ebase-none { letter-spacing: 0.5px; opacity: 0.7; }
+
+.efeed { margin-top: 18px; font-size: 15px; font-weight: 600; }
+.is-ok .efeed { color: var(--ok); }
+.is-bad .efeed { color: var(--bad); }
+/* 讲评：答错时把规则讲清楚，答对时也给一句，趁热打铁 */
+.ewhy {
+  margin-top: 8px;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--dim);
+  padding: 8px 12px;
+  border-left: 2px solid rgba(255, 181, 69, 0.45);
+  background: rgba(255, 181, 69, 0.06);
+  border-radius: 0 6px 6px 0;
+}
+.ewhy.is-bad { color: #ffd9a0; border-left-color: var(--amber); background: rgba(255, 181, 69, 0.1); }
+.ezh { margin-top: 10px; font-size: 14px; color: var(--dim); line-height: 1.7; }
+
+.eactions { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+.eactions[hidden] { display: none; }
+.erow { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+
+.edone { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.edone[hidden] { display: none; }
+.edone h2 { font-size: 40px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.edone .sub { color: var(--dim); font-size: 13.5px; }
+
+@media (max-width: 620px) {
+  .esent { font-size: 17px; line-height: 2.3; }
+  .ecard { padding: 24px 18px; }
+  .echunk { font-size: 19px; }
+  .echips { gap: 10px; min-height: 100px; }
+}
+
+/* 桌面版：题目与讲评字号上调（手机档保持紧凑不动） */
+@media (min-width: 621px) {
+  .esent { font-size: 23px; line-height: 2.25; }
+  .ecard { padding: 44px 48px; }
+  .exhint { font-size: 14px; }
+  .efeed { font-size: 17px; }
+  .ewhy { font-size: 15.5px; line-height: 1.8; }
+  .ezh { font-size: 16px; }
+  .ekind { font-size: 13px; padding: 8px 12px; }
+  .echunk { font-size: 27px; }
+  .echips { gap: 14px; min-height: 150px; }
+  .edone h2 { font-size: 46px; }
+  .edone .sub { font-size: 15px; }
+}
+
+
+/* 题型切换条：语法填空 / 首字母填空 / 连词成句（复用考点章胶囊样式） */
+.etypes { justify-content: center; }
+.etype { color: var(--text); font-weight: 700; }
+.etype.on { border-color: var(--amber); color: var(--amber); background: rgba(255, 181, 69, 0.08); }
+
+/* 连词成句：语块拖拽区（词块样式参考首页一句一屏的 .words 彩色底块） */
+.echips {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 12px; width: 100%; min-height: 120px; padding: 6px 0;
+}
+.echunk {
+  font-family: "Inter", -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 24px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.3;
+  padding: 0.14em 0.4em 0.2em; border-radius: 12px;
+  border: 0; background: var(--c, var(--unk)); color: #fff;
+  box-shadow: 0 12px 30px -18px #000;
+  cursor: grab; user-select: none; -webkit-user-select: none; touch-action: none;
+  transition: filter 0.15s, box-shadow 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.echunk:hover { filter: brightness(1.12); }
+.echunk:active { transform: translateY(1px) scale(0.995); }
+/* 注意：transform 不能带过渡，否则拖拽跟手会有延迟感 */
+.echunk.picked { box-shadow: 0 0 0 2px var(--amber), 0 12px 30px -18px #000; }
+.echunk.dragging { filter: brightness(1.12); box-shadow: 0 0 0 2px var(--amber), 0 18px 40px -18px #000; cursor: grabbing; }
+.echunk.ok { background: var(--ok); color: #fff; box-shadow: none; }
+.echunk.bad { background: var(--bad); color: #fff; box-shadow: none; }
+
+/* 考点统计条 */
+.ekinds {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 2px 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.ekinds::-webkit-scrollbar { display: none; }
+@media (max-width: 620px) {
+  .ekinds { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; }
+}
+.ekind {
+  flex: 0 0 auto;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--dim);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.ekind b {
+  margin-left: 5px;
+  font-weight: 700;
+  color: #cfd6e2;
+  font-variant-numeric: tabular-nums;
+}
+.ekind:hover { border-color: rgba(255, 181, 69, 0.4); }
+.ekind.on {
+  border-color: var(--amber);
+  color: var(--amber);
+  background: rgba(255, 181, 69, 0.1);
+}
+.ekind.on b { color: var(--amber); }
+
+/* ---------- 子页面左上角返回 ---------- */
+.hud-back {
+  display: inline-grid; place-items: center;
+  width: 30px; height: 30px; flex: none;
+  margin-left: -6px; margin-right: -2px;
+  border: 1px solid var(--line); border-radius: 9px;
+  background: transparent; color: var(--dim);
+  font-size: 15px; line-height: 1; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.hud-back:hover { color: var(--text); border-color: #39404e; background: rgba(255, 255, 255, 0.04); }
+.hud-back:active { transform: translateY(1px); }
+.hud-back:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+/* ---------- 背单词：重置进度 ---------- */
+.wfoot { display: flex; align-items: center; gap: 10px; }
+.wreset {
+  border: 1px solid transparent; border-radius: 7px;
+  background: transparent; color: #5a6375;
+  font: inherit; font-size: 12px; padding: 2px 7px; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.wreset:hover { color: var(--dim); border-color: var(--line); }
+.wreset.is-armed { color: var(--bad); border-color: rgba(255, 95, 109, 0.55); background: rgba(255, 95, 109, 0.08); }
+
+/* ---------- 背单词：查词模式（第三个模式，容器与卡片一致） ---------- */
+.wsearch {
+  width: min(560px, 100%);
+  /* 和 .wcard 同一套尺寸，切模式时视线不跳 */
+  min-height: clamp(320px, 44vh, 400px);
+  max-height: 62vh;
+  box-sizing: border-box;
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 24px 24px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line); border-radius: 22px;
+}
+.wsearch[hidden] { display: none; }
+.wsearch .srlist { flex: 1; min-height: 0; }
+
+.srinput {
+  width: 100%; box-sizing: border-box;
+  padding: 11px 14px;
+  background: #0b0d12; border: 1px solid var(--line); border-radius: 12px;
+  color: var(--text); font-size: 16px; font-family: inherit;
+  -webkit-appearance: none; appearance: none;
+}
+.srinput::placeholder { color: #4d5565; }
+.srinput:focus { outline: none; border-color: rgba(255, 181, 69, 0.55); box-shadow: 0 0 0 3px rgba(255, 181, 69, 0.1); }
+
+.srtip { margin: 0; font-size: 13px; color: #5a6375; }
+.srtip[hidden] { display: none; }
+
+.srlist { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding-bottom: 8px; }
+.srlist::-webkit-scrollbar { width: 8px; }
+.srlist::-webkit-scrollbar-thumb { background: #262b36; border-radius: 99px; }
+
+.sritem {
+  width: 100%; box-sizing: border-box; display: block; text-align: left;
+  padding: 9px 10px; margin: 2px 0;
+  background: transparent; border: 1px solid transparent; border-radius: 10px;
+  color: var(--text); font: inherit; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sritem:hover, .sritem:focus-visible { background: rgba(255, 255, 255, 0.04); border-color: var(--line); outline: none; }
+.srline { display: flex; align-items: baseline; flex-wrap: wrap; gap: 7px; }
+.srw { font-size: 19px; font-weight: 700; letter-spacing: 0.01em; }
+.sripa { font-size: 13.5px; color: var(--dim); font-family: "SF Mono", Consolas, monospace; }
+.srpos { font-size: 12px; color: #8a93a6; border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; }
+.srzh { font-size: 16px; color: #c7cdda; }
+.srmeta { display: block; margin-top: 3px; font-size: 12.5px; color: #4f5766; }
+.srexline { display: block; margin-top: 4px; font-size: 14px; color: #6d7688; line-height: 1.6; }
+.sritem mark { background: rgba(255, 181, 69, 0.22); color: var(--amber); border-radius: 3px; padding: 0 1px; }
+
+@media (max-width: 620px) {
+  .wsearch { width: 100%; max-height: 56vh; border-radius: 18px; padding: 16px 16px 8px; gap: 10px; }
+  .srinput { font-size: 16px; } /* iOS 小于 16px 会缩放页面 */
+  .srw { font-size: 18px; }
+  .srzh { font-size: 15.5px; }
+  .srexline { font-size: 13.5px; }
+  .wfoot .kbd { display: none; } /* 手机上把键盘提示让位给重置按钮 */
+  .wmodes { gap: 6px; }
+  .wmode { padding-left: 12px; padding-right: 12px; }
+}
+
+/* ===== 完形填空（#cloze）==== */
+.czmeta { margin-bottom: 14px; font-size: 12.5px; line-height: 1.7; color: var(--dim); }
+.cpass {
+  font-size: 17px;
+  line-height: 2.15;
+  text-align: left;
+  overflow-wrap: break-word;
+  max-height: min(40vh, 360px); /* 篇章内部滚动，选项不被顶出屏幕 */
+  overflow-y: auto;
+  padding-right: 8px;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+.cpass::-webkit-scrollbar { width: 5px; }
+.cpass::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.cblank {
+  appearance: none;
+  display: inline-block;
+  min-width: 3.4em;
+  margin: 0 0.2em;
+  padding: 0 0.5em;
+  border: none;
+  border-bottom: 2px solid var(--amber);
+  border-radius: 6px;
+  background: rgba(255, 181, 69, 0.14);
+  color: var(--amber);
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.cblank:hover { background: rgba(255, 181, 69, 0.26); }
+.cblank.cur {
+  background: rgba(255, 181, 69, 0.38);
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+}
+.cblank.ok { color: #fff; background: var(--ok); border-bottom-color: rgba(0, 0, 0, 0.25); }
+.cblank.bad { color: #fff; background: var(--bad); border-bottom-color: rgba(0, 0, 0, 0.25); }
+.cblank.rev { box-shadow: 0 0 0 2px rgba(238, 241, 246, 0.35); }
+.copts { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 18px; }
+.copt {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--text);
+  font-size: 15.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.copt:active { transform: translateY(1px); }
+.copt b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: rgba(255, 181, 69, 0.16);
+  color: var(--amber);
+  font-size: 13px;
+}
+.copt:hover { border-color: rgba(255, 181, 69, 0.5); }
+.czanalysis {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--ok);
+  border-radius: 8px;
+  background: rgba(88, 224, 138, 0.08);
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: #cfd6e0;
+  text-align: left;
+}
+.czanalysis.is-bad { border-left-color: var(--bad); background: rgba(255, 95, 109, 0.08); }
+@media (max-width: 620px) {
+  .cpass { font-size: 16px; line-height: 2.05; max-height: 44vh; }
+  .copt { min-height: 50px; font-size: 15px; } /* 手机触点要够大 */
+  .czanalysis { font-size: 13.5px; }
+  .ecard { padding: 20px 16px; }
+}
+
+/* 完形页：内容顶对齐，超出从顶部开始滚（无居中、无吸顶、无自动滚动） */
+#cloze .exstage { justify-content: flex-start; }
+@media (max-width: 620px) {
+  #cloze .exstage { gap: 12px; }
+  .cpass { max-height: 40vh; }
+}
+
+/* 完形辅助学习：点词查义面板 + 结算页译文 */
+.czword { cursor: pointer; border-radius: 4px; padding: 0 1px; }
+.czword:hover { background: rgba(90, 156, 255, 0.2); }
+.czword.on { background: rgba(90, 156, 255, 0.34); }
+.czdict {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(90, 156, 255, 0.08);
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #cfd6e0;
+  text-align: left;
+}
+.czdict b { color: var(--amber); margin-right: 8px; }
+.czdict .czipa { color: var(--dim); margin-right: 8px; font-family: inherit; }
+.czdict .czex { display: block; margin-top: 2px; font-size: 13px; color: var(--dim); }
+.cztransbox {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--amber);
+  border-radius: 8px;
+  background: rgba(255, 181, 69, 0.07);
+  font-size: 14.5px;
+  line-height: 2;
+  color: #cfd6e0;
+  text-align: left;
+}
+@media (max-width: 620px) {
+  .czdict { font-size: 13.5px; }
+  .cztransbox { font-size: 13.5px; line-height: 1.9; }
+}
+
+/* 中英对照排版：英文段在前，中文段紧随其后 */
+#czTransBox .czten { margin: 0 0 4px; line-height: 1.9; }
+#czTransBox .cztzh { margin: 0 0 16px; color: var(--dim); }
+#czTransBox .cztzh:last-child { margin-bottom: 0; }
+#czTransBox .czfill { color: var(--amber); font-weight: 700; }
+
+/* 对照区限高内部滚动，防止结算页被撑成长页面 */
+.cztransbox {
+  max-height: min(46vh, 420px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+.cztransbox::-webkit-scrollbar { width: 5px; }
+.cztransbox::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }

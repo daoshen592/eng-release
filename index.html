@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0b0f" />
+    <title>句铭 · 一句一屏</title>
+    <!-- PWA：加到主屏幕后全屏运行（iOS 走 apple-* 系列，Android/桌面走 manifest） -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="icons/favicon.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="句铭" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 开始页 -->
+    <section id="start" class="screen is-on">
+      <div class="profiles" id="profiles" role="group" aria-label="切换档案">
+        <button class="pbtn" data-p="guest" title="游客（不需要密码）" aria-label="游客档案">👤</button>
+        <button class="pbtn locked" data-p="boy" title="男生档案（需要密码）" aria-label="男生档案，需要密码">👦</button>
+        <button class="pbtn locked" data-p="girl" title="女生档案（需要密码）" aria-label="女生档案，需要密码">👧</button>
+      </div>
+      <div class="brand">
+        <span class="dot"></span>
+        <span>句铭<span class="brand-en"> · SENTENCEINSCRIPTION</span></span>
+      </div>
+      <h1 class="h1-hero">
+        <span class="pre">一句一屏</span>
+        <span class="main">逐句<em>铭手</em></span>
+      </h1>
+      <p class="en-sub">One sentence per screen. Inscribe each into your hands.</p>
+
+      <div class="group">
+        <p class="label">模式</p>
+        <div class="modes" id="modes">
+          <button class="mode is-on" data-mode="copy">
+            <b>跟打</b><small>英文可见，照着敲</small>
+          </button>
+          <button class="mode" data-mode="recall">
+            <b>中译英</b><small>只给中文，自己想</small>
+          </button>
+          <button class="mode" data-mode="listen">
+            <b>听写</b><small>只听声音，写下整句</small>
+          </button>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="label">难度 · 可多选</p>
+        <div class="levels" id="levels">
+          <button class="chip is-on" data-level="primary">小学</button>
+          <button class="chip" data-level="g7">初一</button>
+          <button class="chip" data-level="g8">初二</button>
+          <button class="chip" data-level="g9">初三</button>
+          <button class="chip" data-level="g10">高一</button>
+          <button class="chip" data-level="g11">高二</button>
+          <button class="chip" data-level="g12">高三</button>
+        </div>
+      </div>
+
+      <div class="pgrid">
+        <div class="group">
+          <p class="label">本轮题量</p>
+          <div class="levels" id="sizes">
+            <button class="chip is-on" data-size="20">20 句</button>
+            <button class="chip" data-size="50">50 句</button>
+            <button class="chip" data-size="all">全部</button>
+          </div>
+        </div>
+
+        <div class="group">
+          <p class="label">抽题规则</p>
+          <div class="levels orow">
+            <div id="orders">
+              <button class="chip is-on" data-order="smart">智能 · 错题优先</button>
+              <button class="chip" data-order="seq">顺序 · 接着上次</button>
+            </div>
+            <div class="gsel-wrap" id="gselWrap">
+              <button type="button" class="gsel" id="gselBtn" aria-haspopup="listbox"></button>
+              <div class="gmenu" id="gtags" role="listbox" hidden></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="srsinfo" id="srsInfo"></p>
+
+      <div class="cta">
+        <div class="cta-top">
+          <button id="begin" class="primary">开始 · 20 句</button>
+        </div>
+        <div class="cta-row">
+          <button id="openWords" class="secondary">📚 背单词</button>
+          <button id="openCloze" class="secondary">🧩 完形填空</button>
+          <button id="openExam" class="secondary">✍️ 专项练习</button>
+        </div>
+      </div>
+      <div class="footwrap">
+        <p class="foot">
+          词表：湘少版小学 3–6 年级 · 人教版初中 7–9 年级 · 高中 3 档内容待补 ·
+          音标/词性/释义逐词标注 · 整句朗读由语音合成生成，仅供参考
+        </p>
+        <p class="credit">
+          玩法灵感来自
+          <a href="https://github.com/iwangjie/English-Chunks" target="_blank" rel="noopener">iwangjie / English-Chunks</a> ·
+          部分词库 / 插画 / 录音取自
+          <a href="https://github.com/designfuchen/word-atlas" target="_blank" rel="noopener">Word Atlas</a> ·
+          部分例句来自 <a href="https://tatoeba.org" target="_blank" rel="noopener">Tatoeba</a> ·
+          语音由 edge-tts 合成 · 教材词表版权归原出版方，仅供个人学习
+        </p>
+      </div>
+    </section>
+
+    <!-- 背单词 -->
+    <section id="words" class="screen">
+      <header class="hud">
+        <div class="hud-left">
+          <button class="hud-back" id="wBack" type="button" title="返回首页 · Esc" aria-label="返回首页">←</button>
+          <span class="count"><b id="wIdx">1</b>/<span id="wTotal">20</span></span>
+          <span class="bar"><i id="wBarFill"></i></span>
+        </div>
+        <div class="hud-right" id="wStat">待复习 0 · 新词 0</div>
+      </header>
+
+      <main class="wstage">
+        <div class="wmodes" id="wModes">
+          <button class="wmode is-on" data-wm="card">卡片</button>
+          <button class="wmode" data-wm="spell">拼写补全</button>
+          <button class="wmode" data-wm="search">查词</button>
+        </div>
+
+        <div class="wsearch" id="wSearch" hidden>
+          <input id="wsInput" class="srinput" type="search" placeholder="输入英文或中文，如 water / 水" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="查词" />
+          <p class="srtip" id="wsTip">2,577 个词条（含短语）· 点结果打开该词的卡片</p>
+          <div class="srlist" id="wsList"></div>
+        </div>
+
+        <div class="wcard" id="wCard">
+         <div class="wbody" id="wBody">
+          <p class="wfrom" id="wFrom"></p>
+          <img class="wimg" id="wImg" alt="" hidden>
+          <h2 class="wword" id="wWord">hello</h2>
+          <p class="wipa" id="wIpa"></p>
+          <button class="wsay" id="wSay">🔊 听一遍</button>
+          <div class="wans" id="wAns">
+            <p class="wpos" id="wPos"></p>
+            <p class="wzh" id="wZh"></p>
+            <p class="wforms" id="wForms" hidden></p>
+            <p class="wex" id="wEx"></p>
+            <p class="wex wex2" id="wEx2" hidden></p>
+            <p class="wcol" id="wCol" hidden></p>
+            <p class="wdisc" id="wDisc" hidden></p>
+          </div>
+          <div class="wspell" id="wSpell" hidden>
+            <input id="wInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" inputmode="latin" aria-label="补全缺少的字母" />
+            <button class="wtip" id="wTip">💡 提示 · 补一个字母</button>
+            <p class="wfeed" id="wFeed"></p>
+          </div>
+         </div>
+        </div>
+
+        <div class="wactions" id="wActions">
+          <button id="wReveal" class="primary">显示释义 · 空格</button>
+          <button id="wNext" class="primary" hidden>下一题 · Enter</button>
+
+          <div class="wgrade" id="wGrade">
+            <button class="gbtn" data-g="0">不认识<small>1</small></button>
+            <button class="gbtn" data-g="2">认识<small>2</small></button>
+          </div>
+        </div>
+
+        <div class="wdone" id="wDone">
+          <h2>本轮完成</h2>
+          <div class="stats">
+            <div><dt id="wLbl0">认识</dt><dd id="wOk">0</dd></div>
+            <div><dt id="wLbl2">不认识</dt><dd id="wAgain">0</dd></div>
+          </div>
+          <p class="wmiss" id="wMiss"></p>
+          <button id="wAgainBtn" class="primary">再来一轮</button>
+          <button id="wHomeBtn" class="tool ghost">回到首页</button>
+        </div>
+      </main>
+
+      <footer class="tips">
+        <span id="wHint">看清单词，按空格翻面</span>
+        <span class="wfoot">
+          <span class="kbd" id="wKbd">空格 翻面 · 1/2/3 评价 · Esc 退出</span>
+          <button class="wreset" id="wReset" type="button" title="清空本档案的背词记录">重置进度</button>
+        </span>
+      </footer>
+    </section>
+
+    <!-- 练习页 -->
+    <section id="game" class="screen">
+      <header class="hud">
+        <div class="hud-left">
+          <button class="hud-back" id="gBack" type="button" title="返回首页 · Esc" aria-label="返回首页">←</button>
+          <span class="count"><b id="idx">1</b>/<span id="total">20</span></span>
+          <span class="bar"><i id="barFill"></i></span>
+        </div>
+        <div class="combo" id="combo"><span class="perfect">PERFECT</span> <b>×</b> <em id="comboN">0</em></div>
+        <div class="hud-right">
+          <span id="wpm">0</span> WPM · <span id="acc">100</span>%
+        </div>
+      </header>
+
+      <main class="stage" id="stage">
+        <div class="blocks" id="blocks"></div>
+        <div class="zh" id="zh"></div>
+        <div class="tools">
+          <button id="hintBtn" class="tool accent" title="快捷键：空格">💡 提示</button>
+          <button id="answerBtn" class="tool" title="快捷键：Ctrl + Enter">👀 看答案</button>
+          <button id="playSentence" class="tool">▶ 整句</button>
+          <button id="playSlow" class="tool">🐢 慢速</button>
+          <button id="kbdBtn" class="tool" title="打字时播放键盘声">🎹 键盘声</button>
+          <button id="skip" class="tool ghost">跳过</button>
+          <button id="quit" class="tool ghost">结束</button>
+        </div>
+      </main>
+
+      <footer class="tips">
+        <span id="hint">点一下屏幕就能开始打字</span>
+        <span class="kbd">空格 提示 · Ctrl+Enter 看答案 · Enter 下一句 · Esc 退出</span>
+      </footer>
+      <input id="typer" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" inputmode="latin" aria-label="输入英文句子" />
+    </section>
+
+    <!-- 结果页 -->
+    <section id="result" class="screen">
+      <p class="label">本轮结束</p>
+      <h2 id="resCombo">0</h2>
+      <p class="sub">最高连击</p>
+      <div class="stats">
+        <div><dt>完成</dt><dd id="resDone">0 句</dd></div>
+        <div><dt>速度</dt><dd id="resWpm">0 WPM</dd></div>
+        <div><dt>正确率</dt><dd id="resAcc">100%</dd></div>
+        <div><dt>提示</dt><dd id="resHint">0</dd></div>
+      </div>
+
+      <div class="group" style="margin-top: 20px">
+        <p class="label">换个难度再来</p>
+        <div class="levels" id="levels2"></div>
+      </div>
+      <button id="again" class="primary">再来一局</button>
+      <button id="againWrong" class="secondary" hidden>🔁 只练本次错句</button>
+      <button id="home" class="tool ghost">回到首页</button>
+    </section>
+
+    <!-- 专项练习：语法填空 / 首字母填空 / 连词成句 三题型 -->
+    <section id="exam" class="screen">
+      <header class="hud">
+        <div class="hud-left">
+          <button class="hud-back" id="exBack" type="button" title="返回首页" aria-label="返回首页">←</button>
+          <span class="count"><b id="exIdx">1</b>/<span id="exTotal">20</span></span>
+          <span class="bar"><i id="exBar"></i></span>
+        </div>
+        <div class="hud-right" id="exStat">对 0 · 错 0</div>
+      </header>
+
+      <main class="exstage" id="exStage">
+        <div class="etypes" id="exTypes"></div>
+        <div class="ekinds" id="exKinds"></div>
+        <p class="exhint" id="exHintBar">用括号里单词的正确形式填空</p>
+
+        <div class="ecard">
+          <p class="esent" id="exSent"></p>
+          <div class="echips" id="exChips" hidden></div>
+          <p class="efeed" id="exFeed" hidden></p>
+          <p class="ewhy" id="exWhy" hidden></p>
+          <p class="ezh" id="exZh" hidden></p>
+        </div>
+
+        <div class="eactions" id="exActions">
+          <button id="exCheck" class="primary">检查 · Enter</button>
+          <button id="exNext" class="primary" hidden>下一题 · Enter</button>
+          <div class="erow">
+            <button id="exTip" class="tool">💡 提示 · 空格</button>
+            <button id="exZhBtn" class="tool">👀 中文</button>
+            <button id="exSkip" class="tool ghost">跳过</button>
+            <button id="exQuit" class="tool ghost">结束</button>
+          </div>
+        </div>
+
+        <div class="edone" id="exDone" hidden>
+          <p class="label">本轮结束</p>
+          <h2 id="exScore">0 / 20</h2>
+          <p class="sub" id="exSub"></p>
+          <button id="exAgain" class="primary">再来一轮</button>
+          <button id="exHome" class="tool ghost">回到首页</button>
+        </div>
+      </main>
+
+      <footer class="tips">
+        <span id="exFoot">填完按 Enter 检查；不会就按空格提示</span>
+        <span class="kbd">Enter 检查 / 下一题 · 空格 提示 · Esc 退出</span>
+      </footer>
+    </section>
+
+    <!-- 完形填空：独立模块，难度/题量/抽题不绑定首页设置 -->
+    <section id="cloze" class="screen">
+      <header class="hud">
+        <div class="hud-left">
+          <button class="hud-back" id="czBack" type="button" title="返回首页 · Esc" aria-label="返回首页">←</button>
+          <span class="count"><b id="czPiece">1</b>/<span id="czPieces">1</span></span>
+          <span class="bar"><i id="czBar"></i></span>
+        </div>
+        <div class="hud-right" id="czStat">对 0 · 错 0</div>
+      </header>
+
+      <main class="exstage" id="czStage">
+        <div class="etypes" id="czLevels"></div>
+        <p class="exhint" id="czHint"></p>
+
+        <div class="ecard" id="czCard">
+          <p class="czmeta" id="czMeta"></p>
+          <div class="cpass" id="czPass"></div>
+          <div class="czdict" id="czDict" hidden></div>
+          <p class="czanalysis" id="czWhy" hidden></p>
+        </div>
+
+        <div class="copts" id="czOpts"></div>
+
+        <div class="eactions" id="czActions">
+          <div class="erow">
+            <button id="czNext" class="primary" hidden>下一篇 · Enter</button>
+            <button id="czHintBtn" class="tool">💡 提示</button>
+            <button id="czSkip" class="tool">⏭ 跳过这空</button>
+            <button id="czQuit" class="tool ghost">结束</button>
+          </div>
+        </div>
+
+        <div class="edone" id="czDone" hidden>
+          <p class="label">本篇结束</p>
+          <h2 id="czScore">0 / 15</h2>
+          <p class="sub" id="czSub"></p>
+          <div class="erow" style="justify-content: center">
+            <button id="czRedo" class="tool" hidden>🔁 只练错空</button>
+            <button id="czTrans" class="tool">📝 中英对照</button>
+          </div>
+          <div class="cztransbox" id="czTransBox" hidden></div>
+          <button id="czAgain" class="primary">再来一篇</button>
+          <button id="czHome" class="tool ghost">回到首页</button>
+        </div>
+      </main>
+
+      <footer class="tips">
+        <span id="czFoot">点选项作答，选完立即判分；点文中的空回看解析，点单词查词义</span>
+        <span class="kbd">1/2/3 选选项 · Enter 跳过 · Esc 退出</span>
+      </footer>
+    </section>
+
+    <!-- 密码锁：进入男生/女生档案时弹出 -->
+    <div class="lockmask" id="lockMask" hidden>
+      <div class="lockbox" role="dialog" aria-modal="true" aria-labelledby="lockTitle">
+        <p class="lockttl" id="lockTitle">男生档案</p>
+        <p class="locksub" id="lockSub">输入密码进入</p>
+        <input id="lockPass" class="lockinput" type="password" inputmode="numeric" autocomplete="off" maxlength="32" placeholder="密码" />
+        <p class="lockerr" id="lockErr" hidden></p>
+        <div class="lockbtns">
+          <button id="lockCancel" class="tool ghost" type="button">取消</button>
+          <button id="lockOk" class="primary" type="button">进入</button>
+        </div>
+        <button id="lockChange" class="locklink" type="button">修改密码</button>
+      </div>
+    </div>
+
+    <!-- 改密码 -->
+    <div class="lockmask" id="passMask" hidden>
+      <div class="lockbox" role="dialog" aria-modal="true" aria-labelledby="passTitle">
+        <p class="lockttl" id="passTitle">修改密码</p>
+        <p class="locksub">先输入原密码，再设新密码（至少 4 位）</p>
+        <input id="passOld" class="lockinput" type="password" inputmode="numeric" autocomplete="off" maxlength="32" placeholder="原密码" />
+        <input id="passNew" class="lockinput" type="password" inputmode="numeric" autocomplete="off" maxlength="32" placeholder="新密码" />
+        <input id="passNew2" class="lockinput" type="password" inputmode="numeric" autocomplete="off" maxlength="32" placeholder="再输一次新密码" />
+        <p class="lockerr" id="passErr" hidden></p>
+        <div class="lockbtns">
+          <button id="passCancel" class="tool ghost" type="button">取消</button>
+          <button id="passOk" class="primary" type="button">保存</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="data/sentences.js"></script>
+    <script src="data/words.js"></script>
+    <script src="data/forms.js"></script>
+    <script src="data/clozes.js"></script>
+    <script src="data/wordimg.js"></script>
+    <!-- 预生成发音表：多词语块 / 缺录音单词 → mp3（不依赖系统语音包） -->
+    <script src="data/audio_extra.js"></script>
+    <!-- 连击里程碑浮层：×10 / ×20 / ×50 时弹出 -->
+    <div id="milestone" aria-hidden="true"></div>
+
+    <script src="vendor/ts-fsrs.umd.js"></script>
+    <script src="profile.js"></script>
+    <script src="search.js"></script>
+    <script src="wordbook.js"></script>
+    <script src="exam.js"></script>
+    <script src="cloze.js"></script>
+    <script src="app.js"></script>
+    <script>
+      /* PWA 离线缓存：只有 https 或 localhost 下才注册（http 域名浏览器不允许，静默跳过不影响使用） */
+      if ('serviceWorker' in navigator &&
+          (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+        addEventListener('load', function () {
+          navigator.serviceWorker.register('sw.js').catch(function () {});
+        });
+      }
+    </script>
+  </body>
+</html>

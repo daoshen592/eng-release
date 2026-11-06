@@ -1,0 +1,1004 @@
+==== clause_o 宾语从句 ====
+[primary] #400  I think you are right.  ｜我认为你是对的。
+[g7] #134  I'm sorry I'm late.  ｜对不起，我迟到了。
+[g8] #205  I think it is necessary to take a break.  ｜我觉得有必要休息一下。
+[g8] #496  I think it is necessary to learn a foreign language.  ｜我认为学一门外语是必要的。
+[g8] #510  I hope you will feel better soon.  ｜希望你很快好起来。
+[g8] #529  I wonder what he is doing now.  ｜我想知道他现在在做什么。
+[g8] #530  Could you tell me how to get there?  ｜你能告诉我怎么去那里吗？
+[g8] #531  I don't know whether he will come.  ｜我不知道他是否会来。
+[g8] #532  Let me know if you need any help.  ｜如果你需要帮助，请告诉我。
+[g8] #620  The doctor took my temperature and said it was normal.  ｜医生量了我的体温，说是正常。
+[g8] #697  The astronaut said that space was very quiet.  ｜那位宇航员说太空非常安静。
+[g8] #762  Please count how many books are on the desk.  ｜请数一数书桌上有多少本书。
+[g8] #788  Imagine you are on a small island.  ｜想象你在一座小岛上。
+[g8] #835  I truly believe you can do it.  ｜我真的相信你能做到。
+[g8] #886  I want to find out who broke the window.  ｜我想查出是谁打破了窗户。
+[g8] #894  Make sure the door is closed.  ｜确保门关好了。
+[g8] #1115  Can you guess how old he is?  ｜你能猜出他多大吗？
+[g8] #2503  I'm glad to hear that you are better.  ｜听说你好些了，我很高兴。
+[g8] #2788  I hope that you will come to my party.  ｜我希望你能来参加我的聚会。
+[g8] #2789  I know that she likes music very much.  ｜我知道她非常喜欢音乐。
+[g8] #2790  We all think that the movie is exciting.  ｜我们都认为这部电影很精彩。
+[g8] #2791  He says that he wants to be a doctor.  ｜他说他想当一名医生。
+[g8] #2792  I remember that I put the keys on the desk.  ｜我记得我把钥匙放在桌子上了。
+[g8] #2793  My mother told me that she would buy me a new bike.  ｜妈妈告诉我她会给我买一辆新自行车。
+[g8] #2794  I believe that our team will win the match.  ｜我相信我们队会赢得这场比赛。
+[g8] #2795  I want to know if it will rain tomorrow.  ｜我想知道明天会不会下雨。
+[g8] #2796  She asked if I could help her with the box.  ｜她问我能不能帮她搬箱子。
+[g8] #2797  Do you know if there is a bank near here?  ｜你知道这附近有没有银行吗？
+[g8] #2798  I don't know whether he will come or not.  ｜我不知道他到底来不来。
+[g8] #2799  I don't know what his name is.  ｜我不知道他的名字是什么。
+[g8] #2800  Can you tell me where the nearest hospital is?  ｜你能告诉我最近的医院在哪里吗？
+[g8] #2801  I wonder why she is late again.  ｜我想知道她为什么又迟到了。
+[g8] #2802  Nobody knows when he will be back.  ｜没人知道他什么时候回来。
+[g8] #2803  Could you tell me how I can get to the station?  ｜你能告诉我怎么去车站吗？
+[g8] #2804  I don't know who broke the window.  ｜我不知道是谁打破了窗户。
+[g8] #2805  Do you remember what the teacher said just now?  ｜你记得老师刚才说了什么吗？
+[g9] #224  I think that mooncakes are delicious.  ｜我认为月饼很好吃。
+[g9] #225  It is said that the festival has a long history.  ｜据说这个节日有很长的历史。
+[g9] #227  Could you tell me where the restrooms are?  ｜你能告诉我洗手间在哪里吗？
+[g9] #228  Can you tell me how to get to the train station?  ｜你能告诉我怎么去火车站吗？
+[g9] #230  Do you know when the meeting will start?  ｜你知道会议什么时候开始吗？
+[g9] #267  Nobody knows what will happen in the future.  ｜没有人知道将来会发生什么。
+[g9] #268  I am sure that our dream will come true one day.  ｜我相信我们的梦想总有一天会实现。
+[g9] #271  I don't know if he will come tomorrow.  ｜我不知道他明天是否会来。
+[g9] #272  She asked me whether I had finished the work.  ｜她问我是否完成了工作。
+[g9] #273  The teacher told us that the earth goes around the sun.  ｜老师告诉我们地球绕着太阳转。
+[g9] #275  I wish I could fly like a bird.  ｜我希望我能像鸟一样飞。
+[g9] #560  I believe I can achieve my goal.  ｜我相信我能实现目标。
+[g9] #563  The doctor suggested that I should rest more.  ｜医生建议我多休息。
+[g9] #574  I think everyone can do something for the earth.  ｜我认为每个人都能为地球做点事。
+[g9] #1375  Some people believe that aliens visit the earth.  ｜有些人相信外星人来过地球。
+[g9] #1396  People say there is a ghost in that old house.  ｜人们说那所老房子里有鬼。
+[g9] #1458  I doubt that he will come on time.  ｜我怀疑他会不会准时来。
+[g9] #1464  His expression showed that he was happy.  ｜他的表情说明他很高兴。
+[g9] #2816  He said that he had seen the film before.  ｜他说他以前看过这部电影。
+[g9] #2817  She told me that she had visited Paris twice.  ｜她告诉我她去过巴黎两次。
+[g9] #2818  I didn't know that he had moved to Shanghai.  ｜我不知道他已经搬到上海去了。
+[g9] #2819  The teacher asked us what we had done.  ｜老师问我们做了什么。
+[g9] #2820  She asked me whether I had finished my work.  ｜她问我是否完成了工作。
+[g9] #2821  I don't know whether he will accept the invitation.  ｜我不知道他是否会接受邀请。
+[g9] #2822  Could you tell me when the train leaves?  ｜你能告诉我火车什么时候开吗？
+[g9] #2823  Nobody knows where he has gone.  ｜没人知道他去哪儿了。
+[g9] #2824  I want to know how you solved the problem.  ｜我想知道你是怎么解决这个问题的。
+
+==== clause_r 定语从句 ====
+[g8] #519  This is the most interesting film I have ever seen.  ｜这是我看过的最有趣的电影。
+[g8] #839  This is the worst movie I have ever seen.  ｜这是我看过最差的电影。
+[g9] #223  The more careful you are, the fewer mistakes you will make.  ｜你越细心，犯的错就越少。
+[g9] #243  I like music that I can dance to.  ｜我喜欢能跟着跳舞的音乐。
+[g9] #244  This is the museum which we visited last week.  ｜这就是我们上周参观的博物馆。
+[g9] #245  He is the boy who won the first prize.  ｜他就是那个得了一等奖的男孩。
+[g9] #246  I prefer music that has great lyrics.  ｜我更喜欢歌词优美的音乐。
+[g9] #266  The harder you study, the better grades you will get.  ｜你学习越努力，成绩就越好。
+[g9] #1216  Make a list of the books you want to read.  ｜把你想要读的书列个清单。
+[g9] #2830  The book that I borrowed from the library is interesting.  ｜我从图书馆借的那本书很有意思。
+[g9] #2831  The girl who is wearing a red coat is my cousin.  ｜穿红外套的那个女孩是我表妹。
+[g9] #2832  This is the photo which I took in Beijing last year.  ｜这就是我去年在北京拍的照片。
+[g9] #2833  The man who lives next door is a doctor.  ｜住在隔壁的那个人是医生。
+[g9] #2834  I like the songs which have beautiful lyrics.  ｜我喜欢那些歌词优美的歌曲。
+[g9] #2836  People who exercise every day are usually healthy.  ｜每天锻炼的人通常很健康。
+[g9] #2837  The letter which came this morning is from my pen pal.  ｜今天早上到的那封信是我笔友寄来的。
+[g9] #2838  I will never forget the days that we spent together.  ｜我永远不会忘记我们一起度过的日子。
+
+==== clause_adv 状语从句 ====
+[primary] #82  She is sad because she is ill.  ｜她很难过，因为她生病了。
+[primary] #384  He is happy because he gets a gift.  ｜他很开心，因为他得到了一份礼物。
+[primary] #2269  Be careful when you cross the street.  ｜过马路时要小心。
+[primary] #2316  Hold my hand when we cross the street.  ｜过马路时牵着我的手。
+[primary] #2344  Please stand up when the teacher comes in.  ｜老师进来时请起立。
+[primary] #2457  Turn off the lights before you leave.  ｜离开前把灯关掉。
+[primary] #2477  We greet the teacher when we meet.  ｜我们见到老师时问好。
+[g7] #109  Why do you like pandas? Because they are cute.  ｜你为什么喜欢熊猫？因为它们很可爱。
+[g7] #120  She didn't come to school yesterday because she was ill.  ｜她昨天没来上学，因为她生病了。
+[g7] #130  I like summer best because I can swim.  ｜我最喜欢夏天，因为我可以游泳。
+[g7] #1728  The little dog says woof when it sees me.  ｜那只小狗看见我就汪汪叫。
+[g7] #1824  I take the subway because it is fast.  ｜我坐地铁，因为它很快。
+[g7] #1890  Think about your answer before you speak.  ｜说话之前先想想你的答案。
+[g7] #2079  Be careful when you cross the road.  ｜过马路时要小心。
+[g7] #2104  If it rains, we will stay at home.  ｜如果下雨，我们就待在家里。
+[g7] #2123  After the long walk, I was very tired.  ｜走了很久之后，我非常累。
+[g7] #2159  Reading before bed is a good habit.  ｜睡前阅读是个好习惯。
+[g8] #167  He is going to be a doctor when he grows up.  ｜他长大后要当一名医生。
+[g8] #183  What were you doing when the rainstorm came?  ｜暴风雨来的时候你在做什么？
+[g8] #185  While I was walking, I met an old friend.  ｜我散步的时候遇到了一位老朋友。
+[g8] #209  She was so tired that she fell asleep quickly.  ｜她太累了，很快就睡着了。
+[g8] #494  Remember to turn off the lights when you leave.  ｜离开时记得关灯。
+[g8] #606  If you have the flu, you should stay in bed and drink more water.  ｜如果你得了流感，就该卧床多喝水。
+[g8] #611  She hurt her arm when she fell off the bike.  ｜她从自行车上摔下来，伤了胳膊。
+[g8] #614  He was so ill that he could hardly breathe.  ｜他病得很重，几乎喘不上气。
+[g8] #619  My grandfather is in good condition because he exercises every day.  ｜我爷爷身体很好，因为他每天锻炼。
+[g8] #625  She was upset because nobody came to her birthday party.  ｜她很难过，因为没人来参加她的生日聚会。
+[g8] #633  I was bored because the movie was too long.  ｜电影太长了，我看得很无聊。
+[g8] #680  We should compare the two answers before we choose.  ｜选之前我们应该比较一下两个答案。
+[g8] #727  I go to school by bicycle when the weather is fine.  ｜天气好的时候我骑自行车上学。
+[g8] #740  Please reply to my email as soon as you can.  ｜请尽快回复我的邮件。
+[g8] #746  I dislike rainy days because I must stay inside.  ｜我讨厌下雨天，因为出不了门。
+[g8] #750  Our team may lose the match if we do not work hard.  ｜不努力的话我们队可能会输掉比赛。
+[g8] #767  Do not push others when you get on the bus.  ｜上公交车时不要推别人。
+[g8] #853  Whenever I see him, he is smiling.  ｜我每次见到他，他都在笑。
+[g8] #873  As long as you study hard, you will do well.  ｜只要你努力学习，就会学得好。
+[g8] #951  Call me as soon as you arrive.  ｜你一到就给我打电话。
+[g8] #984  Even though it was cold, we went out.  ｜尽管天冷，我们还是出门了。
+[g8] #985  Even if it rains, we will go.  ｜即使下雨我们也去。
+[g8] #1060  Maybe he is still at school, although it is late.  ｜也许他还在学校，虽然已经很晚了。
+[g8] #1092  Wait here until I come back.  ｜在这儿等到我回来。
+[g8] #2492  What will happen if we are late?  ｜如果我们迟到会发生什么？
+[g8] #2494  When the singer left, his friend took his place.  ｜歌手离开后，他的朋友代替了他。
+[g8] #2508  He hurt himself when he fell.  ｜他摔倒时伤到了自己。
+[g8] #2511  My left foot hurts after the run.  ｜跑步后我的左脚疼。
+[g8] #2524  I got up so late that I missed the train.  ｜我起得太晚，错过了火车。
+[g8] #2525  We should think twice before we decide.  ｜做决定前我们应该三思。
+[g8] #2581  I didn't realize the time until mom called me.  ｜直到妈妈叫我，我才意识到时间。
+[g8] #2807  We will go to the park if it is sunny.  ｜如果天晴我们就去公园。
+[g8] #2808  If he comes back, I will tell him the news.  ｜如果他回来，我就把这个消息告诉他。
+[g8] #2809  You will feel better if you take the medicine.  ｜吃了药你会感觉好一些的。
+[g9] #242  He can't be at school because he is ill.  ｜他不可能在学校，因为他病了。
+[g9] #247  You are supposed to shake hands when you meet for the first time.  ｜第一次见面时你应该握手。
+[g9] #256  The environment will be better if we act now.  ｜如果我们现在行动起来，环境会更好。
+[g9] #274  If I were you, I would talk to the teacher.  ｜如果我是你，我会跟老师谈谈。
+[g9] #278  Be careful when you are in danger.  ｜遇到危险时要当心。
+[g9] #280  He has lived here since he was born.  ｜他从出生起就住在这里。
+[g9] #287  Please give me a hand when you are free.  ｜你有空时请帮我一下。
+[g9] #561  Nothing is impossible if you keep trying.  ｜只要坚持尝试，没有什么不可能。
+[g9] #583  I was so tired that I fell asleep at once.  ｜我太累了，立刻就睡着了。
+[g9] #591  I would be happy if you could help me.  ｜如果你能帮我，我会很高兴。
+[g9] #1183  Tom was absent from school yesterday because he was ill.  ｜汤姆昨天因病没来上学。
+[g9] #1206  Read the instructions before you start.  ｜开始前先读说明。
+[g9] #1293  Please ring the bell before you enter.  ｜进来前请按门铃。
+[g9] #1295  Take an umbrella in case it rains.  ｜带把伞吧，以防下雨。
+[g9] #1313  She felt embarrassed when she fell down.  ｜她摔倒时觉得很尴尬。
+[g9] #1368  The plant died because it had no water.  ｜这株植物因为没水死了。
+[g9] #1460  He hurt his elbow when he fell.  ｜他摔倒时伤了肘部。
+[g9] #1513  You can call in a doctor if you feel worse.  ｜如果感觉更糟，你可以请医生来。
+[g9] #1514  Drop by when you are free.  ｜有空来坐坐。
+[g9] #1519  My father got mad when I broke the window.  ｜我打碎窗户时爸爸生气了。
+[g9] #1529  When I look back at my school days, I smile.  ｜回想学生时代，我会微笑。
+[g9] #1548  Please shut off the lights when you leave.  ｜离开时请关灯。
+[g9] #1611  The film was so moving that I cried.  ｜这部电影太感人了，我哭了。
+[g9] #1642  Wait till I come back.  ｜等我回来。
+[g9] #2826  If I have time, I will visit you next week.  ｜如果有时间，我下周去看你。
+[g9] #2827  If we protect the animals, they won't disappear.  ｜如果我们保护动物，它们就不会消失。
+[g9] #2828  You will make progress if you keep practicing.  ｜只要你坚持练习，你就会进步。
+[g9] #2829  If everyone uses fewer plastic bags, the earth will be cleaner.  ｜如果每个人都少用塑料袋，地球会更干净。
+
+==== there There be ====
+[primary] #17  There are ten books on the desk.  ｜桌子上有十本书。
+[primary] #46  There are twenty students in my class.  ｜我们班有二十个学生。
+[primary] #140  There is some milk in the cup.  ｜杯子里有一些牛奶。
+[primary] #79  There is a lamp on the table.  ｜桌子上有一盏台灯。
+[primary] #305  There is a picture on the wall.  ｜墙上有一幅画。
+[primary] #323  There are many fish in the lake.  ｜湖里有很多鱼。
+[primary] #334  There is some orange juice in the bottle.  ｜瓶子里有一些橙汁。
+[primary] #348  There are twelve months in a year.  ｜一年有十二个月。
+[primary] #1929  There is a snack bar near my school.  ｜我们学校附近有一个小吃店。
+[primary] #1946  There are nineteen students in the room.  ｜房间里有十九个学生。
+[primary] #1959  There are sixteen boys in my class.  ｜我们班有十六个男生。
+[primary] #1972  There are one hundred students in our grade.  ｜我们年级有一百名学生。
+[primary] #1976  There is a new shopping centre here.  ｜这里有一个新的购物中心。
+[primary] #2185  There are five sheep on the hill.  ｜山上有五只羊。
+[primary] #2203  There are fifteen oranges in the box.  ｜箱子里有十五个橙子。
+[primary] #2255  There are forty desks in the room.  ｜房间里有四十张桌子。
+[primary] #2596  There are many white clouds in the sky today.  ｜今天天上有许多白云。
+[primary] #2368  There is a new restaurant near the park.  ｜公园附近有一家新餐馆。
+[primary] #2410  There are many tall buildings in the city.  ｜城市里有许多高楼。
+[primary] #2443  There is a box of chocolates on the desk.  ｜桌上有一盒巧克力。
+[g7] #126  There are forty students in our class.  ｜我们班有四十个学生。
+[g7] #2840  There is some milk in the cup.  ｜杯子里有一些牛奶。
+[g7] #408  There are forty students in my class.  ｜我们班有四十个学生。
+[g7] #440  There is a river behind their house.  ｜他们家后面有一条河。
+[g7] #457  There is a map of China on the wall.  ｜墙上有一张中国地图。
+[g7] #1734  There is a bookcase next to my desk.  ｜我书桌旁边有一个书柜。
+[g7] #1758  There is a quilt on my bed.  ｜我的床上有一床被子。
+[g7] #1766  There is a swimming pool near my house.  ｜我家附近有一个游泳池。
+[g7] #1780  There is a bowl of rice on the table.  ｜桌上有一碗米饭。
+[g7] #1789  There are fifteen boys and eighteen girls in my class.  ｜我们班有十五个男生和十八个女生。
+[g7] #1803  There are sixty minutes in an hour.  ｜一小时有六十分钟。
+[g7] #1834  There is a red flag on the building.  ｜楼顶有一面红旗。
+[g7] #1848  There are twelve candles on the cake.  ｜蛋糕上有十二支蜡烛。
+[g7] #1871  There are lots of books in the library.  ｜图书馆里有很多书。
+[g7] #1897  There is a pay phone next to the hotel.  ｜旅馆旁边有一部公用电话。
+[g7] #1997  There are fifty students in the hall.  ｜大厅里有五十个学生。
+[g7] #2011  There are one hundred teachers in our school.  ｜我们学校有一百位老师。
+[g7] #2017  There is a bridge over the river.  ｜河上有一座桥。
+[g7] #2050  There is a new movie at the cinema.  ｜电影院有一部新电影。
+[g7] #2074  There is a restaurant on Bridge Street.  ｜大桥街上有一家餐馆。
+[g7] #2076  There is a tree in front of my house.  ｜我家房前有一棵树。
+[g7] #2112  There is a painting on the wall.  ｜墙上有一幅画。
+[g7] #2154  There are flowers everywhere in spring.  ｜春天到处都是花。
+[g8] #721  There is sand all over the ground near the sea.  ｜海边地上到处是沙子。
+[g8] #725  There is a bear in the forest near our yard.  ｜我们院子附近的森林里有一只熊。
+[g8] #800  There is a saying that practice makes perfect.  ｜有句话叫熟能生巧。
+[g8] #870  There are more than fifty students in our class.  ｜我们班有五十多个学生。
+[g8] #2608  Long long ago, there was a poor man.  ｜很久很久以前，有一个穷人。
+[g8] #2501  There is a shop on the other side of the street.  ｜街那边有一家商店。
+[g8] #2590  There is a bathroom next to my bedroom.  ｜我的卧室旁边有一个浴室。
+[g8] #2797  Do you know if there is a bank near here?  ｜你知道这附近有没有银行吗？
+[g9] #600  Where there is a will, there is a way.  ｜有志者事竟成。
+[g9] #1258  There is some milk in the fridge.  ｜冰箱里有一些牛奶。
+[g9] #1308  There is a supermarket near my home.  ｜我家附近有一家超市。
+[g9] #1395  There are four seasons in a year.  ｜一年有四个季节。
+[g9] #1498  There is a small shop nearby.  ｜附近有一家小店。
+[g9] #1537  There is a big parking lot behind the shop.  ｜商店后面有一个大停车场。
+[g9] #2539  There was a big crowd at the gate.  ｜门口有一大群人。
+
+==== imp 祈使句 ====
+[primary] #10  Look at the classroom.  ｜看看这间教室。
+[primary] #14  Please open your book.  ｜请打开你的书。
+[primary] #26  Touch your nose.  ｜摸摸你的鼻子。
+[primary] #27  Raise your hand, please.  ｜请举手。
+[primary] #29  Wash your hands before dinner.  ｜晚饭前要洗手。
+[primary] #31  Look at the elephant. It is big.  ｜看那头大象，它很大。
+[primary] #55  Please pass me the chopsticks.  ｜请把筷子递给我。
+[primary] #69  Go straight and turn left.  ｜直走，然后左转。
+[primary] #84  Drink more water and have a good rest.  ｜多喝水，好好休息。
+[primary] #85  Don't talk in the library.  ｜不要在图书馆里说话。
+[primary] #86  Let's clean the windows together.  ｜我们一起擦窗户吧。
+[primary] #89  Don't be late for school.  ｜上学不要迟到。
+[primary] #291  Welcome to our class.  ｜欢迎来到我们班。
+[primary] #293  Thank you very much.  ｜非常感谢你。
+[primary] #298  Please sit down and listen.  ｜请坐下听讲。
+[primary] #299  Look at the blackboard, please.  ｜请看黑板。
+[primary] #300  Read after me, please.  ｜请跟我读。
+[primary] #329  Please put on your hat.  ｜请戴上你的帽子。
+[primary] #355  Let's go to the park on foot.  ｜我们步行去公园吧。
+[primary] #358  Turn right at the crossing.  ｜在十字路口右转。
+[primary] #369  Let's play basketball after class.  ｜我们下课后打篮球吧。
+[primary] #2593  Please listen to me.  ｜请听我说。
+[primary] #377  Don't run in the hall.  ｜不要在走廊里跑。
+[primary] #381  Take this medicine after dinner.  ｜晚饭后吃这个药。
+[primary] #383  Don't worry. I can help you.  ｜别担心，我可以帮你。
+[primary] #395  Let's sing a song for her.  ｜我们为她唱首歌吧。
+[primary] #396  Please write your name here.  ｜请在这里写下你的名字。
+[primary] #397  Listen and circle the right answer.  ｜听录音，圈出正确答案。
+[primary] #398  Work in pairs, please.  ｜请两人一组练习。
+[primary] #402  Let's go and have a look.  ｜我们去看看吧。
+[primary] #1952  Take your raincoat. It is raining.  ｜带上你的雨衣，下雨了。
+[primary] #1961  Don't spit in the street.  ｜不要在大街上吐痰。
+[primary] #1977  Don't step on the grass.  ｜不要踩草坪。
+[primary] #1979  Please write about your family.  ｜请写一写你的家庭。
+[primary] #2181  Touch your head, then touch your ear.  ｜摸摸你的头，再摸摸你的耳朵。
+[primary] #2209  Wash your face and brush your teeth every day.  ｜每天洗脸刷牙。
+[primary] #2220  Get up early and you will be healthy.  ｜早点起床，你就会健康。
+[primary] #2221  Hurry up, or we'll miss the bus.  ｜快点，不然我们要错过公交车了。
+[primary] #2225  Don't cry. I will help you.  ｜别哭，我会帮你。
+[primary] #2234  Don't litter in the park.  ｜不要在公园里乱扔垃圾。
+[primary] #2595  Please close the door for me.  ｜请帮我关上门。
+[primary] #2266  Don't work too hard at night.  ｜晚上别学习太累。
+[primary] #2269  Be careful when you cross the street.  ｜过马路时要小心。
+[primary] #2282  Remember to bring your book tomorrow.  ｜记得明天带书来。
+[primary] #2288  Wait for me at the school gate.  ｜在校门口等我。
+[primary] #2291  Don't smoke here. It's bad for your health.  ｜不要在这里吸烟，有害健康。
+[primary] #2292  Don't pick the flowers in the garden.  ｜不要摘花园里的花。
+[primary] #2300  Put some ice in the juice.  ｜在果汁里放些冰。
+[primary] #2306  Look up the word on the computer.  ｜在电脑上查一查这个单词。
+[primary] #2311  Look up the word in the dictionary.  ｜在词典里查这个单词。
+[primary] #2316  Hold my hand when we cross the street.  ｜过马路时牵着我的手。
+[primary] #2317  Don't feed the animals in the zoo.  ｜不要在动物园喂动物。
+[primary] #2318  Welcome back to school!  ｜欢迎回到学校！
+[primary] #2322  Let me have a try.  ｜让我试一试。
+[primary] #2327  Wash your clothes and hang them up.  ｜把衣服洗了晾起来。
+[primary] #2329  Please sweep the floor and clean the desks.  ｜请扫地并擦桌子。
+[primary] #2337  Don't talk loudly in the library.  ｜不要在图书馆大声说话。
+[primary] #2341  Don't be angry with him.  ｜不要生他的气。
+[primary] #2344  Please stand up when the teacher comes in.  ｜老师进来时请起立。
+[primary] #2345  Come to the front and read the text.  ｜到前面来读课文。
+[primary] #2352  Please give a report about your trip.  ｜请做一个关于你旅行的报告。
+[primary] #2354  Write your name on this piece of paper.  ｜把你的名字写在这张纸上。
+[primary] #2355  Be careful, or you will cut your hand.  ｜小心，不然会割到手。
+[primary] #2356  Tie the box with a string.  ｜用绳子把箱子捆好。
+[primary] #2357  Don't throw paper on the floor.  ｜不要往地上扔纸。
+[primary] #2358  Don't waste water, please.  ｜请不要浪费水。
+[primary] #2359  Don't play on the road.  ｜不要在马路上玩耍。
+[primary] #2373  Walk along this street and turn right.  ｜沿着这条街走然后右转。
+[primary] #2375  Get on the bus at the first stop.  ｜在第一站上车。
+[primary] #2376  Get off at the school gate.  ｜在校门口下车。
+[primary] #2378  Be active in class, please.  ｜上课请积极一点。
+[primary] #2384  Drink warm water and you will feel better.  ｜喝点温水，你会好一些。
+[primary] #2385  Doing sport is good for your health.  ｜做运动对你的健康有好处。
+[primary] #2395  Please take a note of the new words.  ｜请把这些生词记下来。
+[primary] #2401  Be careful not to lose your key.  ｜小心别把钥匙弄丢了。
+[primary] #2403  Playing with fire is dangerous.  ｜玩火很危险。
+[primary] #2406  Eating vegetables keeps you healthy.  ｜吃蔬菜使你健康。
+[primary] #2407  Take care of your little brother.  ｜照顾好你的弟弟。
+[primary] #2411  Look after your pet dog well.  ｜照看好你的宠物狗。
+[primary] #2416  Please read the text aloud.  ｜请大声朗读课文。
+[primary] #2417  Don't move the desk. It's too heavy.  ｜别搬桌子，太重了。
+[primary] #2423  Please reply to my email soon.  ｜请尽快回复我的邮件。
+[primary] #2437  Be careful, or you will hurt your arm.  ｜小心，不然会弄伤手臂。
+[primary] #2444  Close the window, please. It's cold outside.  ｜请关上窗户，外面很冷。
+[primary] #2447  Please bring your homework tomorrow.  ｜请明天把作业带来。
+[primary] #2457  Turn off the lights before you leave.  ｜离开前把灯关掉。
+[primary] #2461  Don't drop litter on the ground.  ｜不要往地上扔垃圾。
+[primary] #2465  Eating fruit is good for your health.  ｜吃水果有益健康。
+[primary] #2469  Don't be so loud in the hospital.  ｜在医院里不要大声喧哗。
+[primary] #2472  Let me check your answer.  ｜我来检查一下你的答案。
+[primary] #2474  Eating too much sugar is bad for your teeth.  ｜吃太多糖对牙齿不好。
+[primary] #2475  Wear a coat, or you may catch a cold.  ｜穿上外套，不然你会感冒。
+[primary] #2479  Reading brings me great joy.  ｜读书给我带来极大的快乐。
+[g7] #107  Don't eat in the classroom.  ｜不要在教室里吃东西。
+[g7] #122  Let's play volleyball after school.  ｜放学后我们打排球吧。
+[g7] #135  Thank you for your help.  ｜谢谢你的帮助。
+[g7] #137  Please be quiet in the classroom.  ｜在教室里请保持安静。
+[g7] #138  Let's meet at the school library at eight.  ｜我们八点在学校图书馆见。
+[g7] #151  Let's help the old man cross the street.  ｜我们帮那位老人过马路吧。
+[g7] #153  Reading books is good for us.  ｜读书对我们有好处。
+[g7] #424  Let's meet at the school door at five.  ｜我们五点在校园门口见吧。
+[g7] #431  Go along this street and turn right.  ｜沿着这条街走，然后右转。
+[g7] #453  Don't be afraid to speak English.  ｜不要害怕说英语。
+[g7] #462  Don't eat too much meat.  ｜不要吃太多肉。
+[g7] #1701  Please write your name on the ID card.  ｜请把你的名字写在身份证上。
+[g7] #1704  Let us go to the library together.  ｜我们一起去图书馆吧。
+[g7] #1762  Let's play ping-pong after class.  ｜我们下课后打乒乓球吧。
+[g7] #1784  Let's eat out this evening.  ｜我们今晚出去吃吧。
+[g7] #1811  Don't run in the hallway.  ｜不要在走廊里奔跑。
+[g7] #1849  Please blow out the candles.  ｜请把蜡烛吹灭。
+[g7] #1856  Please open your mouth.  ｜请张开嘴。
+[g7] #1870  Let's take a walk after supper.  ｜我们晚饭后散散步吧。
+[g7] #1874  Don't stay up late before a test.  ｜考试前不要熬夜。
+[g7] #1877  Don't shout at your little brother.  ｜不要冲你弟弟大喊大叫。
+[g7] #1887  Close your eyes and make a wish.  ｜闭上眼睛许个愿。
+[g7] #1890  Think about your answer before you speak.  ｜说话之前先想想你的答案。
+[g7] #1898  Go along the street and you will see it.  ｜沿着这条街走，你就会看到它。
+[g7] #1985  Let's play chess after school.  ｜放学后我们下棋吧。
+[g7] #2004  Eat your breakfast quickly, or you will be late.  ｜快吃早饭，不然你要迟到了。
+[g7] #2009  Stop talking and listen to me.  ｜别说话了，听我讲。
+[g7] #2021  Work hard and your dream will come true.  ｜努力学习，梦想就会成真。
+[g7] #2024  Please arrive at school before eight.  ｜请在八点前到校。
+[g7] #2025  Be on time for class, please.  ｜上课请准时。
+[g7] #2026  Don't fight with your classmates.  ｜不要和同学打架。
+[g7] #2035  Remember to close the windows.  ｜记得关窗户。
+[g7] #2036  Please follow the rules in the library.  ｜在图书馆请遵守规则。
+[g7] #2042  Let's save the elephants.  ｜我们来拯救大象吧。
+[g7] #2048  Wash your hands before dinner.  ｜晚饭前洗手。
+[g7] #2069  Sit down and have a cup of tea.  ｜坐下喝杯茶吧。
+[g7] #2070  See you soon!  ｜回头见！
+[g7] #2078  Turn left at the second crossing.  ｜在第二个十字路口向左转。
+[g7] #2079  Be careful when you cross the road.  ｜过马路时要小心。
+[g7] #2087  Let's meet at the cinema at six.  ｜我们六点在电影院见面吧。
+[g7] #2101  Please take off your shoes at the door.  ｜请在门口脱鞋。
+[g7] #2105  Don't eat too much candy.  ｜不要吃太多糖果。
+[g7] #2106  Cut up the tomatoes for the soup.  ｜把西红柿切碎做汤。
+[g7] #2110  Don't worry about the test.  ｜别担心考试。
+[g7] #2132  Don't jump on the bed.  ｜不要在床上跳。
+[g7] #2133  Wake up! It's seven o'clock.  ｜醒醒！七点了。
+[g7] #2151  Come on! We will be late for class.  ｜快点！我们上课要迟到了。
+[g7] #2159  Reading before bed is a good habit.  ｜睡前阅读是个好习惯。
+[g7] #2176  Don't be strict with him. He is only six.  ｜别对他太严格，他才六岁。
+[g8] #212  Don't forget to turn off the lights.  ｜别忘了关灯。
+[g8] #219  Please remember to bring your homework tomorrow.  ｜请记得明天带作业来。
+[g8] #492  Don't throw rubbish here and there.  ｜不要到处扔垃圾。
+[g8] #494  Remember to turn off the lights when you leave.  ｜离开时记得关灯。
+[g8] #497  Reading helps us open our eyes.  ｜阅读帮助我们开阔眼界。
+[g8] #502  Don't worry about the exam.  ｜别担心考试。
+[g8] #509  Take the medicine three times a day.  ｜这药一天吃三次。
+[g8] #525  Thank you for inviting me.  ｜谢谢你邀请我。
+[g8] #532  Let me know if you need any help.  ｜如果你需要帮助，请告诉我。
+[g8] #617  Take this medicine twice a day and you will feel better.  ｜这药一天吃两次，你会好起来的。
+[g8] #630  Don't be angry with him. He didn't mean to break it.  ｜别生他的气，他不是故意弄坏的。
+[g8] #646  Thank you for your kindness and your help.  ｜谢谢你的好意和帮助。
+[g8] #655  Believe in yourself and you will achieve your dream.  ｜相信自己，你就能实现梦想。
+[g8] #660  Let me introduce myself: I am a new student from the country.  ｜我来介绍一下自己：我是从乡下来的新学生。
+[g8] #669  Please read the passage on page twenty and answer the questions.  ｜请读第二十页的短文并回答问题。
+[g8] #677  Please speak more quietly in the library.  ｜在图书馆里请说话轻一点。
+[g8] #681  Do not copy your classmate's homework. Try to do it yourself.  ｜别抄同学的作业，自己试着做。
+[g8] #699  Add some yogurt and honey, and mix them well.  ｜加些酸奶和蜂蜜，搅拌均匀。
+[g8] #700  Cut the watermelon into pieces with a knife.  ｜用刀把西瓜切成块。
+[g8] #701  Put the corn in the pot and add a little salt.  ｜把玉米放进锅里，加一点盐。
+[g8] #705  Serve the soup in a bowl and cover it.  ｜把汤盛在碗里，然后盖上。
+[g8] #706  Add some pepper and sugar to the gravy.  ｜往肉汁里加点胡椒和糖。
+[g8] #707  Put the lettuce on a plate and fill it with salad.  ｜把生菜放在盘子里，装上沙拉。
+[g8] #709  Use a spoon to taste the soup.  ｜用勺子尝一下汤。
+[g8] #712  Freezing weather and icy roads made driving dangerous.  ｜严寒的天气和结冰的路面让开车很危险。
+[g8] #733  Please buy me a snack on your way home.  ｜回家路上请给我买点零食。
+[g8] #738  Write the date on the calendar.  ｜把日期写在日历上。
+[g8] #740  Please reply to my email as soon as you can.  ｜请尽快回复我的邮件。
+[g8] #741  Delete the old photos from your camera.  ｜把你相机里的旧照片删掉。
+[g8] #742  Print the paper and hand it out to the class.  ｜把试卷打印出来发给全班。
+[g8] #745  Please wait for me at the bus stop.  ｜请在公交站等我。
+[g8] #751  Please send the letter to my teacher.  ｜请把这封信寄给我的老师。
+[g8] #756  Press here to turn on the machine.  ｜按这个按钮开动机器。
+[g8] #757  Hang your coat behind the door.  ｜把外套挂在门后。
+[g8] #760  Hold the cup with both hands.  ｜用两只手端杯子。
+[g8] #762  Please count how many books are on the desk.  ｜请数一数书桌上有多少本书。
+[g8] #767  Do not push others when you get on the bus.  ｜上公交车时不要推别人。
+[g8] #774  Please stick the photo on the paper.  ｜请把照片贴在纸上。
+[g8] #777  Never cheat in an exam.  ｜考试时绝不要作弊。
+[g8] #781  Hurry up, or we will be late for school.  ｜快点，不然上学要迟到了。
+[g8] #787  Please organize the books by subject.  ｜请按科目整理这些书。
+[g8] #788  Imagine you are on a small island.  ｜想象你在一座小岛上。
+[g8] #790  Fold the paper in half.  ｜把纸对折。
+[g8] #808  Never forget the importance of health.  ｜永远别忘了健康的重要性。
+[g8] #816  Thank you for your understanding.  ｜谢谢你的理解。
+[g8] #818  Reading is an important skill.  ｜阅读是一项重要的技能。
+[g8] #821  Please tell me the truth.  ｜请告诉我真相。
+[g8] #883  Please make up a new story.  ｜请编一个新故事。
+[g8] #890  Do a good job, and people will remember you.  ｜好好干，人们会记住你。
+[g8] #894  Make sure the door is closed.  ｜确保门关好了。
+[g8] #897  Write down the important words in your notebook.  ｜把重要的词记在笔记本上。
+[g8] #899  Reading is a good way of self-improvement.  ｜阅读是自我提升的好方法。
+[g8] #908  Let's make a banana milk shake.  ｜我们做香蕉奶昔吧。
+[g8] #910  Let's meet another time.  ｜我们改天见吧。
+[g8] #915  Turn down the TV; the baby is sleeping.  ｜把电视声音调小，宝宝在睡觉。
+[g8] #2607  Eating too much meat is not healthy.  ｜吃太多肉不健康。
+[g8] #919  Cut the cake in half.  ｜把蛋糕切成两半。
+[g8] #923  Take breaks every hour.  ｜每小时休息一下。
+[g8] #926  Come here right away.  ｜马上过来。
+[g8] #932  Get out of the room now.  ｜马上离开房间。
+[g8] #934  Do not give up. Keep trying.  ｜别放弃，继续努力。
+[g8] #935  Let's clean up the classroom.  ｜我们把教室打扫干净吧。
+[g8] #936  Cheer up! Things will get better.  ｜振作起来！事情会好起来的。
+[g8] #939  Do not put off your homework.  ｜别拖延作业。
+[g8] #949  Please take out the rubbish.  ｜请把垃圾拿出去。
+[g8] #951  Call me as soon as you arrive.  ｜你一到就给我打电话。
+[g8] #954  Take care of yourself.  ｜照顾好自己。
+[g8] #959  Cut out the picture and put it here.  ｜把图片剪下来贴在这里。
+[g8] #961  Please pick up the pen.  ｜请把笔捡起来。
+[g8] #965  Let me have a look.  ｜让我看一看。
+[g8] #968  Take down the old picture.  ｜把旧画取下来。
+[g8] #972  Add a little bit of salt.  ｜加一点点盐。
+[g8] #979  Feel free to ask me questions.  ｜有问题尽管问我。
+[g8] #1016  Let's play a board game.  ｜我们玩个桌游吧。
+[g8] #1066  Please take this seriously; it is important.  ｜请认真对待，这很重要。
+[g8] #1069  Wash your hands with soap before dinner.  ｜饭前用肥皂洗手。
+[g8] #1092  Wait here until I come back.  ｜在这儿等到我回来。
+[g8] #1098  Take one step forward, please.  ｜请向前走一步。
+[g8] #1110  Do not waste water.  ｜不要浪费水。
+[g8] #1113  Be careful not to drop the cup.  ｜小心别把杯子掉了。
+[g8] #1170  Do not walk into the road without looking.  ｜不看路就别走到马路上。
+[g8] #2480  Take an umbrella. It may rain.  ｜带把伞，可能会下雨。
+[g8] #2481  Let's go to the park together.  ｜我们一起去公园吧。
+[g8] #2484  Speak clearly so everyone can hear you.  ｜说清楚点，让每个人都能听见。
+[g8] #2486  Don't touch the machine. It's dangerous.  ｜不要碰机器，很危险。
+[g8] #2518  Wash the vegetables and cut them up.  ｜把蔬菜洗了切碎。
+[g8] #2521  Please pass me the salt.  ｜请把盐递给我。
+[g8] #2522  Reading in the sun is bad for your eyes.  ｜在阳光下读书对眼睛不好。
+[g8] #2531  Please return the book to the library on time.  ｜请按时把书还给图书馆。
+[g8] #2532  Try your best, and you will make it.  ｜尽最大努力，你会成功的。
+[g8] #2577  Reading can develop your mind.  ｜阅读能开发你的思维。
+[g8] #2668  Driving fast is more dangerous than walking, and it is the most dangerous thing on the road.  ｜开快车比走路危险，它是路上最危险的事。
+[g9] #221  Reading aloud is a good way to learn a language.  ｜大声朗读是学习语言的好方法。
+[g9] #262  Never give up, and you will succeed.  ｜永不放弃，你就会成功。
+[g9] #278  Be careful when you are in danger.  ｜遇到危险时要当心。
+[g9] #283  Thank you for sharing your experience with us.  ｜谢谢你与我们分享你的经历。
+[g9] #287  Please give me a hand when you are free.  ｜你有空时请帮我一下。
+[g9] #542  Don't be afraid to ask questions.  ｜不要害怕提问。
+[g9] #553  Don't put off what you can do today.  ｜今天能做的事不要拖到明天。
+[g9] #577  Let's go to the mountains this weekend, shall we?  ｜这周末我们去山里，好吗？
+[g9] #588  Thank you for your time and advice.  ｜谢谢你的时间和建议。
+[g9] #592  Please write back soon.  ｜请尽快回信。
+[g9] #593  Thank you for reading my letter.  ｜谢谢你读我的信。
+[g9] #1184  Be active in class and answer more questions.  ｜上课要积极，多回答问题。
+[g9] #1185  Please pay attention to the teacher's words.  ｜请注意听老师的话。
+[g9] #1192  Do not be afraid to fail. Try again.  ｜别怕失败，再试一次。
+[g9] #1193  Reading widely gives you a lot of knowledge.  ｜广泛阅读能给你很多知识。
+[g9] #1199  Write a sentence with the new word.  ｜用这个新词写一个句子。
+[g9] #1202  Open your textbook to page twenty.  ｜把课本翻到第二十页。
+[g9] #1206  Read the instructions before you start.  ｜开始前先读说明。
+[g9] #1207  Let me give you a short introduction.  ｜让我给你做个简短的介绍。
+[g9] #1216  Make a list of the books you want to read.  ｜把你想要读的书列个清单。
+[g9] #1224  Please complete the work before noon.  ｜请在中午前完成工作。
+[g9] #1244  Please write your address on this card.  ｜请把你的地址写在这张卡上。
+[g9] #1250  Please throw the paper into the bin.  ｜请把纸扔进垃圾桶。
+[g9] #1257  Use a fork to eat the noodles.  ｜用叉子吃面条。
+[g9] #1262  Be careful with the water near the keyboard.  ｜键盘旁边有水，小心点。
+[g9] #1264  Add some lemon to the tea, please.  ｜请往茶里加点柠檬。
+[g9] #1267  Please put a napkin beside each plate.  ｜请在每个盘子边放一张餐巾纸。
+[g9] #1270  Cut the paper with these scissors.  ｜用这把剪刀剪纸。
+[g9] #1275  Please close the zipper of your coat.  ｜请把你外套的拉链拉上。
+[g9] #1290  Do not use your mobile phone in class.  ｜上课不要用手机。
+[g9] #1295  Take an umbrella in case it rains.  ｜带把伞吧，以防下雨。
+[g9] #1304  Please shut the window. It is cold.  ｜请关上窗户，天冷。
+[g9] #1323  Do not stare at other people on the bus.  ｜别在公交车上盯着别人看。
+[g9] #1333  Relax and keep your cool before the test.  ｜考前放松，保持冷静。
+[g9] #1337  Do not make a fool of yourself in public.  ｜别在公共场合出丑。
+[g9] #1341  Work with your partner and finish the task.  ｜和你的同伴一起完成这个任务。
+[g9] #1407  Do not litter in the park.  ｜不要在公园里乱扔垃圾。
+[g9] #1443  Please boil some water for the tea.  ｜请烧点水泡茶。
+[g9] #1445  Do not burn the paper in the room.  ｜不要在房间里烧纸。
+[g9] #1456  Divide the class into four groups.  ｜把全班分成四组。
+[g9] #1471  Please polish your shoes before the interview.  ｜面试前请把鞋擦亮。
+[g9] #1476  Please pull the door open.  ｜请把门拉开。
+[g9] #1481  Please remain in your seats.  ｜请留在座位上。
+[g9] #1483  Do not rush; we have enough time.  ｜别急，我们有足够时间。
+[g9] #1495  Do not oversleep on school days.  ｜上学的日子别睡过头。
+[g9] #1509  Please bring back my dictionary.  ｜请把我的词典带回来。
+[g9] #1514  Drop by when you are free.  ｜有空来坐坐。
+[g9] #1518  Do not let games get in the way of your study.  ｜别让游戏妨碍你学习。
+[g9] #1528  Please do not leave out any question.  ｜请不要漏掉任何问题。
+[g9] #1530  Look up the new word in the dictionary.  ｜在词典里查这个生词。
+[g9] #1533  Make an effort to speak English every day.  ｜努力每天说英语。
+[g9] #1548  Please shut off the lights when you leave.  ｜离开时请关灯。
+[g9] #1549  Stick to your dream and never give up.  ｜坚持你的梦想，永不放弃。
+[g9] #1550  Please take off your coat and sit down.  ｜请脱下外套坐下。
+[g9] #1551  Do not talk back to your parents.  ｜不要跟父母顶嘴。
+[g9] #1565  Write your name at the bottom of the page.  ｜把名字写在页面底部。
+[g9] #1567  Reading is good exercise for the brain.  ｜阅读对大脑是很好的锻炼。
+[g9] #1578  Please read the dialogue in pairs.  ｜请两人一组读这个对话。
+[g9] #1607  Reading is a lifelong habit for her.  ｜阅读对她来说是终身的习惯。
+[g9] #1619  Do not forget your passport at home.  ｜别把护照忘在家里。
+[g9] #1633  Use a scoop to get the ice cream.  ｜用勺子舀冰淇淋。
+[g9] #1642  Wait till I come back.  ｜等我回来。
+[g9] #1656  Throw away these old newspapers.  ｜把这些旧报纸扔掉。
+[g9] #1660  Please lay out the tools on the floor.  ｜请把工具摆在地上。
+[g9] #2553  Please turn off the TV and go to bed.  ｜请关掉电视去睡觉。
+[g9] #2563  Don't let the team down.  ｜别让队伍失望。
+[g9] #2565  Don't be too hard on yourself.  ｜别对自己太苛刻。
+[g9] #2569  Remember to divide the cake into eight pieces.  ｜记得把蛋糕分成八块。
+[g9] #2571  Keep the medicine away from children.  ｜把药放在孩子们够不到的地方。
+
+==== excl 感叹句 ====
+[primary] #2766  What a nice dog!  ｜多好的一只狗啊！
+[primary] #2767  How nice!  ｜真好啊！
+[primary] #2768  What a big apple!  ｜好大的一个苹果啊！
+[primary] #2769  How happy we are!  ｜我们多么幸福啊！
+[primary] #2770  How beautiful!  ｜真美啊！
+[primary] #2771  What a tall tree!  ｜好高的一棵树啊！
+[primary] #2772  How cold it is!  ｜天真冷啊！
+[primary] #2773  What a lovely cat!  ｜多可爱的一只猫啊！
+[g7] #1748  What a lovely day!  ｜多么美好的一天！
+[g7] #2774  What a beautiful flower!  ｜多么漂亮的一朵花啊！
+[g7] #2775  What an interesting book!  ｜多么有趣的一本书啊！
+[g7] #2776  What a heavy box!  ｜多重的一个箱子啊！
+[g7] #2777  What a clever boy!  ｜多么聪明的男孩啊！
+[g7] #2778  What a fine day for a walk!  ｜多适合散步的好天气啊！
+[g7] #2779  What an exciting game!  ｜多么激动人心的一场比赛啊！
+[g7] #2780  What beautiful flowers!  ｜多么漂亮的花啊！
+[g7] #2781  What delicious food!  ｜多么美味的食物啊！
+[g7] #2782  How fast he runs!  ｜他跑得多快啊！
+[g7] #2783  How tall the building is!  ｜这栋楼多高啊！
+[g7] #2784  How hard it rains!  ｜雨下得多大啊！
+[g7] #2785  How warm it is today!  ｜今天真暖和啊！
+[g7] #2786  How lucky we are!  ｜我们多幸运啊！
+[g7] #2839  How well she sings!  ｜她唱得多好啊！
+[g8] #527  What a wonderful day it is!  ｜多么美好的一天啊！
+[g8] #528  How beautiful the flowers are!  ｜这些花多美啊！
+[g8] #2811  What an exciting game it was!  ｜那是一场多么激动人心的比赛啊！
+[g8] #2812  How carefully he does his homework!  ｜他做作业多么认真啊！
+[g8] #2813  What beautiful music it is!  ｜多么美的音乐啊！
+[g8] #2814  What a heavy rain it was!  ｜那是多大的一场雨啊！
+[g8] #2815  How bright the moon looks tonight!  ｜今晚的月亮多么明亮啊！
+[g9] #1315  What a pity! You missed the match.  ｜真可惜！你错过了比赛。
+
+==== modal 情态动词 ====
+[primary] #35  The bird can fly.  ｜鸟会飞。
+[primary] #51  Would you like some bread?  ｜你想要一些面包吗？
+[primary] #58  It will be windy tomorrow.  ｜明天会刮风。
+[primary] #62  She can play the violin.  ｜她会拉小提琴。
+[primary] #64  Can you swim? Yes, I can.  ｜你会游泳吗？我会。
+[primary] #88  We should keep the air clean.  ｜我们应该保持空气干净。
+[primary] #292  I can help you.  ｜我可以帮你。
+[primary] #295  May I come in, please?  ｜我可以进来吗？
+[primary] #301  Can I borrow your pen?  ｜我可以借你的钢笔吗？
+[primary] #311  My brother can ride a bike.  ｜我哥哥会骑自行车。
+[primary] #321  The duck can swim in the river.  ｜鸭子会在河里游泳。
+[primary] #331  I would like an apple, please.  ｜请给我一个苹果。
+[primary] #337  Can you cook noodles?  ｜你会煮面条吗？
+[primary] #360  How can I get to the zoo?  ｜我怎样才能到动物园？
+[primary] #366  Can I have a look at that bag?  ｜我可以看看那个包吗？
+[primary] #372  I can sing, but I can't dance.  ｜我会唱歌，但不会跳舞。
+[primary] #378  We must wash our hands first.  ｜我们必须先洗手。
+[primary] #380  You should go to see a doctor.  ｜你应该去看医生。
+[primary] #383  Don't worry. I can help you.  ｜别担心，我可以帮你。
+[primary] #399  Who can answer this question?  ｜谁能回答这个问题？
+[primary] #1930  I would like a bottle of cola.  ｜我想要一瓶可乐。
+[primary] #1934  We should help elderly people.  ｜我们应该帮助老人。
+[primary] #1947  We will have an outing this Friday.  ｜这周五我们要去郊游。
+[primary] #1949  The parrot can say hello.  ｜这只鹦鹉会说你好。
+[primary] #1958  You shouldn't eat too much candy.  ｜你不该吃太多糖。
+[primary] #1968  It won't rain tomorrow.  ｜明天不会下雨。
+[primary] #1970  I would like a piece of cake.  ｜我想要一块蛋糕。
+[primary] #2220  Get up early and you will be healthy.  ｜早点起床，你就会健康。
+[primary] #2221  Hurry up, or we'll miss the bus.  ｜快点，不然我们要错过公交车了。
+[primary] #2225  Don't cry. I will help you.  ｜别哭，我会帮你。
+[primary] #2226  The cat can jump onto the table.  ｜猫能跳到桌子上。
+[primary] #2232  I can't find the key to my bike.  ｜我找不到自行车的钥匙。
+[primary] #2276  So we can't go out to play.  ｜所以我们不能出去玩。
+[primary] #2289  May I use your pen? Sure, here you are.  ｜我可以用你的笔吗？当然，给你。
+[primary] #2299  Would you like some tea or coffee?  ｜你想要茶还是咖啡？
+[primary] #2302  You can send me an email tonight.  ｜你今晚可以给我发电子邮件。
+[primary] #2305  The robot can talk and walk.  ｜这个机器人会说话会走路。
+[primary] #2597  You can find the information in books.  ｜你可以在书里找到这些信息。
+[primary] #2310  May I use your eraser, please?  ｜我可以用一下你的橡皮吗？
+[primary] #2313  May I ask you a question? Sure.  ｜我可以问你一个问题吗？当然。
+[primary] #2343  Our team may win the game.  ｜我们队可能赢得比赛。
+[primary] #2351  I can't find my schoolbag.  ｜我找不到书包了。
+[primary] #2355  Be careful, or you will cut your hand.  ｜小心，不然会割到手。
+[primary] #2372  Can you tell me the way to the station?  ｜你能告诉我去车站的路吗？
+[primary] #2384  Drink warm water and you will feel better.  ｜喝点温水，你会好一些。
+[primary] #2386  He can jump about two metres.  ｜他能跳大约两米。
+[primary] #2599  We should keep the earth clean.  ｜我们应该保持地球干净。
+[primary] #2426  We will travel to Yunnan this summer.  ｜今年夏天我们要去云南旅行。
+[primary] #2437  Be careful, or you will hurt your arm.  ｜小心，不然会弄伤手臂。
+[primary] #2453  Can you carry the box for me?  ｜你能帮我搬这个箱子吗？
+[primary] #2460  We should save water every day.  ｜我们应该每天节约用水。
+[primary] #2462  People should not kill wild animals.  ｜人们不应该杀害野生动物。
+[primary] #2475  Wear a coat, or you may catch a cold.  ｜穿上外套，不然你会感冒。
+[g7] #102  Can you play the guitar? Yes, I can play it well.  ｜你会弹吉他吗？是的，我弹得很好。
+[g7] #108  We must be quiet in the library.  ｜我们在图书馆里必须保持安静。
+[g7] #130  I like summer best because I can swim.  ｜我最喜欢夏天，因为我可以游泳。
+[g7] #136  Would you like to go with us?  ｜你愿意和我们一起去吗？
+[g7] #142  We should eat more vegetables and fruit.  ｜我们应该多吃蔬菜和水果。
+[g7] #147  I can't find my keys.  ｜我找不到我的钥匙了。
+[g7] #420  I can play the guitar but I can't dance.  ｜我会弹吉他，但不会跳舞。
+[g7] #423  Would you like to join us?  ｜你想加入我们吗？
+[g7] #429  You can take the bus.  ｜你可以坐公交车。
+[g7] #442  My birthday is on May the fifth.  ｜我的生日是五月五日。
+[g7] #2602  We should listen to the teacher.  ｜我们应该听老师的话。
+[g7] #464  I will take this pair.  ｜我要这一双。
+[g7] #465  I would like to buy a T-shirt.  ｜我想买一件T恤。
+[g7] #468  Can I try it on?  ｜我可以试穿吗？
+[g7] #470  We will have a sports meeting next week.  ｜我们下周要开运动会。
+[g7] #471  I will run in the race.  ｜我要参加赛跑。
+[g7] #1733  May I use your eraser? Mine is lost.  ｜我可以用你的橡皮吗？我的丢了。
+[g7] #1739  We can see many stars at night.  ｜夜里我们能看到许多星星。
+[g7] #1743  Can you spell your name, please?  ｜请你拼一下你的名字好吗？
+[g7] #1770  I would like a hamburger and a glass of juice.  ｜我想要一个汉堡和一杯果汁。
+[g7] #1772  Would you like some strawberries?  ｜你想要一些草莓吗？
+[g7] #1786  May I take your order now?  ｜现在可以点菜了吗？
+[g7] #1809  We can take the ropeway up the mountain.  ｜我们可以坐索道上山。
+[g7] #1819  Can I take a message?  ｜我可以帮你带个话吗？
+[g7] #1820  I will call back after six.  ｜我六点以后回电话。
+[g7] #1823  I can find the way easily.  ｜我能轻松找到路。
+[g7] #1835  We must not kill wild animals.  ｜我们绝不能杀害野生动物。
+[g7] #1839  We should look after the natural world.  ｜我们应该爱护自然界。
+[g7] #1857  Can you describe your new teacher?  ｜你能描述一下你的新老师吗？
+[g7] #1892  I will come for sure tomorrow.  ｜我明天一定来。
+[g7] #1898  Go along the street and you will see it.  ｜沿着这条街走，你就会看到它。
+[g7] #1901  The farmer can milk a cow and ride a horse.  ｜那个农民会挤牛奶，也会骑马。
+[g7] #1984  My sister can play chess very well.  ｜我姐姐国际象棋下得很好。
+[g7] #1986  Can you tell me your name?  ｜你能告诉我你的名字吗？
+[g7] #1987  Would you like tea or coffee?  ｜你想要茶还是咖啡？
+[g7] #1988  You can talk to your teacher about it.  ｜你可以和老师谈谈这件事。
+[g7] #1992  He can also play the violin.  ｜他还会拉小提琴。
+[g7] #1993  I can help with the school show.  ｜我可以帮忙准备学校演出。
+[g7] #1994  Can you help me with my maths?  ｜你能帮我学数学吗？
+[g7] #2004  Eat your breakfast quickly, or you will be late.  ｜快吃早饭，不然你要迟到了。
+[g7] #2005  You can take the train or the bus.  ｜你可以坐火车或坐公交。
+[g7] #2012  Either you or he can water the flowers.  ｜你或者他可以给花浇水。
+[g7] #2021  Work hard and your dream will come true.  ｜努力学习，梦想就会成真。
+[g7] #2023  We must follow the school rules.  ｜我们必须遵守校规。
+[g7] #2028  We can't go out on school nights.  ｜上学日的晚上我们不能外出。
+[g7] #2065  Could you call me back tonight?  ｜你今晚能给我回电话吗？
+[g7] #2082  Monkeys can climb trees very fast.  ｜猴子爬树爬得很快。
+[g7] #2089  I will call you later.  ｜我晚点给你打电话。
+[g7] #2099  Would you like a potato or some rice?  ｜你想要土豆还是米饭？
+[g7] #2104  If it rains, we will stay at home.  ｜如果下雨，我们就待在家里。
+[g7] #2115  The robot can clean the room.  ｜机器人会打扫房间。
+[g7] #2149  May I ask you a question?  ｜我可以问你一个问题吗？
+[g7] #2151  Come on! We will be late for class.  ｜快点！我们上课要迟到了。
+[g7] #2173  You can ask the police for help.  ｜你可以向警察求助。
+[g7] #2177  I'll wake him up at seven.  ｜我七点叫醒他。
+[g8] #166  Will people have robots at home one day?  ｜将来人们家里会拥有机器人吗？
+[g8] #171  Can you come to my party on Saturday?  ｜你周六能来参加我的聚会吗？
+[g8] #172  If you go to the party, you will have a great time.  ｜如果你去参加聚会，你会玩得很开心。
+[g8] #173  If it rains tomorrow, we will stay at home.  ｜如果明天下雨，我们就待在家里。
+[g8] #175  You should lie down and rest.  ｜你应该躺下休息。
+[g8] #176  I will help to clean up the city parks.  ｜我要帮忙打扫城市公园。
+[g8] #178  Could you please clean your room?  ｜你能打扫一下你的房间吗？
+[g8] #179  Could you please help me with the housework?  ｜你能帮我做点家务吗？
+[g8] #198  We must protect the environment.  ｜我们必须保护环境。
+[g8] #199  Everyone should do something for the earth.  ｜每个人都应该为地球做点事。
+[g8] #201  We should take more exercise every day.  ｜我们应该每天多做运动。
+[g8] #216  I would like to be your friend.  ｜我愿意做你的朋友。
+[g8] #218  It is not easy to learn English well, but I will try.  ｜学好英语不容易，但我会努力。
+[g8] #491  We should do something to protect the environment.  ｜我们应该做点什么来保护环境。
+[g8] #493  We can save water in many ways.  ｜我们可以用很多方法节约用水。
+[g8] #503  If you work hard, you will make progress.  ｜如果你努力，你就会进步。
+[g8] #505  You should talk to your parents about it.  ｜你应该和父母谈谈这件事。
+[g8] #508  You should drink more water and have a rest.  ｜你应该多喝水，休息一下。
+[g8] #510  I hope you will feel better soon.  ｜希望你很快好起来。
+[g8] #514  We should be friendly to others.  ｜我们应该对他人友好。
+[g8] #517  I couldn't help crying at the end.  ｜结尾时我忍不住哭了。
+[g8] #524  I would like to invite you to my party.  ｜我想邀请你参加我的聚会。
+[g8] #526  I'm sorry, but I can't come.  ｜很抱歉，我不能来。
+[g8] #530  Could you tell me how to get there?  ｜你能告诉我怎么去那里吗？
+[g8] #531  I don't know whether he will come.  ｜我不知道他是否会来。
+[g8] #536  Everyone should play a part in saving the earth.  ｜每个人都应为拯救地球出一份力。
+[g8] #537  Small actions can make a big difference.  ｜小小的行动也能带来很大的改变。
+[g8] #606  If you have the flu, you should stay in bed and drink more water.  ｜如果你得了流感，就该卧床多喝水。
+[g8] #614  He was so ill that he could hardly breathe.  ｜他病得很重，几乎喘不上气。
+[g8] #617  Take this medicine twice a day and you will feel better.  ｜这药一天吃两次，你会好起来的。
+[g8] #636  It is a shame that you will not come to the party.  ｜你不能来参加聚会，真遗憾。
+[g8] #639  Stress and pressure can make young people ill.  ｜紧张和压力会让年轻人生病。
+[g8] #648  It is fair that everyone can try.  ｜每个人都能试一试，这是公平的。
+[g8] #655  Believe in yourself and you will achieve your dream.  ｜相信自己，你就能实现梦想。
+[g8] #657  Nobody can succeed without hard work.  ｜不努力谁都成功不了。
+[g8] #665  I have a lot of schoolwork tonight, so I must stay at home.  ｜我今晚作业很多，不能出去玩。
+[g8] #667  A good education can change a child's whole life.  ｜好的教育能改变孩子的一生。
+[g8] #670  Can you give me an example of a hard-working student?  ｜你能举一个用功学生的例子吗？
+[g8] #674  Each student can choose two activities after class.  ｜每个学生课后可以选两项活动。
+[g8] #680  We should compare the two answers before we choose.  ｜选之前我们应该比较一下两个答案。
+[g8] #688  A good magician can make a rabbit disappear.  ｜好的魔术师能让兔子消失。
+[g8] #694  That performer can stand on one hand for a minute.  ｜那位表演者能单手倒立一分钟。
+[g8] #703  I would like a cheese sandwich with butter.  ｜我想要一个抹黄油的奶酪三明治。
+[g8] #708  Can I see the menu? I would like a hot meal.  ｜我能看看菜单吗？我想吃顿热饭。
+[g8] #710  We must not pollute the earth; it is our only planet.  ｜我们不能污染地球，它是我们唯一的星球。
+[g8] #736  Can you repair this broken wheel?  ｜你能修好这个坏了的轮子吗？
+[g8] #740  Please reply to my email as soon as you can.  ｜请尽快回复我的邮件。
+[g8] #746  I dislike rainy days because I must stay inside.  ｜我讨厌下雨天，因为出不了门。
+[g8] #750  Our team may lose the match if we do not work hard.  ｜不努力的话我们队可能会输掉比赛。
+[g8] #761  We should consider the problem carefully.  ｜我们应该仔细考虑这个问题。
+[g8] #764  You can depend on him; he is honest.  ｜你可以依靠他，他为人诚实。
+[g8] #769  She will compete in the singing competition.  ｜她要参加歌唱比赛。
+[g8] #770  We must beat the other team to win the cup.  ｜我们必须打败另一队才能夺冠。
+[g8] #776  They will marry next spring.  ｜他们明年春天结婚。
+[g8] #778  The teacher will lead the students to the museum.  ｜老师会带学生去博物馆。
+[g8] #781  Hurry up, or we will be late for school.  ｜快点，不然上学要迟到了。
+[g8] #807  The situation is difficult, but we can deal with it.  ｜情况很困难，但我们能应付。
+[g8] #815  We should be fair to everyone.  ｜我们应该公平对待每个人。
+[g8] #817  In my opinion, we should start now.  ｜在我看来，我们应该现在就出发。
+[g8] #835  I truly believe you can do it.  ｜我真的相信你能做到。
+[g8] #847  He will probably come tomorrow.  ｜他明天可能会来。
+[g8] #848  I am certain that he will help us.  ｜我确定他会帮我们。
+[g8] #858  Of course you can borrow my book.  ｜你当然可以借我的书。
+[g8] #866  You should sleep at least eight hours.  ｜你应该至少睡八小时。
+[g8] #873  As long as you study hard, you will do well.  ｜只要你努力学习，就会学得好。
+[g8] #875  The teacher can bring out the best in her students.  ｜这位老师能激发学生最好的一面。
+[g8] #884  For example, a dog can help a blind man.  ｜例如，狗能帮助盲人。
+[g8] #890  Do a good job, and people will remember you.  ｜好好干，人们会记住你。
+[g8] #902  Everyone should play a part in protecting the earth.  ｜人人都应为保护地球出力。
+[g8] #909  We must prepare for the sports meeting.  ｜我们必须为运动会做准备。
+[g8] #913  We will leave the day after tomorrow.  ｜我们后天出发。
+[g8] #922  The nurse will take your temperature.  ｜护士会给你量体温。
+[g8] #936  Cheer up! Things will get better.  ｜振作起来！事情会好起来的。
+[g8] #937  The teacher will give out the papers.  ｜老师要发试卷了。
+[g8] #943  We will try out the new game.  ｜我们要试试这个新游戏。
+[g8] #948  Small actions can make a difference.  ｜小行动也能带来改变。
+[g8] #957  Everything will work out in the end.  ｜最后一切都会好起来。
+[g8] #969  At first, I could not understand him.  ｜起初我听不懂他的话。
+[g8] #985  Even if it rains, we will go.  ｜即使下雨我们也去。
+[g8] #994  We should help one another.  ｜我们应该互相帮助。
+[g8] #1015  We can check out the new shop.  ｜我们可以去看看那家新店。
+[g8] #1056  Is anyone at home? I cannot find my keys anywhere.  ｜有人在家吗？我到处都找不到钥匙。
+[g8] #1074  You might be right, but I am not sure.  ｜你可能是对的，但我不确定。
+[g8] #1085  Humans must protect the earth.  ｜人类必须保护地球。
+[g8] #1097  You will not do well unless you work harder.  ｜除非你更努力，否则会失败。
+[g8] #1104  Excuse me, sir. Can you help me?  ｜打扰一下，先生，能帮我吗？
+[g8] #1105  Good morning, madam. How can I help you?  ｜早上好，女士。有什么可以帮您？
+[g8] #1107  Can you lend me your pen?  ｜你能借我笔吗？
+[g8] #1115  Can you guess how old he is?  ｜你能猜出他多大吗？
+[g8] #1118  Secondly, we should save money.  ｜其次，我们应该省钱。
+[g8] #1122  The film will begin at seven.  ｜电影七点开始。
+[g8] #1143  They will be friends forever.  ｜他们会永远是朋友。
+[g8] #1166  The children will grow up quickly.  ｜孩子们会很快长大。
+[g8] #1167  You should not take a risk like that.  ｜你不该冒那样的险。
+[g8] #1176  We should act with fairness to everyone.  ｜我们应该公平对待每个人。
+[g8] #2480  Take an umbrella. It may rain.  ｜带把伞，可能会下雨。
+[g8] #2484  Speak clearly so everyone can hear you.  ｜说清楚点，让每个人都能听见。
+[g8] #2488  You can find the information on the Internet.  ｜你可以在网上找到这个信息。
+[g8] #2491  You should take your lessons seriously.  ｜你应该认真对待功课。
+[g8] #2492  What will happen if we are late?  ｜如果我们迟到会发生什么？
+[g8] #2505  We will travel to Japan next month.  ｜下个月我们要去日本旅行。
+[g8] #2509  Can you solve this maths problem?  ｜你能解出这道数学题吗？
+[g8] #2515  Could you carry this box for me?  ｜你能帮我搬这个箱子吗？
+[g8] #2525  We should think twice before we decide.  ｜做决定前我们应该三思。
+[g8] #2529  The problem is hard, but I won't give up.  ｜这道题很难，但我不会放弃。
+[g8] #2532  Try your best, and you will make it.  ｜尽最大努力，你会成功的。
+[g8] #2577  Reading can develop your mind.  ｜阅读能开发你的思维。
+[g8] #2580  Can you explain this word to me?  ｜你能给我解释一下这个单词吗？
+[g8] #2583  We should protect nature.  ｜我们应该保护大自然。
+[g8] #2666  You should be more careful than before, and this is the most careful plan we have.  ｜你应该比以前更细心，这是我们最周密的计划。
+[g8] #2745  I can make a cake myself.  ｜这个蛋糕我能自己做。
+[g8] #2746  He can look after himself.  ｜他能照顾自己。
+[g8] #2747  She must be proud of herself.  ｜她一定为自己感到骄傲。
+[g8] #2748  We can enjoy ourselves at the party.  ｜我们可以在聚会上玩得开心。
+[g8] #2749  They can clean the classroom themselves.  ｜他们能自己打扫教室。
+[g8] #2705  You should believe in yourself.  ｜你应该相信自己。
+[g8] #2750  The cat can wash itself.  ｜猫会自己洗澡。
+[g8] #2763  She can do the work by herself.  ｜她能自己完成这项工作。
+[g8] #2788  I hope that you will come to my party.  ｜我希望你能来参加我的聚会。
+[g8] #2793  My mother told me that she would buy me a new bike.  ｜妈妈告诉我她会给我买一辆新自行车。
+[g8] #2794  I believe that our team will win the match.  ｜我相信我们队会赢得这场比赛。
+[g8] #2795  I want to know if it will rain tomorrow.  ｜我想知道明天会不会下雨。
+[g8] #2796  She asked if I could help her with the box.  ｜她问我能不能帮她搬箱子。
+[g8] #2798  I don't know whether he will come or not.  ｜我不知道他到底来不来。
+[g8] #2800  Can you tell me where the nearest hospital is?  ｜你能告诉我最近的医院在哪里吗？
+[g8] #2802  Nobody knows when he will be back.  ｜没人知道他什么时候回来。
+[g8] #2803  Could you tell me how I can get to the station?  ｜你能告诉我怎么去车站吗？
+[g8] #2806  If you work hard, you will pass the exam.  ｜如果你努力，你会通过考试的。
+[g8] #2807  We will go to the park if it is sunny.  ｜如果天晴我们就去公园。
+[g8] #2808  If he comes back, I will tell him the news.  ｜如果他回来，我就把这个消息告诉他。
+[g8] #2809  You will feel better if you take the medicine.  ｜吃了药你会感觉好一些的。
+[g8] #2810  If we plant more trees, our city will be greener.  ｜如果我们种更多的树，城市会更绿。
+[g9] #220  How can we learn English well?  ｜我们怎样才能学好英语？
+[g9] #223  The more careful you are, the fewer mistakes you will make.  ｜你越细心，犯的错就越少。
+[g9] #227  Could you tell me where the restrooms are?  ｜你能告诉我洗手间在哪里吗？
+[g9] #228  Can you tell me how to get to the train station?  ｜你能告诉我怎么去火车站吗？
+[g9] #230  Do you know when the meeting will start?  ｜你知道会议什么时候开始吗？
+[g9] #238  Teenagers should be allowed to make their own decisions.  ｜应该允许青少年自己做决定。
+[g9] #240  The book must belong to Carla. Her name is on it.  ｜这本书一定是卡拉的，上面有她的名字。
+[g9] #241  The light is on, so he must be at home.  ｜灯亮着，所以他一定在家。
+[g9] #242  He can't be at school because he is ill.  ｜他不可能在学校，因为他病了。
+[g9] #243  I like music that I can dance to.  ｜我喜欢能跟着跳舞的音乐。
+[g9] #256  The environment will be better if we act now.  ｜如果我们现在行动起来，环境会更好。
+[g9] #257  The trees should be planted in spring.  ｜树应该在春天种。
+[g9] #258  Everyone can make a difference.  ｜每个人都能有所作为。
+[g9] #262  Never give up, and you will succeed.  ｜永不放弃，你就会成功。
+[g9] #264  We should make good use of our free time.  ｜我们应该好好利用空闲时间。
+[g9] #266  The harder you study, the better grades you will get.  ｜你学习越努力，成绩就越好。
+[g9] #267  Nobody knows what will happen in the future.  ｜没有人知道将来会发生什么。
+[g9] #268  I am sure that our dream will come true one day.  ｜我相信我们的梦想总有一天会实现。
+[g9] #271  I don't know if he will come tomorrow.  ｜我不知道他明天是否会来。
+[g9] #274  If I were you, I would talk to the teacher.  ｜如果我是你，我会跟老师谈谈。
+[g9] #275  I wish I could fly like a bird.  ｜我希望我能像鸟一样飞。
+[g9] #279  We should be friendly to each other.  ｜我们应该彼此友好。
+[g9] #543  The more you practice, the better you will be.  ｜练得越多，你就会越好。
+[g9] #553  Don't put off what you can do today.  ｜今天能做的事不要拖到明天。
+[g9] #554  We should learn to solve problems by ourselves.  ｜我们应该学会自己解决问题。
+[g9] #560  I believe I can achieve my goal.  ｜我相信我能实现目标。
+[g9] #563  The doctor suggested that I should rest more.  ｜医生建议我多休息。
+[g9] #568  We must take action to protect wild animals.  ｜我们必须采取行动保护野生动物。
+[g9] #573  We can use old bottles and paper again.  ｜我们可以再次利用旧瓶子和纸。
+[g9] #574  I think everyone can do something for the earth.  ｜我认为每个人都能为地球做点事。
+[g9] #577  Let's go to the mountains this weekend, shall we?  ｜这周末我们去山里，好吗？
+[g9] #590  Could you please give me some advice?  ｜你能给我一些建议吗？
+[g9] #591  I would be happy if you could help me.  ｜如果你能帮我，我会很高兴。
+[g9] #595  We should learn about different cultures.  ｜我们应该了解不同的文化。
+[g9] #602  Time flies and we must treasure it.  ｜时光飞逝，我们要珍惜。
+[g9] #603  I will never forget my middle school life.  ｜我永远不会忘记我的中学生活。
+[g9] #1186  We should avoid making the same mistake twice.  ｜我们应该避免重犯同样的错误。
+[g9] #1196  Can you pronounce this word for me?  ｜你能给我读一下这个单词吗？
+[g9] #1209  My sister will graduate from college soon.  ｜我姐姐很快就要大学毕业了。
+[g9] #1210  We will have a graduation party on Friday.  ｜我们周五要开毕业聚会。
+[g9] #1218  Could you repeat the question, please?  ｜你能再说一遍这个问题吗？
+[g9] #1227  We must keep a high standard of work.  ｜我们必须保持高标准。
+[g9] #1234  Every student must hand in the form today.  ｜每个学生今天都要交这张表。
+[g9] #1236  Anybody can join the club for free.  ｜任何人都可以免费加入俱乐部。
+[g9] #1238  Whoever wants to go should tell me today.  ｜想去的人今天告诉我。
+[g9] #1291  You can find the answer on the website.  ｜你可以在网站上找到答案。
+[g9] #1306  Can you lift this box for me?  ｜你能帮我抬起这个箱子吗？
+[g9] #1344  The manager will attend the meeting tomorrow.  ｜经理明天会参加这个会议。
+[g9] #1349  Every competitor must follow the rules.  ｜每位参赛者都必须遵守规则。
+[g9] #1362  Can you keep a secret for me?  ｜你能替我保守秘密吗？
+[g9] #1372  You can have a talk with him in person.  ｜你可以当面和他谈。
+[g9] #1373  Pardon me, could you say that again?  ｜对不起，你能再说一遍吗？
+[g9] #1394  The bird hurt its wing and could not fly.  ｜那只鸟伤了翅膀，飞不起来。
+[g9] #1402  The opening ceremony will start at nine.  ｜开幕式九点开始。
+[g9] #1408  We can recycle old paper and bottles.  ｜我们可以回收旧纸和瓶子。
+[g9] #1441  The school will announce the result tomorrow.  ｜学校明天将公布结果。
+[g9] #1442  Children should behave well in public.  ｜孩子们在公共场合要举止得体。
+[g9] #1458  I doubt that he will come on time.  ｜我怀疑他会不会准时来。
+[g9] #1459  We will put on a short drama tonight.  ｜我们今晚要演一出短剧。
+[g9] #1463  She could not express her feelings in words.  ｜她无法用语言表达自己的感受。
+[g9] #1470  The students will perform at the school show.  ｜学生将在学校演出上表演。
+[g9] #1472  We must prevent the fire from spreading.  ｜我们必须阻止火势蔓延。
+[g9] #1485  We should separate the waste into different bins.  ｜我们应该把垃圾分类放进不同的桶。
+[g9] #1489  We should treat animals kindly.  ｜我们应该善待动物。
+[g9] #1491  Can you translate this sentence into Chinese?  ｜你能把这句话译成中文吗？
+[g9] #1494  We can overcome any difficulty with hard work.  ｜只要努力，我们能克服任何困难。
+[g9] #1497  Children should play outdoors more often.  ｜孩子们应该多到户外玩。
+[g9] #1503  We can sing and dance at the same time.  ｜我们可以边唱歌边跳舞。
+[g9] #1512  By the end of the term, we will finish the book.  ｜到学期末我们会学完这本书。
+[g9] #1513  You can call in a doctor if you feel worse.  ｜如果感觉更糟，你可以请医生来。
+[g9] #1520  You will get used to the cold weather soon.  ｜你很快就会习惯这里的寒冷天气。
+[g9] #1526  In that case, we should start right now.  ｜那样的话，我们应该马上开始。
+[g9] #1539  Who will pay for the meal?  ｜这顿饭谁付钱？
+[g9] #1542  I would rather walk than take a bus.  ｜我宁愿走路也不坐公交。
+[g9] #1560  We cannot afford a new car this year.  ｜我们今年买不起新车。
+[g9] #1595  We should honour our promise.  ｜我们应该信守承诺。
+[g9] #1598  Can you play a musical instrument?  ｜你会演奏乐器吗？
+[g9] #1603  Everyone must follow the law.  ｜每个人都必须遵守法律。
+[g9] #1620  We will have a math test in the next period.  ｜下一节课我们要考数学。
+[g9] #1657  Everyone can take part in the game.  ｜每个人都可以参加这个游戏。
+[g9] #2536  Of course, I will help you.  ｜我当然会帮你。
+[g9] #2541  May I borrow your ruler?  ｜我可以借用你的尺子吗？
+[g9] #2560  The more you practice, the better you will speak.  ｜你练习得越多，说得就越好。
+[g9] #2567  We should put our free time to good use.  ｜我们应该把空闲时间好好利用起来。
+[g9] #2572  I will make my own decision this time.  ｜这次我要自己做决定。
+[g9] #2573  You can connect the music with your memories.  ｜你可以把音乐和回忆联系起来。
+[g9] #2592  I believe in myself, and I will make it.  ｜我相信自己，我会成功的。
+[g9] #2710  The new library will be opened next term.  ｜新图书馆下学期开放。
+[g9] #2714  The work must be finished before Friday.  ｜这项工作必须在周五前完成。
+[g9] #2718  The classroom must be kept clean every day.  ｜教室必须每天保持干净。
+[g9] #2754  They can teach themselves to play the guitar.  ｜他们能自学弹吉他。
+[g9] #2756  He can buy himself a new watch.  ｜他能给自己买一块新表。
+[g9] #2757  She can make herself a cup of tea.  ｜她能给自己泡杯茶。
+[g9] #2736  We must take care of ourselves.  ｜我们必须照顾好自己。
+[g9] #2758  You can help yourselves to some fruit.  ｜你们可以随便吃点水果。
+[g9] #2759  The little boy can dress himself.  ｜小男孩会自己穿衣服了。
+[g9] #2764  She can finish the work by herself.  ｜她能自己完成这项工作。
+[g9] #2821  I don't know whether he will accept the invitation.  ｜我不知道他是否会接受邀请。
+[g9] #2822  Could you tell me when the train leaves?  ｜你能告诉我火车什么时候开吗？
+[g9] #2825  If you don't hurry, you will miss the train.  ｜如果你不快点，你就会赶不上火车。
+[g9] #2826  If I have time, I will visit you next week.  ｜如果有时间，我下周去看你。
+[g9] #2827  If we protect the animals, they won't disappear.  ｜如果我们保护动物，它们就不会消失。
+[g9] #2828  You will make progress if you keep practicing.  ｜只要你坚持练习，你就会进步。
+[g9] #2829  If everyone uses fewer plastic bags, the earth will be cleaner.  ｜如果每个人都少用塑料袋，地球会更干净。
+[g9] #2838  I will never forget the days that we spent together.  ｜我永远不会忘记我们一起度过的日子。
+
+==== comp 比较等级 ====
+[primary] #322  The horse is faster than the cow.  ｜马比牛跑得快。
+[primary] #2215  The train is faster than the bus.  ｜火车比公交车快。
+[primary] #2267  Spring is the best season of the year.  ｜春天是一年中最好的季节。
+[primary] #2363  August is the hottest month here.  ｜八月是这里最热的月份。
+[primary] #2614  I am taller than my sister.  ｜我比妹妹高。
+[primary] #2615  My ruler is longer than yours.  ｜我的尺子比你的长。
+[primary] #2616  Her hair is shorter than mine.  ｜她的头发比我的短。
+[primary] #2617  This box is bigger than that one.  ｜这个箱子比那个大。
+[primary] #2618  This ball is smaller than that one.  ｜这个球比那个小。
+[primary] #2619  My schoolbag is heavier than yours.  ｜我的书包比你的重。
+[primary] #2620  This book is thinner than that one.  ｜这本书比那本薄。
+[primary] #2621  My brother is older than me.  ｜我哥哥比我大。
+[primary] #2622  My sister is younger than me.  ｜我妹妹比我小。
+[primary] #2623  My father is stronger than me.  ｜我爸爸比我强壮。
+[primary] #2624  A car is faster than a bike.  ｜汽车比自行车快。
+[primary] #2625  It is hotter today than yesterday.  ｜今天比昨天热。
+[primary] #2626  Winter is colder than autumn.  ｜冬天比秋天冷。
+[primary] #2627  This coat is warmer than that one.  ｜这件外套比那件暖和。
+[primary] #2628  My room is cleaner than yours.  ｜我的房间比你的干净。
+[primary] #2629  This book is easier than that one.  ｜这本书比那本简单。
+[primary] #2630  She looks happier than before.  ｜她看起来比以前开心。
+[primary] #2672  The blue one is nicer than the red one.  ｜蓝色的那个比红色的好看。
+[g7] #430  Excuse me, where is the nearest bank?  ｜打扰一下，最近的银行在哪里？
+[g8] #160  I am more outgoing than my sister.  ｜我比我姐姐更外向。
+[g8] #161  This is the best movie theater in town.  ｜这是城里最好的电影院。
+[g8] #162  My brother is the tallest student in his class.  ｜我哥哥是他班上最高的学生。
+[g8] #163  The Yangtze River is longer than any other river in China.  ｜长江比中国其他任何河流都长。
+[g8] #188  What's the highest mountain in the world?  ｜世界上最高的山是哪座？
+[g8] #478  It is one of the most famous places in China.  ｜它是中国最著名的地方之一。
+[g8] #489  The air is cleaner than before.  ｜空气比以前更干净了。
+[g8] #518  He is taller than his brother.  ｜他比他哥哥高。
+[g8] #519  This is the most interesting film I have ever seen.  ｜这是我看过的最有趣的电影。
+[g8] #521  My sister is as careful as my mother.  ｜我姐姐和妈妈一样细心。
+[g8] #798  I have less money than my brother.  ｜我的钱比我哥哥少。
+[g8] #838  Things are getting worse than before.  ｜情况比以前更糟了。
+[g8] #870  There are more than fifty students in our class.  ｜我们班有五十多个学生。
+[g8] #871  It takes less than an hour to get there.  ｜到那儿不到一小时。
+[g8] #875  The teacher can bring out the best in her students.  ｜这位老师能激发学生最好的一面。
+[g8] #986  The Nile is the longest river in Africa.  ｜尼罗河是非洲最长的河。
+[g8] #988  The Himalayas are the highest mountains.  ｜喜马拉雅山脉是最高的山。
+[g8] #1050  Asia is the largest part of the world.  ｜亚洲是世界上最大的洲。
+[g8] #1053  Qomolangma is the highest mountain in the world.  ｜珠穆朗玛峰是世界最高峰。
+[g8] #1120  He came later than usual.  ｜他比平时来得晚。
+[g8] #2632  My grandfather is older than my grandmother, and he is the oldest in our family.  ｜我爷爷比我奶奶年纪大，他是我们家最年长的。
+[g8] #2633  Shanghai is bigger than my hometown, and it is one of the biggest cities in China.  ｜上海比我的家乡大，它是中国最大的城市之一。
+[g8] #2634  These shoes are smaller than those, and they are the smallest ones here.  ｜这双鞋比那双小，它们是这里最小的。
+[g8] #2635  The Great Wall is greater than any other wall, and it is the greatest in the world.  ｜长城比任何别的城墙都雄伟，它是世界上最伟大的。
+[g8] #2636  Tom came later than Jack, and Mike was the latest of all.  ｜汤姆比杰克来得晚，迈克是所有人中最晚的。
+[g8] #2637  My teacher is kinder than I thought, and she is the kindest person I know.  ｜我的老师比我想的更和善，她是我认识的最善良的人。
+[g8] #2638  It is colder in Beijing than in Shanghai, and the north is the coldest part of China.  ｜北京比上海冷，北方是中国最冷的地区。
+[g8] #2639  She looks happier than before, and today is the happiest day of her life.  ｜她看起来比以前开心，今天是她一生中最快乐的一天。
+[g8] #2640  The weather is worse than yesterday, and this is the worst week of the month.  ｜天气比昨天更糟，这是这个月最糟的一周。
+[g8] #2673  This pencil is shorter than that one, and it is the shortest of the three.  ｜这支铅笔比那支短，它是三支里最短的。
+[g8] #2642  The library is quieter than the classroom, and it is the quietest place in our school.  ｜图书馆比教室安静，它是我们学校最安静的地方。
+[g8] #2643  This apple is sweeter than that one, and it is the sweetest fruit in the box.  ｜这个苹果比那个甜，它是盒子里最甜的水果。
+[g8] #2644  I got up earlier than usual, and I was the earliest student in the classroom.  ｜我比平时起得早，是教室里最早到的学生。
+[g8] #2645  My cousin is younger than me, and he is the youngest in his class.  ｜我表弟比我小，他是他班上最小的。
+[g8] #2646  Tom is taller than Jim, and he is the tallest boy in our class.  ｜汤姆比吉姆高，他是我们班最高的男生。
+[g8] #2647  The Yellow River is longer than the Pearl River, and it is one of the longest rivers in China.  ｜黄河比珠江长，它是中国最长的河流之一。
+[g8] #2648  This box is heavier than that one, and it is the heaviest box here.  ｜这个箱子比那个重，它是这里最重的箱子。
+[g8] #2674  This book is thinner than that one, and it is the thinnest book in my bag.  ｜这本书比那本薄，它是我包里最薄的一本。
+[g8] #2650  It is hotter today than yesterday, and this is the hottest day of the year.  ｜今天比昨天热，这是一年中最热的一天。
+[g8] #2651  A plane is faster than a train, and it is the fastest way to travel.  ｜飞机比火车快，它是最快的出行方式。
+[g8] #2652  This question is easier than that one, and it is the easiest question in the test.  ｜这道题比那道容易，它是考试中最容易的一道。
+[g8] #2653  Monday is busier than Tuesday, and it is the busiest day of the week.  ｜星期一比星期二忙，它是一周中最忙的一天。
+[g8] #2654  This shirt is cheaper than that one, and it is the cheapest in the shop.  ｜这件衬衫比那件便宜，它是店里最便宜的。
+[g8] #2655  He is stronger than his brother, and he is the strongest player on the team.  ｜他比他哥哥强壮，他是队里最强壮的队员。
+[g8] #2656  Spring is warmer than winter, and it is the warmest season here.  ｜春天比冬天暖和，它是这里最暖和的季节。
+[g8] #2657  Autumn is cooler than summer, and it is the coolest season in my city.  ｜秋天比夏天凉爽，它是我所在城市最凉爽的季节。
+[g8] #2658  My room is cleaner than yours, and it is the cleanest room in the house.  ｜我的房间比你的干净，它是家里最干净的房间。
+[g8] #2675  A bike is slower than a car, and it is the slowest of the three.  ｜自行车比汽车慢，它是三者中最慢的。
+[g8] #2660  This building is higher than that one, and it is the highest building in the city.  ｜这栋楼比那栋高，它是城里最高的建筑。
+[g8] #2661  The sea is deeper than the lake, and it is the deepest place in the world.  ｜海比湖深，它是世界上最深的地方。
+[g8] #2662  This road is safer than that one, and it is the safest way to school.  ｜这条路比那条安全，它是上学最安全的路线。
+[g8] #2663  Health is more important than money, and it is the most important thing in life.  ｜健康比金钱重要，它是人生中最重要的东西。
+[g8] #2664  This garden is more beautiful than that one, and it is the most beautiful garden in our city.  ｜这个花园比那个美，它是我们城市最美的花园。
+[g8] #2665  This singer is more famous than that one, and she is the most famous singer in China.  ｜这位歌手比那位出名，她是中国最出名的歌手。
+[g8] #2666  You should be more careful than before, and this is the most careful plan we have.  ｜你应该比以前更细心，这是我们最周密的计划。
+[g8] #2667  This watch is more expensive than that one, and it is the most expensive thing I have.  ｜这块手表比那块贵，它是我拥有的最贵的东西。
+[g8] #2668  Driving fast is more dangerous than walking, and it is the most dangerous thing on the road.  ｜开快车比走路危险，它是路上最危险的事。
+[g8] #2669  This question is more difficult than that one, and it is the most difficult question in the test.  ｜这道题比那道难，它是考试中最难的一道。
+[g8] #2670  She is more active than her sister, and she is the most active student in our class.  ｜她比她姐姐活跃，她是我们班最活跃的学生。
+[g8] #2671  This film is more popular than that one, and it is the most popular film this year.  ｜这部电影比那部受欢迎，它是今年最受欢迎的电影。
+[g8] #2800  Can you tell me where the nearest hospital is?  ｜你能告诉我最近的医院在哪里吗？
+[g9] #223  The more careful you are, the fewer mistakes you will make.  ｜你越细心，犯的错就越少。
+[g9] #543  The more you practice, the better you will be.  ｜练得越多，你就会越好。
+[g9] #599  Actions speak louder than words.  ｜行动胜于言辞。
+[g9] #601  Practice is the best teacher.  ｜实践是最好的老师。
+[g9] #1288  We use less electricity than before.  ｜我们比以前用电少了。
+[g9] #1360  True friendship is more valuable than money.  ｜真正的友谊比金钱更宝贵。
+[g9] #1554  Without doubt, she is the best player.  ｜毫无疑问，她是最好的球员。
+[g9] #1652  Health is more important than wealth.  ｜健康比财富更重要。
+[g9] #2560  The more you practice, the better you will speak.  ｜你练习得越多，说得就越好。
