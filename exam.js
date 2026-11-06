@@ -286,6 +286,11 @@
     card.classList.remove("is-ok", "is-bad");
     $("exFeed").hidden = true;
     $("exZh").hidden = true;
+    $("exWhy").hidden = true;
+    /* 按钮状态必须在 order 分支之前重置：order 没有 input，早退后残留的
+       「下一题可见 + 检查隐藏」会让下一题点下一题没反应、检查按钮消失 */
+    $("exCheck").hidden = false;
+    $("exNext").hidden = true;
     $("exSent").hidden = S.etype === "order";
     $("exChips").hidden = S.etype !== "order";
 
@@ -346,7 +351,14 @@
     $("exCheck").hidden = false;
     $("exNext").hidden = true;
     $("exWhy").hidden = true;
-    setTimeout(() => input && input.focus(), 30);
+    /* 首字母模式预填了首字母：部分手机浏览器 focus() 会把光标放到最前面，
+       孩子打的字全插到预填字母前面，看起来就是「吞字/乱序」——强制钉到末尾 */
+    setTimeout(() => {
+      if (!input) return;
+      input.focus();
+      const n = input.value.length;
+      try { input.setSelectionRange(n, n); } catch (e) { /* 某些类型不支持时忽略 */ }
+    }, 30);
   }
 
   function shuffleOrder(it) {
@@ -468,12 +480,14 @@
   function check() {
     if (S.phase !== "ask") return;
     const it = S.list[S.i];
+    /* 连词成句没有输入框，必须先分流——原代码先读 input.value，order 模式下
+       input 为 null 直接抛 TypeError，检查按钮就「没反应」了 */
+    if (S.etype === "order") { checkOrder(it); return; }
     const val = norm(input.value);
     if (!val) {
       input.focus();
       return;
     }
-    if (S.etype === "order") { checkOrder(it); return; }
     S.phase = "done";
     const good = val === norm(it.a);
     const card = document.querySelector("#exam .ecard");
