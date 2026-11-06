@@ -328,10 +328,16 @@
     input.spellcheck = false;
     input.setAttribute("inputmode", "latin");
     input.setAttribute("aria-label", it.b ? "填入单词的正确形式" : "填入合适的词");
-    // 无提示题不能按答案长度给宽度，否则等于泄露答案
+    /* 框宽：ch 单位按数字 0 量宽，特粗体的大写 M/W 实际接近 1.7ch，首字母预填的
+       常是大写字母，按 len+1ch 给框必窄；且居中对齐下一旦超宽两端同时被裁（吞字观感）。
+       改用 0.8em/字符估宽并随输入自动加宽；无提示题保底 4 字符宽度，不泄露答案长度 */
     const firstMode = S.etype === "first";
-    if (firstMode) input.style.width = (it.a.length + 1) + "ch";
-    else input.style.width = (it.b ? Math.max(it.a.length + 1, 4) : 7) + "ch";
+    const minLen = firstMode || it.b ? it.a.length : 4;
+    const fit = () => {
+      input.style.width = (Math.max(input.value.length, minLen) * 0.8 + 1.6) + "em";
+    };
+    fit();
+    input.addEventListener("input", fit);
     p.append(input);
     const base = document.createElement("span");
     if (firstMode) {
