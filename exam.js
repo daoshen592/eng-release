@@ -343,6 +343,7 @@
     input.autocapitalize = "off";
     input.spellcheck = false;
     input.setAttribute("inputmode", "latin");
+    input.setAttribute("enterkeyhint", "go"); // 手机键盘右下角显示「前往」而非「换行」
     input.setAttribute("aria-label", it.b ? "填入单词的正确形式" : "填入合适的词");
     /* 框宽：ch 单位按数字 0 量宽，特粗体的大写 M/W 实际接近 1.7ch，首字母预填的
        常是大写字母，按 len+1ch 给框必窄；且居中对齐下一旦超宽两端同时被裁（吞字观感）。

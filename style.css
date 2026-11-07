@@ -35,6 +35,9 @@ body {
   font-family: "Inter", -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
+  /* 手机端：消灭 iOS 双击缩放（连点词块重听时容易误触）和 300ms 点击延迟。
+     连词成句拖拽区已单独设 touch-action:none，不受影响 */
+  touch-action: manipulation;
 }
 
 /* Tab 浏览时的焦点环：琥珀色描边，所有按钮/输入框统一 */

@@ -8,7 +8,7 @@
  *
  * VER 只在 CORE 列表本身变化时才需要改（用来清掉旧缓存里的废弃条目）。
  */
-const VER = 'chunk-20261108zn';
+const VER = 'chunk-20261108zo';
 const CORE = [
   './',
   'index.html',
