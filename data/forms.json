@@ -5119,28 +5119,6 @@
    "t": "两者比较用比较级，常和 than 连用；单音节形容词加 -er：small→smaller"
   },
   {
-   "id": "f2619-ag7",
-   "l": "g7",
-   "s": "My schoolbag is ___ than yours.",
-   "zh": "我的书包比你的重。",
-   "b": "heavy",
-   "z": "大量的；重的",
-   "k": "r",
-   "a": "heavier",
-   "t": "两者比较用比较级，常和 than 连用；辅音字母 + y 结尾，变 y 为 i 加 -er：heavy→heavier"
-  },
-  {
-   "id": "f2620-ag7",
-   "l": "g7",
-   "s": "This book is ___ than that one.",
-   "zh": "这本书比那本薄。",
-   "b": "thin",
-   "z": "薄的",
-   "k": "r",
-   "a": "thinner",
-   "t": "两者比较用比较级，常和 than 连用；重读闭音节，双写末尾辅音加 -er：thin→thinner"
-  },
-  {
    "id": "f2782",
    "l": "g7",
    "s": "How fast he ___!",
@@ -5161,6 +5139,413 @@
    "k": "3",
    "a": "rains",
    "t": "主语是第三人称单数，一般现在时动词加 -s：rain→rains"
+  },
+  {
+   "id": "f2847",
+   "l": "g7",
+   "s": "Welcome to the ___ unit of our new English book.",
+   "zh": "欢迎来到我们新英语书的预备单元。",
+   "b": "start",
+   "z": "开始",
+   "k": "r",
+   "a": "starter",
+   "t": "两者比较用比较级，常和 than 连用；单音节形容词加 -er：start→starter"
+  },
+  {
+   "id": "f2850",
+   "l": "g7",
+   "s": "I want ___ to know my new classmates.",
+   "zh": "我想认识我的新同学。",
+   "b": "get",
+   "z": "得到；收到；变得",
+   "k": "inf",
+   "a": "to get",
+   "t": "want / hope / decide / plan 等动词后面接 to do：get→to get"
+  },
+  {
+   "id": "f2851",
+   "l": "g7",
+   "s": "It is easy to make ___ in a new school.",
+   "zh": "在新学校交朋友很容易。",
+   "b": "friend",
+   "z": "朋友",
+   "k": "s",
+   "a": "friends",
+   "t": "可数名词变复数，一般直接加 -s：friend→friends"
+  },
+  {
+   "id": "f2859",
+   "l": "g7",
+   "s": "My grandpa ___ me to play Chinese chess.",
+   "zh": "我爷爷教我下中国象棋。",
+   "b": "teach",
+   "z": "教；讲授",
+   "k": "p",
+   "a": "taught",
+   "t": "一般过去时用动词的过去式；teach 是不规则动词，过去式 teach→taught，要单独记"
+  },
+  {
+   "id": "f2863",
+   "l": "g7",
+   "s": "We play football on the ___ field.",
+   "zh": "我们在运动场上踢足球。",
+   "b": "sport",
+   "z": "运动；体育运动",
+   "k": "s",
+   "a": "sports",
+   "t": "可数名词变复数，一般直接加 -s：sport→sports"
+  },
+  {
+   "id": "f2865",
+   "l": "g7",
+   "s": "We do ___ at eight every morning.",
+   "zh": "我们每天早上八点做操。",
+   "b": "exercise",
+   "z": "锻炼；活动；运动",
+   "k": "s",
+   "a": "exercises",
+   "t": "可数名词变复数，一般直接加 -s：exercise→exercises"
+  },
+  {
+   "id": "f2866-2",
+   "l": "g7",
+   "s": "Our biology class ___ at eight a.m.",
+   "zh": "我们的生物课上午八点开始。",
+   "b": "start",
+   "z": "开始",
+   "k": "3",
+   "a": "starts",
+   "t": "主语是第三人称单数，一般现在时动词加 -s：start→starts"
+  },
+  {
+   "id": "f2867",
+   "l": "g7",
+   "s": "The shop ___ at nine a.m. and closes at six p.m.",
+   "zh": "这家店上午九点开门，下午六点关门。",
+   "b": "open",
+   "z": "打开；开着的",
+   "k": "3",
+   "a": "opens",
+   "t": "主语是第三人称单数，一般现在时动词加 -s：open→opens"
+  },
+  {
+   "id": "f2867-2",
+   "l": "g7",
+   "s": "The shop opens at nine a.m. and ___ at six p.m.",
+   "zh": "这家店上午九点开门，下午六点关门。",
+   "b": "close",
+   "z": "关上；接近的",
+   "k": "3",
+   "a": "closes",
+   "t": "主语是第三人称单数，一般现在时动词加 -s：close→closes"
+  },
+  {
+   "id": "f2870",
+   "l": "g7",
+   "s": "We ___ for a hike in the hills last Sunday.",
+   "zh": "上周日我们去山里远足了。",
+   "b": "go",
+   "z": "去；进行",
+   "k": "p",
+   "a": "went",
+   "t": "句中有过去时间状语，用一般过去时；go 是不规则动词，过去式 go→went，要单独记"
+  },
+  {
+   "id": "f2870-2",
+   "l": "g7",
+   "s": "We went for a hike in the ___ last Sunday.",
+   "zh": "上周日我们去山里远足了。",
+   "b": "hill",
+   "z": "小山",
+   "k": "s",
+   "a": "hills",
+   "t": "可数名词变复数，一般直接加 -s：hill→hills"
+  },
+  {
+   "id": "f2875-2",
+   "l": "g7",
+   "s": "I often visit my grandma at ___.",
+   "zh": "我常在周末去看外婆。",
+   "b": "weekend",
+   "z": "周末",
+   "k": "s",
+   "a": "weekends",
+   "t": "可数名词变复数，一般直接加 -s：weekend→weekends"
+  },
+  {
+   "id": "f2882",
+   "l": "g7",
+   "s": "Come ___ next time, please.",
+   "zh": "下次请早点来。",
+   "b": "early",
+   "z": "早的；早",
+   "k": "r",
+   "a": "earlier",
+   "t": "两者比较用比较级，常和 than 连用；辅音字母 + y 结尾，变 y 为 i 加 -er：early→earlier"
+  },
+  {
+   "id": "f2885-2",
+   "l": "g7",
+   "s": "PLA Day ___ on the first of August.",
+   "zh": "建军节在八月一日。",
+   "b": "come",
+   "z": "来",
+   "k": "3",
+   "a": "comes",
+   "t": "主语是第三人称单数，一般现在时动词加 -s：come→comes"
+  },
+  {
+   "id": "f2888",
+   "l": "g7",
+   "s": "This app can help you learn new ___.",
+   "zh": "这个应用程序可以帮你学新词。",
+   "b": "word",
+   "z": "单词",
+   "k": "s",
+   "a": "words",
+   "t": "可数名词变复数，一般直接加 -s：word→words"
+  },
+  {
+   "id": "f2890",
+   "l": "g7",
+   "s": "The seat belt ___ his life.",
+   "zh": "安全带救了他的命。",
+   "b": "save",
+   "z": "节约；拯救；保存（七下U1）",
+   "k": "p",
+   "a": "saved",
+   "t": "一般过去时用动词的过去式；以 e 结尾直接加 -d：save→saved"
+  },
+  {
+   "id": "f2891",
+   "l": "g7",
+   "s": "The stars are ___ brightly tonight.",
+   "zh": "今晚星星明亮地闪着。",
+   "b": "shine",
+   "z": "发光；照耀",
+   "k": "ing",
+   "a": "shining",
+   "t": "现在进行时 = am/is/are + 现在分词；以不发音的 e 结尾，去 e 加 -ing：shine→shining"
+  },
+  {
+   "id": "f2892",
+   "l": "g7",
+   "s": "My mother is ___ a cucumber.",
+   "zh": "我妈妈正在切黄瓜。",
+   "b": "cut",
+   "z": "切；割；剪下",
+   "k": "ing",
+   "a": "cutting",
+   "t": "现在进行时 = am/is/are + 现在分词；重读闭音节，双写末尾辅音字母再加 -ing：cut→cutting"
+  },
+  {
+   "id": "f2895",
+   "l": "g7",
+   "s": "I want ___ the old city.",
+   "zh": "我想去探索这座老城。",
+   "b": "explore",
+   "z": "探索",
+   "k": "inf",
+   "a": "to explore",
+   "t": "want / hope / decide / plan 等动词后面接 to do：explore→to explore"
+  },
+  {
+   "id": "f2900",
+   "l": "g7",
+   "s": "The old man ___ us a magical story.",
+   "zh": "老人给我们讲了一个神奇的故事。",
+   "b": "tell",
+   "z": "告诉；讲述",
+   "k": "p",
+   "a": "told",
+   "t": "一般过去时用动词的过去式；tell 是不规则动词，过去式 tell→told，要单独记"
+  },
+  {
+   "id": "f2902-2",
+   "l": "g7",
+   "s": "Our school newsletter ___ out every month.",
+   "zh": "我们学校的简讯每月出一期。",
+   "b": "come",
+   "z": "来",
+   "k": "3",
+   "a": "comes",
+   "t": "主语是第三人称单数，一般现在时动词加 -s：come→comes"
+  },
+  {
+   "id": "f2908",
+   "l": "g7",
+   "s": "Hold the rope with both ___.",
+   "zh": "用双手抓住绳子。",
+   "b": "hand",
+   "z": "手",
+   "k": "s",
+   "a": "hands",
+   "t": "可数名词变复数，一般直接加 -s：hand→hands"
+  },
+  {
+   "id": "f2916",
+   "l": "g7",
+   "s": "The waitress ___ in a small restaurant.",
+   "zh": "那名女服务员在一家小餐馆工作。",
+   "b": "work",
+   "z": "工作；劳动",
+   "k": "3",
+   "a": "works",
+   "t": "主语是第三人称单数，一般现在时动词加 -s：work→works"
+  },
+  {
+   "id": "f2917",
+   "l": "g7",
+   "s": "I have a few good ___ here.",
+   "zh": "我在这里有几个好朋友。",
+   "b": "friend",
+   "z": "朋友",
+   "k": "s",
+   "a": "friends",
+   "t": "可数名词变复数，一般直接加 -s：friend→friends"
+  },
+  {
+   "id": "f2923",
+   "l": "g7",
+   "s": "Please call back in ten ___.",
+   "zh": "请十分钟后再打过来。",
+   "b": "minute",
+   "z": "分钟",
+   "k": "s",
+   "a": "minutes",
+   "t": "数词（大于 1）后面的可数名词要用复数：minute→minutes"
+  },
+  {
+   "id": "f2925",
+   "l": "g7",
+   "s": "Please drop off the ___ at the office.",
+   "zh": "请把书送到办公室。",
+   "b": "book",
+   "z": "书",
+   "k": "s",
+   "a": "books",
+   "t": "可数名词变复数，一般直接加 -s：book→books"
+  },
+  {
+   "id": "f2927-2",
+   "l": "g7",
+   "s": "We had fish and ___ for lunch.",
+   "zh": "我们午饭吃了炸鱼薯条。",
+   "b": "chip",
+   "z": "炸薯条",
+   "k": "s",
+   "a": "chips",
+   "t": "可数名词变复数，一般直接加 -s：chip→chips"
+  },
+  {
+   "id": "f2930",
+   "l": "g7",
+   "s": "We will go on a trip to the ___ soon.",
+   "zh": "我们很快要去山里旅行。",
+   "b": "mountain",
+   "z": "高山；山岳；山脉",
+   "k": "s",
+   "a": "mountains",
+   "t": "可数名词变复数，一般直接加 -s：mountain→mountains"
+  },
+  {
+   "id": "f2934-2",
+   "l": "g7",
+   "s": "The children are in high ___ today.",
+   "zh": "孩子们今天兴高采烈。",
+   "b": "spirit",
+   "z": "精神；情绪",
+   "k": "s",
+   "a": "spirits",
+   "t": "可数名词变复数，一般直接加 -s：spirit→spirits"
+  },
+  {
+   "id": "f2935",
+   "l": "g7",
+   "s": "The girls are ___ rope in the playground.",
+   "zh": "女孩们在操场上跳绳。",
+   "b": "jump",
+   "z": "跳；跃",
+   "k": "ing",
+   "a": "jumping",
+   "t": "现在进行时 = am/is/are + 现在分词；直接加 -ing：jump→jumping"
+  },
+  {
+   "id": "f2937",
+   "l": "g7",
+   "s": "Do not laugh at ___.",
+   "zh": "不要嘲笑别人。",
+   "b": "other",
+   "z": "其他的；另一个",
+   "k": "s",
+   "a": "others",
+   "t": "可数名词变复数，一般直接加 -s：other→others"
+  },
+  {
+   "id": "f2941-2",
+   "l": "g7",
+   "s": "He ___ hard to make money for his family.",
+   "zh": "他努力工作为家里挣钱。",
+   "b": "work",
+   "z": "工作；劳动",
+   "k": "3",
+   "a": "works",
+   "t": "主语是第三人称单数，一般现在时动词加 -s：work→works"
+  },
+  {
+   "id": "f2945",
+   "l": "g7",
+   "s": "My father ___ me a new mobile phone.",
+   "zh": "我爸爸给我买了一部新手机。",
+   "b": "buy",
+   "z": "买",
+   "k": "p",
+   "a": "bought",
+   "t": "一般过去时用动词的过去式；buy 是不规则动词，过去式 buy→bought，要单独记"
+  },
+  {
+   "id": "f2948",
+   "l": "g7",
+   "s": "We ___ at a rest area on the way.",
+   "zh": "我们在路上一个休息区停了车。",
+   "b": "stop",
+   "z": "停止；车站",
+   "k": "p",
+   "a": "stopped",
+   "t": "一般过去时用动词的过去式；重读闭音节，双写末尾辅音加 -ed：stop→stopped"
+  },
+  {
+   "id": "f2955",
+   "l": "g7",
+   "s": "Many ___ take part in the school show.",
+   "zh": "许多学生参加学校的演出。",
+   "b": "student",
+   "z": "学生",
+   "k": "s",
+   "a": "students",
+   "t": "数词（大于 1）后面的可数名词要用复数：student→students"
+  },
+  {
+   "id": "f2959",
+   "l": "g7",
+   "s": "What about ___ to the park?",
+   "zh": "去公园怎么样？",
+   "b": "go",
+   "z": "去；进行",
+   "k": "ger",
+   "a": "going",
+   "t": "介词后面接动名词（-ing）作宾语；直接加 -ing：go→going"
+  },
+  {
+   "id": "f2967",
+   "l": "g7",
+   "s": "We take ___ in the park on Sundays.",
+   "zh": "我们常在星期天去公园拍照。",
+   "b": "photo",
+   "z": "照片",
+   "k": "s",
+   "a": "photos",
+   "t": "photo 的复数是不规则变化 photo→photos，要单独记"
   },
   {
    "id": "f362",
@@ -5306,17 +5691,6 @@
    "t": "five 的序数词是不规则变化 five→fifth，要单独记"
   },
   {
-   "id": "f444",
-   "l": "g7",
-   "s": "Last Sunday I ___ to the zoo with my friends.",
-   "zh": "上周日我和朋友去了动物园。",
-   "b": "go",
-   "z": "去；进行",
-   "k": "p",
-   "a": "went",
-   "t": "句中有过去时间状语，用一般过去时；go 是不规则动词，过去式 go→went，要单独记"
-  },
-  {
    "id": "f446",
    "l": "g7",
    "s": "The pandas were ___ bamboo.",
@@ -5337,17 +5711,6 @@
    "k": "p",
    "a": "took",
    "t": "一般过去时用动词的过去式；take 是不规则动词，过去式 take→took，要单独记"
-  },
-  {
-   "id": "f451",
-   "l": "g7",
-   "s": "I read English ___ every evening.",
-   "zh": "我每天晚上读英语书。",
-   "b": "book",
-   "z": "书",
-   "k": "s",
-   "a": "books",
-   "t": "可数名词变复数，一般直接加 -s：book→books"
   },
   {
    "id": "f459-2",
@@ -5962,6 +6325,18 @@
    "t": "一般过去时用动词的过去式；take 是不规则动词，过去式 take→took，要单独记"
   },
   {
+   "id": "fe1183-2",
+   "l": "g7",
+   "s": "The waitress ___ us warm bread and fresh soup.",
+   "zh": "女服务员给我们端来了温热的面包和新鲜的汤。",
+   "b": "bring",
+   "z": "带来",
+   "k": "p",
+   "a": "brought",
+   "_ex": true,
+   "t": "一般过去时用动词的过去式；bring 是不规则动词，过去式 bring→brought，要单独记"
+  },
+  {
    "id": "fe1191-2",
    "l": "g7",
    "s": "___ my phone before breakfast has become a habit.",
@@ -5972,18 +6347,6 @@
    "a": "Checking",
    "_ex": true,
    "t": "空格在句首作主语，动词要变成动名词（-ing）形式；直接加 -ing：check→Checking"
-  },
-  {
-   "id": "fe1192-1",
-   "l": "g7",
-   "s": "I'm sick of ___ fast food.",
-   "zh": "我受够吃快餐了。",
-   "b": "eat",
-   "z": "吃",
-   "k": "ger",
-   "a": "eating",
-   "_ex": true,
-   "t": "介词后面接动名词（-ing）作宾语；直接加 -ing：eat→eating"
   },
   {
    "id": "fe1227-2",
@@ -6358,18 +6721,6 @@
    "t": "数词（大于 1）后面的可数名词要用复数：chair→chairs"
   },
   {
-   "id": "fe166-2",
-   "l": "g7",
-   "s": "I ___ some fresh bread on my way home.",
-   "zh": "我在回家的路上买了些新鲜面包。",
-   "b": "buy",
-   "z": "买",
-   "k": "p",
-   "a": "bought",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；buy 是不规则动词，过去式 buy→bought，要单独记"
-  },
-  {
    "id": "fe175-2",
    "l": "g7",
    "s": "He ___ his face before sitting down for breakfast.",
@@ -6454,18 +6805,6 @@
    "t": "一般过去时用动词的过去式；规则动词加 -ed：land→landed"
   },
   {
-   "id": "fe200-2x1",
-   "l": "g7",
-   "s": "Our plane landed just before the rain ___.",
-   "zh": "我们的飞机刚降落，雨就下起来了。",
-   "b": "begin",
-   "z": "开始；着手",
-   "k": "p",
-   "a": "began",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；begin 是不规则动词，过去式 begin→began，要单独记"
-  },
-  {
    "id": "fe203-2",
    "l": "g7",
    "s": "Our neighbours ___ outside to welcome us home.",
@@ -6512,18 +6851,6 @@
    "a": "making",
    "_ex": true,
    "t": "介词后面接动名词（-ing）作宾语；以不发音的 e 结尾，去 e 加 -ing：make→making"
-  },
-  {
-   "id": "fe218-2x1",
-   "l": "g7",
-   "s": "We ___ the afternoon making art with coloured paper.",
-   "zh": "我们花了一下午用彩纸创作艺术作品。",
-   "b": "spend",
-   "z": "花（钱、时间）；度过",
-   "k": "p",
-   "a": "spent",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；spend 是不规则动词，过去式 spend→spent，要单独记"
   },
   {
    "id": "fe222-2",
@@ -6682,18 +7009,6 @@
    "t": "一般过去时用动词的过去式；catch 是不规则动词，过去式 catch→caught，要单独记"
   },
   {
-   "id": "fe266-2x1",
-   "l": "g7",
-   "s": "We caught a fast train and ___ before lunch.",
-   "zh": "我们赶上了一班快车，在午饭前就到了。",
-   "b": "arrive",
-   "z": "到达",
-   "k": "p",
-   "a": "arrived",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；以 e 结尾直接加 -d：arrive→arrived"
-  },
-  {
    "id": "fe275-2",
    "l": "g7",
    "s": "We ___ fresh beans from the garden before lunch.",
@@ -6788,18 +7103,6 @@
    "a": "waiting",
    "_ex": true,
    "t": "这里要用动名词（-ing）形式；直接加 -ing：wait→waiting"
-  },
-  {
-   "id": "fe317-2x1",
-   "l": "g7",
-   "s": "The writer ___ her notebook while waiting for the train.",
-   "zh": "那位作家等火车时，把笔记本写得满满的。",
-   "b": "fill",
-   "z": "装满；填满",
-   "k": "p",
-   "a": "filled",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；规则动词加 -ed：fill→filled"
   },
   {
    "id": "fe319-1",
@@ -6934,18 +7237,6 @@
    "t": "一般过去时用动词的过去式；规则动词加 -ed：turn→turned"
   },
   {
-   "id": "fe365-2x1",
-   "l": "g7",
-   "s": "My grandfather turned sixty and ___ with a picnic.",
-   "zh": "我爷爷满六十岁时，办了一次野餐来庆祝。",
-   "b": "celebrate",
-   "z": "庆祝；庆贺",
-   "k": "p",
-   "a": "celebrated",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；以 e 结尾直接加 -d：celebrate→celebrated"
-  },
-  {
    "id": "fe376-2",
    "l": "g7",
    "s": "All the children ___ fruit for the picnic.",
@@ -7040,18 +7331,6 @@
    "a": "turned",
    "_ex": true,
    "t": "一般过去时用动词的过去式；规则动词加 -ed：turn→turned"
-  },
-  {
-   "id": "fe399-2x1",
-   "l": "g7",
-   "s": "The sky turned orange as we ___ home.",
-   "zh": "我们步行回家时，天空变成了橙色。",
-   "b": "walk",
-   "z": "行走；散步；步行",
-   "k": "p",
-   "a": "walked",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；规则动词加 -ed：walk→walked"
   },
   {
    "id": "fe408-2",
@@ -7150,18 +7429,6 @@
    "t": "tomato 的复数是不规则变化 tomato→tomatoes，要单独记"
   },
   {
-   "id": "fe439-2",
-   "l": "g7",
-   "s": "Our new neighbours ___ us a basket of apples.",
-   "zh": "我们的新邻居送来了一篮苹果。",
-   "b": "bring",
-   "z": "带来",
-   "k": "p",
-   "a": "brought",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；bring 是不规则动词，过去式 bring→brought，要单独记"
-  },
-  {
    "id": "fe442-2",
    "l": "g7",
    "s": "We ___ a round table beside the kitchen window.",
@@ -7184,18 +7451,6 @@
    "a": "needs",
    "_ex": true,
    "t": "主语是第三人称单数，一般现在时动词加 -s：need→needs"
-  },
-  {
-   "id": "fe456-2x1",
-   "l": "g7",
-   "s": "I made a pot of tea while you ___.",
-   "zh": "你休息的时候，我泡了一壶茶。",
-   "b": "rest",
-   "z": "休息；其余（七下U6）",
-   "k": "p",
-   "a": "rested",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；规则动词加 -ed：rest→rested"
   },
   {
    "id": "fe458-2",
@@ -7571,6 +7826,18 @@
    "t": "动名词（-ing）作定语，修饰后面的名词（如 swimming pool 游泳池）；重读闭音节，双写末尾辅音字母再加 -ing：shop→shopping"
   },
   {
+   "id": "fe592-2",
+   "l": "g7",
+   "s": "We ___ along the river and watched the ducks.",
+   "zh": "我们沿着河边散步，看着水里的鸭子。",
+   "b": "walk",
+   "z": "行走；散步；步行",
+   "k": "p",
+   "a": "walked",
+   "_ex": true,
+   "t": "一般过去时用动词的过去式；规则动词加 -ed：walk→walked"
+  },
+  {
    "id": "fe595-2",
    "l": "g7",
    "s": "We ___ at the airport before the sun rose.",
@@ -7869,6 +8136,18 @@
    "a": "walls",
    "_ex": true,
    "t": "可数名词变复数，一般直接加 -s：wall→walls"
+  },
+  {
+   "id": "fe709-2",
+   "l": "g7",
+   "s": "The soup tasted so bad that I stopped ___.",
+   "zh": "这汤太难喝了，我便不再喝了。",
+   "b": "eat",
+   "z": "吃",
+   "k": "ger",
+   "a": "eating",
+   "_ex": true,
+   "t": "这里要用动名词（-ing）形式；直接加 -ing：eat→eating"
   },
   {
    "id": "fe71-2",
@@ -8183,18 +8462,6 @@
    "t": "主语是第三人称单数，一般现在时动词加 -s：get→gets"
   },
   {
-   "id": "fe853-1",
-   "l": "g7",
-   "s": "The sun ___ brightly.",
-   "zh": "太阳明亮地照耀着。",
-   "b": "shine",
-   "z": "发光；照耀",
-   "k": "3",
-   "a": "shines",
-   "_ex": true,
-   "t": "主语是第三人称单数，一般现在时动词加 -s：shine→shines"
-  },
-  {
    "id": "fe853-2",
    "l": "g7",
    "s": "The sun ___ through my bedroom window this morning.",
@@ -8375,18 +8642,6 @@
    "t": "可数名词变复数，一般直接加 -s：flower→flowers"
   },
   {
-   "id": "fe950-1",
-   "l": "g7",
-   "s": "We ___ basketball in the gym.",
-   "zh": "我们在体育馆打篮球。",
-   "b": "play",
-   "z": "玩；打（球）；演奏",
-   "k": "p",
-   "a": "played",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；规则动词加 -ed：play→played"
-  },
-  {
    "id": "fe954-2",
    "l": "g7",
    "s": "We ___ this special cake for your birthday.",
@@ -8445,30 +8700,6 @@
    "a": "taking",
    "_ex": true,
    "t": "介词后面接动名词（-ing）作宾语；以不发音的 e 结尾，去 e 加 -ing：take→taking"
-  },
-  {
-   "id": "fe974-1",
-   "l": "g7",
-   "s": "I never ___ biology.",
-   "zh": "我从来没喜欢过生物学。",
-   "b": "like",
-   "z": "喜欢；怎么样；像",
-   "k": "p",
-   "a": "liked",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；以 e 结尾直接加 -d：like→liked"
-  },
-  {
-   "id": "fe979-2",
-   "l": "g7",
-   "s": "I ___ your phone number on my new phone.",
-   "zh": "我把你的电话号码存到了新手机里。",
-   "b": "save",
-   "z": "节约；拯救；保存（七下U1）",
-   "k": "p",
-   "a": "saved",
-   "_ex": true,
-   "t": "一般过去时用动词的过去式；以 e 结尾直接加 -d：save→saved"
   },
   {
    "id": "g101",
@@ -9294,6 +9525,50 @@
    "k": "prep",
    "a": "to",
    "t": "listen to 是固定搭配，to 不能省"
+  },
+  {
+   "id": "g2869",
+   "l": "g7",
+   "s": "Let's act out the story ___ class.",
+   "zh": "我们在课上把这个故事表演出来吧。",
+   "b": "",
+   "z": "",
+   "k": "prep",
+   "a": "in",
+   "t": "in bed 卧床、in class 上课、in fact 事实上，都是固定搭配"
+  },
+  {
+   "id": "g2897",
+   "l": "g7",
+   "s": "We could not see the road because ___ the fog.",
+   "zh": "因为大雾我们看不见路。",
+   "b": "",
+   "z": "",
+   "k": "prep",
+   "a": "of",
+   "t": "because of 后面接名词/代词；because 后面接句子"
+  },
+  {
+   "id": "g2920",
+   "l": "g7",
+   "s": "Beach volleyball is a good sport ___ summer.",
+   "zh": "沙滩排球是夏天很好的一项运动。",
+   "b": "",
+   "z": "",
+   "k": "prep",
+   "a": "in",
+   "t": "季节前用 in：in spring / in summer"
+  },
+  {
+   "id": "g2921",
+   "l": "g7",
+   "s": "These books belong ___ my sister.",
+   "zh": "这些书是我姐姐的。",
+   "b": "",
+   "z": "",
+   "k": "prep",
+   "a": "to",
+   "t": "belong to 属于"
   },
   {
    "id": "g407",
@@ -10484,17 +10759,6 @@
    "t": "可数名词变复数，一般直接加 -s：apple→apples"
   },
   {
-   "id": "f1166",
-   "l": "g8",
-   "s": "The children will grow up ___.",
-   "zh": "孩子们会很快长大。",
-   "b": "quick",
-   "z": "快的；敏捷的",
-   "k": "adv",
-   "a": "quickly",
-   "t": "形容词加 -ly 构成副词，用来修饰动词：quick→quickly"
-  },
-  {
    "id": "f1168",
    "l": "g8",
    "s": "Please hand out the ___ to the class.",
@@ -10581,17 +10845,6 @@
    "k": "p",
    "a": "fallen",
    "t": "一般过去时用动词的过去式；fall 是不规则动词，过去式 fall→fallen，要单独记"
-  },
-  {
-   "id": "f1180",
-   "l": "g8",
-   "s": "The shop sells books ___.",
-   "zh": "这家店卖书很便宜。",
-   "b": "cheap",
-   "z": "便宜的",
-   "k": "adv",
-   "a": "cheaply",
-   "t": "形容词加 -ly 构成副词，用来修饰动词：cheap→cheaply"
   },
   {
    "id": "f129",
@@ -10867,17 +11120,6 @@
    "k": "der",
    "a": "lucky",
    "t": "名词加 -y 构成形容词（多表示天气或特征）：luck→lucky"
-  },
-  {
-   "id": "f1816-2",
-   "l": "g8",
-   "s": "You are lucky to have such good ___.",
-   "zh": "你有这么好的朋友真幸运。",
-   "b": "friend",
-   "z": "朋友",
-   "k": "s",
-   "a": "friends",
-   "t": "可数名词变复数，一般直接加 -s：friend→friends"
   },
   {
    "id": "f1823",
@@ -11340,6 +11582,17 @@
    "k": "ger",
    "a": "playing",
    "t": "动名词（-ing）作定语，修饰后面的名词（如 swimming pool 游泳池）；直接加 -ing：play→playing"
+  },
+  {
+   "id": "f209",
+   "l": "g8",
+   "s": "She was so tired that she fell asleep ___.",
+   "zh": "她太累了，很快就睡着了。",
+   "b": "quick",
+   "z": "快的；敏捷的",
+   "k": "adv",
+   "a": "quickly",
+   "t": "形容词加 -ly 构成副词，用来修饰动词：quick→quickly"
   },
   {
    "id": "f210",
@@ -12033,17 +12286,6 @@
    "k": "p",
    "a": "cleaned",
    "t": "一般过去时用动词的过去式；规则动词加 -ed：clean→cleaned"
-  },
-  {
-   "id": "f2528",
-   "l": "g8",
-   "s": "He ___ as a guide in the museum.",
-   "zh": "他在博物馆当导游。",
-   "b": "work",
-   "z": "工作；劳动",
-   "k": "3",
-   "a": "works",
-   "t": "主语是第三人称单数，一般现在时动词加 -s：work→works"
   },
   {
    "id": "f2530",
@@ -13454,17 +13696,6 @@
    "t": "可数名词变复数，一般直接加 -s：key→keys"
   },
   {
-   "id": "f2793",
-   "l": "g8",
-   "s": "My mother ___ me that she would buy me a new bike.",
-   "zh": "妈妈告诉我她会给我买一辆新自行车。",
-   "b": "tell",
-   "z": "告诉；讲述",
-   "k": "p",
-   "a": "told",
-   "t": "一般过去时用动词的过去式；tell 是不规则动词，过去式 tell→told，要单独记"
-  },
-  {
    "id": "f2795",
    "l": "g8",
    "s": "I want ___ if it will rain tomorrow.",
@@ -13573,6 +13804,28 @@
    "k": "3",
    "a": "looks",
    "t": "主语是第三人称单数，一般现在时动词加 -s：look→looks"
+  },
+  {
+   "id": "f2909",
+   "l": "g8",
+   "s": "The old man walks ___ along the river.",
+   "zh": "老人沿着河边慢慢地走。",
+   "b": "slow",
+   "z": "慢的；缓慢的",
+   "k": "adv",
+   "a": "slowly",
+   "t": "形容词加 -ly 构成副词，用来修饰动词：slow→slowly"
+  },
+  {
+   "id": "f2919",
+   "l": "g8",
+   "s": "At the start, no one ___ the new teacher.",
+   "zh": "一开始没人喜欢这位新老师。",
+   "b": "like",
+   "z": "喜欢；怎么样；像",
+   "k": "p",
+   "a": "liked",
+   "t": "一般过去时用动词的过去式；以 e 结尾直接加 -d：like→liked"
   },
   {
    "id": "f328",
@@ -14400,17 +14653,6 @@
    "t": "可数名词变复数，一般直接加 -s：question→questions"
   },
   {
-   "id": "f671",
-   "l": "g8",
-   "s": "The fact is that most ___ need more sleep.",
-   "zh": "事实是大多数学生需要更多睡眠。",
-   "b": "student",
-   "z": "学生",
-   "k": "s",
-   "a": "students",
-   "t": "可数名词变复数，一般直接加 -s：student→students"
-  },
-  {
    "id": "f672",
    "l": "g8",
    "s": "I ___ an article about our school for the magazine.",
@@ -14508,17 +14750,6 @@
    "k": "refl",
    "a": "yourself",
    "t": "主语和宾语指同一个人时用反身代词 yourself（意为「you自己」）"
-  },
-  {
-   "id": "f682-2",
-   "l": "g8",
-   "s": "My uncle is a computer engineer and ___ in a big building.",
-   "zh": "我叔叔是计算机工程师，在一栋大楼里上班。",
-   "b": "work",
-   "z": "工作；劳动",
-   "k": "3",
-   "a": "works",
-   "t": "主语是第三人称单数，一般现在时动词加 -s：work→works"
   },
   {
    "id": "f683",
@@ -18908,17 +19139,6 @@
    "k": "s",
    "a": "gifts",
    "t": "可数名词变复数，一般直接加 -s：gift→gifts"
-  },
-  {
-   "id": "f1463-2",
-   "l": "g9",
-   "s": "She could not express her feelings in ___.",
-   "zh": "她无法用语言表达自己的感受。",
-   "b": "word",
-   "z": "单词",
-   "k": "s",
-   "a": "words",
-   "t": "可数名词变复数，一般直接加 -s：word→words"
   },
   {
    "id": "f1464",
