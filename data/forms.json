@@ -1080,6 +1080,17 @@
    "t": "以 -s/-x/-ch/-sh 结尾的名词，复数加 -es：class→classes"
   },
   {
+   "id": "f370",
+   "l": "primary",
+   "s": "She ___ very fast.",
+   "zh": "她跑得很快。",
+   "b": "run",
+   "z": "跑；奔跑",
+   "k": "3",
+   "a": "runs",
+   "t": "主语是第三人称单数，一般现在时动词加 -s：run→runs"
+  },
+  {
    "id": "f387",
    "l": "primary",
    "s": "People eat rice ___ at the Dragon Boat Festival.",
@@ -5408,17 +5419,6 @@
    "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
   },
   {
-   "id": "sy2840-indef",
-   "l": "g7",
-   "s": "There is ___ milk in the cup.",
-   "zh": "杯子里有一些牛奶。",
-   "b": "",
-   "z": "一些",
-   "k": "indef",
-   "a": "some",
-   "t": "不定代词：肯定句用 some，否定/疑问句用 any；复合不定代词作主语按单数处理。"
-  },
-  {
    "id": "sy406-conj",
    "l": "g7",
    "s": "My name is Tom ___ I am twelve.",
@@ -8554,6 +8554,17 @@
    "t": "形容词加 -ly 构成副词，用来修饰动词：usual→usually"
   },
   {
+   "id": "f425",
+   "l": "g8",
+   "s": "What time do you ___ have dinner?",
+   "zh": "你通常几点吃晚饭？",
+   "b": "usual",
+   "z": "通常的",
+   "k": "adv",
+   "a": "usually",
+   "t": "形容词加 -ly 构成副词，用来修饰动词：usual→usually"
+  },
+  {
    "id": "f484",
    "l": "g8",
    "s": "I have ___ it for three years.",
@@ -9720,17 +9731,6 @@
    "t": "be proud of 为……感到骄傲"
   },
   {
-   "id": "g2844",
-   "l": "g8",
-   "s": "I am interested ___ science.",
-   "zh": "我对科学感兴趣。",
-   "b": "",
-   "z": "",
-   "k": "prep",
-   "a": "in",
-   "t": "be interested in 对……感兴趣"
-  },
-  {
    "id": "g478",
    "l": "g8",
    "s": "It is one of ___ most famous places in China.",
@@ -9905,6 +9905,17 @@
    "k": "art",
    "a": "a",
    "t": "wonderful 以辅音音素开头，不定冠词用 a；以元音音素开头的用 an"
+  },
+  {
+   "id": "g533",
+   "l": "g8",
+   "s": "It's a good idea to keep a diary ___ English.",
+   "zh": "用英语写日记是个好主意。",
+   "b": "",
+   "z": "",
+   "k": "prep",
+   "a": "in",
+   "t": "in bed 卧床、in class 上课、in fact 事实上，都是固定搭配"
   },
   {
    "id": "g534",
@@ -12415,17 +12426,6 @@
    "t": "have 的第三人称单数是 has"
   },
   {
-   "id": "f1387",
-   "l": "g9",
-   "s": "The sun ___ in the east.",
-   "zh": "太阳从东方升起。",
-   "b": "rise",
-   "z": "起床；升起",
-   "k": "3",
-   "a": "rises",
-   "t": "主语是第三人称单数，一般现在时动词加 -s：rise→rises"
-  },
-  {
    "id": "f1391",
    "l": "g9",
    "s": "A shark is a big and ___ fish.",
@@ -14173,17 +14173,6 @@
    "k": "perf",
    "a": "been",
    "t": "现在完成时 have/has + been：表示「曾经去过/一直是」"
-  },
-  {
-   "id": "f2845",
-   "l": "g9",
-   "s": "___, the lights went out.",
-   "zh": "突然，灯灭了。",
-   "b": "sudden",
-   "z": "突然的",
-   "k": "adv",
-   "a": "Suddenly",
-   "t": "形容词加 -ly 构成副词，用来修饰动词：sudden→Suddenly"
   },
   {
    "id": "f285",
