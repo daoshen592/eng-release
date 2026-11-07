@@ -6805,6 +6805,18 @@
    "t": "一般过去时用动词的过去式；规则动词加 -ed：land→landed"
   },
   {
+   "id": "fe200-2x1",
+   "l": "g7",
+   "s": "Our plane landed just before the rain ___.",
+   "zh": "我们的飞机刚降落，雨就下起来了。",
+   "b": "begin",
+   "z": "开始；着手",
+   "k": "p",
+   "a": "began",
+   "_ex": true,
+   "t": "一般过去时用动词的过去式；begin 是不规则动词，过去式 begin→began，要单独记"
+  },
+  {
    "id": "fe203-2",
    "l": "g7",
    "s": "Our neighbours ___ outside to welcome us home.",
