@@ -8,6 +8,11 @@
  *    校验并存在 progress/pass.config.php；没有 PHP 时退回本机 localStorage 里的
  *    密码。解锁状态只在本标签页有效（sessionStorage），关掉页面就要重新输入。
  * 没有接口（纯静态托管）时自动退回 1)，不报错。
+ *
+ * ── 契约 ─────────────────────────────────────────────
+ * 依赖：无（仅 DOM / localStorage，不碰任何 data 全局）
+ * 导出：window.Store（唯一持久化口，get/set/profile/unlock…）
+ * 加载序：功能模块中必须第一个 —— wordbook/exam/cloze/app 都依赖 Store
  */
 (function () {
   "use strict";

@@ -1,3 +1,12 @@
+/* 主控：路由（屏幕切换）、词块拆句主玩法、设置与首页 HUD。
+ * 必须最后加载 —— 依赖前面所有模块导出的全局。
+ *
+ * ── 契约 ─────────────────────────────────────────────
+ * 依赖：window.SENTENCES（主玩法题源）· window.Store · window.AUDIO_EXTRA（预合成音频）
+ *       window.FSRS（句子侧复习调度）· window.WordBook（背单词入口）
+ * 导出：window.AppHome / window.WordBookHome（供各模块「回首页」惰性调用）
+ * 加载序：最后。各功能模块通过 DOM 按钮与本模块互调，均带 window.X && 守卫
+ */
 (() => {
   "use strict";
 

@@ -2,6 +2,11 @@
  * 数据：data/words.js（window.WORDS），跨册重复按拼写合并
  * 匹配：英文拼写（完全相同 > 前缀 > 短语整词命中 > 包含）+ 中文释义包含
  * 点结果 → 回调给 wordbook.js，打开该词的卡片
+ *
+ * ── 契约 ─────────────────────────────────────────────
+ * 依赖：window.WORDS（只读）
+ * 导出：window.WordSearch（被 wordbook.js 调起；选中词经 open() 的回调参数回传）
+ * 加载序：Store 之后、wordbook 之前即可（无状态，不依赖其他模块）
  */
 (function () {
   "use strict";

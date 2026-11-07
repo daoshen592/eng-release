@@ -1,5 +1,11 @@
 /* 背单词：卡片 + FSRS 间隔复习（vendor/ts-fsrs.umd.js，与句子侧同一调度器）
  * 数据：data/words.js（window.WORDS），进度存 localStorage
+ *
+ * ── 契约 ─────────────────────────────────────────────
+ * 依赖：window.WORDS · window.WORDIMG（配图名单）· window.AUDIO_EXTRA（预合成音频）
+ *       window.FSRS（vendor/ts-fsrs.umd.js）· window.Store · window.WordSearch
+ * 导出：window.WordBook = { start, finish, dueCount }（app.js 调起）
+ * 回首页：window.WordBookHome（app.js 定义，惰性调用须 && 守卫 —— app 加载在后）
  */
 (function () {
   "use strict";

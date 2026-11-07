@@ -6,6 +6,12 @@
  *   - 题量：一轮一篇（10 空），无题量选项
  *   - 抽题：没做过的篇先随机轮一遍（绝不重复），全轮完后按错题热度加权随机（cloze.prog），不读首页 level/size/order
  * 判分：逐空即时判定（选完即对错），错空进错空重做池（cloze.wrong，按空记）。
+ *
+ * ── 契约 ─────────────────────────────────────────────
+ * 依赖：window.CLOZES（题库）· window.Store（cloze.levels/prog/wrong 三键）
+ *       window.WORDS 可选（点词查义，缺失只禁用查词不报错）
+ * 导出：window.__CLOZE（调试 / 冒烟测试句柄）
+ * 加载序：Store 之后即可；入口按钮 #openCloze（首页），一轮一篇不读首页 level/size
  */
 (function () {
   const $ = (id) => document.getElementById(id);

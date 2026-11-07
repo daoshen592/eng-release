@@ -383,6 +383,18 @@
       </div>
     </div>
 
+    <!--
+      ═══ 加载契约（顺序不可调换，app.js 必须最后）═══
+      第一批 data/*.js：只定义全局变量，无逻辑
+        sentences → window.SENTENCES   words → window.WORDS     forms → window.FORMS
+        clozes → window.CLOZES         wordimg → window.WORDIMG  audio_extra → window.AUDIO_EXTRA
+      第二批 vendor/ts-fsrs.umd.js → window.FSRS（仅 wordbook/app 用）
+      第三批功能模块（互不 import，靠 window 全局通信）：
+        profile.js  定义 window.Store —— 唯一持久化口，必须最先（其余模块都要用）
+        search.js   定义 window.WordSearch（无状态，wordbook 调它）
+        wordbook.js / exam.js / cloze.js  各自独立，定义 window.WordBook / __EXAM / __CLOZE
+        app.js      主控 + 路由，依赖前面所有模块 —— 必须最后加载
+    -->
     <script src="data/sentences.js"></script>
     <script src="data/words.js"></script>
     <script src="data/forms.js"></script>

@@ -4,6 +4,12 @@
  *   first   首字母填空——同一题库，只给首字母和中文提示（多词答案除外）
  *   order   连词成句——句库语块打乱拖拽排序（data/sentences.js 的 chunks）
  * 难度 / 题量 / 抽题规则全部沿用首页设置（Store 的 level / size）。
+ *
+ * ── 契约 ─────────────────────────────────────────────
+ * 依赖：window.SENTENCES（order 题源）· window.FORMS（grammar/first 题源）· window.Store
+ *       window.WORDS 可选（词信息兜底，缺失不报错）
+ * 导出：window.__EXAM（调试 / 冒烟测试句柄）
+ * 加载序：Store 之后即可；入口按钮 #openExam（首页）
  */
 (function () {
   const $ = (id) => document.getElementById(id);
