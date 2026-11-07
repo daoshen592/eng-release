@@ -1397,3 +1397,24 @@ h1 {
 }
 .cztransbox::-webkit-scrollbar { width: 5px; }
 .cztransbox::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+
+/* ---------- 新版本提示条 ---------- */
+#swToast {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  margin: 0;
+  padding: 10px 22px;
+  background: var(--amber);
+  color: #14171f;
+  font-size: 14.5px;
+  font-weight: 600;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+#swToast:active { transform: translateX(-50%) scale(0.97); }

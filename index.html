@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- 新版本提示条：检测到新 SW 接管时出现，点一下刷新 -->
+    <div id="swToast" hidden role="status">
+      🚀 有新版本，点这里刷新
+    </div>
+
     <!-- 开始页 -->
     <section id="start" class="screen is-on">
       <div class="profiles" id="profiles" role="group" aria-label="切换档案">
@@ -430,8 +435,27 @@
       /* PWA 离线缓存：只有 https 或 localhost 下才注册（http 域名浏览器不允许，静默跳过不影响使用） */
       if ('serviceWorker' in navigator &&
           (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+        var swShown = false;
+        function showSwToast() {
+          if (swShown) return;
+          swShown = true;
+          var t = document.getElementById('swToast');
+          if (!t) return;
+          t.hidden = false;
+          t.addEventListener('click', function () { location.reload(); });
+        }
         addEventListener('load', function () {
           navigator.serviceWorker.register('sw.js').catch(function () {});
+          /* 新版本提醒：页面原本就有 SW 在控制、之后 SW 接管换成新 SW → 一定是一次更新。
+             （首装时没有旧控制器，claim 引发的 controllerchange 不算更新，不弹） */
+          var hadController = !!navigator.serviceWorker.controller;
+          navigator.serviceWorker.addEventListener('controllerchange', function () {
+            if (hadController) showSwToast();
+          });
+          /* 兜底：长驻页面每小时主动查一次更新（浏览器默认只在导航时查） */
+          setInterval(function () {
+            navigator.serviceWorker.getRegistration().then(function (r) { if (r) r.update(); }).catch(function () {});
+          }, 60 * 60 * 1000);
         });
       }
       /* 捐助弹窗 */
