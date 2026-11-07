@@ -18,6 +18,61 @@
   const KEY = "examprog";
   const ETYPES = [["grammar", "语法填空"], ["first", "首字母填空"], ["order", "连词成句"]];
   const WHY_ORDER = "先找主语和谓语搭出主干，再按中文意思把修饰语挂上去；标点跟着它所在的语块走。";
+
+  /* ---- 复习调度（与首页同一套 FSRS，参数一致）----
+     抽题优先级完全对齐首页智能模式：错题(当天回锅) > 新题 > 到期复习 > 未到期。
+     存储用独立键 exam.srs：专项题 id(f/sy/g/o 前缀)与首页句 id 不混，掌握度各自独立。 */
+  const F_LIB = window.FSRS;
+  const F_SCHED = F_LIB ? F_LIB.fsrs(
+    F_LIB.generatorParameters({ enable_fuzz: true, enable_short_term: false, request_retention: 0.9 })
+  ) : null;
+  const F_GOOD = F_LIB ? F_LIB.Rating.Good : null;
+  const F_AGAIN = F_LIB ? F_LIB.Rating.Again : null;
+  const F_MAX_IVAL = 365; // 天
+  const SRS_KEY = "exam.srs";
+
+  function dayNum() { return Math.floor(Date.now() / 86400000); }
+  function srsAll() {
+    try { return JSON.parse((window.Store && Store.get(SRS_KEY)) || "{}") || {}; }
+    catch (e) { return {}; }
+  }
+  function reviveCard(c) {
+    c.due = new Date(c.due);
+    if (c.last_review) c.last_review = new Date(c.last_review);
+    return c;
+  }
+  function dueDay(rec) { return Math.floor(new Date(rec.due).getTime() / 86400000); }
+  /* 判对错时更新掌握度（与首页 gradeSentence 同款二值映射 + miss 标记 + 当天回锅） */
+  function gradeItem(id, ok) {
+    if (!F_SCHED || !id) return;
+    const all = srsAll();
+    const now = new Date();
+    const card = all[id] ? reviveCard(all[id]) : F_LIB.createEmptyCard(now);
+    const next = F_SCHED.next(card, now, ok ? F_GOOD : F_AGAIN).card;
+    next.miss = !ok;
+    if (!ok) {
+      next.due = new Date(now.getTime() + 5 * 60000);      // 答错 5 分钟后回锅
+    } else {
+      if ((next.due - now) / 86400000 > F_MAX_IVAL) {
+        next.due = new Date(now.getTime() + F_MAX_IVAL * 86400000);
+      }
+      if (dueDay(next.due) <= dayNum()) {
+        next.due = new Date(now.getTime() + 86400000);     // 下限 1 天
+      }
+    }
+    all[id] = next;
+    if (window.Store) Store.set(SRS_KEY, JSON.stringify(all));
+  }
+  /* 抽题优先级（与首页 smartPick 一致）：错题 > 新题 > 到期复习 > 未到期 */
+  function srsHeat(it) {
+    const all = srsAll();
+    const today = dayNum();
+    const r = all[it.id];
+    if (!r) return 1;                                    // 新题：次高优先
+    if (dueDay(r) <= today && r.miss) return 0;          // 错题：最高优先
+    if (dueDay(r) <= today) return 2;                    // 到期复习
+    return 3;                                            // 未到期
+  }
   /* 一轮多少题不单独设，跟首页「本轮题量」（20 句 / 50 句 / 全部）保持一致 */
   function readSize(pool) {
     let raw = "20";
@@ -101,6 +156,7 @@
     p.t = Date.now();
     S.prog[id] = p;
     saveProg();
+    gradeItem(id, good);   // 同步更新 FSRS 掌握度，抽题优先级与首页对齐
   }
 
   function levelPool() {
@@ -176,12 +232,9 @@
   function buildOrderRound() {
     const pool = orderPool();
     if (!pool.length) return [];
-    const heat = (it) => {
-      const p = S.prog[it.id] || {};
-      return (p.w || 0) * 2 - (p.o || 0) + (p.t ? 0 : 0.4) + Math.random() * 1.2;
-    };
     const n = readSize(pool);
-    return pool.slice().sort((a, b) => heat(b) - heat(a)).slice(0, n)
+    return pool.slice().sort((a, b) => srsHeat(a) - srsHeat(b) || Math.random() - 0.5)
+      .slice(0, n)
       .sort(() => Math.random() - 0.5);
   }
 
@@ -189,18 +242,15 @@
     if (S.etype === "order") return buildOrderRound();
     const pool = currentPool();
     if (!pool.length) return [];
-    const heat = (it) => {
-      const p = S.prog[it.id] || {};
-      return (p.w || 0) * 2 - (p.o || 0) + (p.t ? 0 : 0.4) + Math.random() * 1.2;
-    };
-    // 按考点分组：过去式/复数占题库七成，纯按热度抽会一轮全是一种
+    // 按考点分组：过去式/复数占题库比例大，纯按热度抽会一轮全是一种
     const groups = new Map();
     pool.forEach((it) => {
       const arr = groups.get(it.k) || [];
       arr.push(it);
       groups.set(it.k, arr);
     });
-    groups.forEach((arr) => arr.sort((a, b) => heat(b) - heat(a)));
+    // 组内按 FSRS 优先级排序（错题>新题>到期>未到期），同优先级随机打散
+    groups.forEach((arr) => arr.sort((a, b) => srsHeat(a) - srsHeat(b) || Math.random() - 0.5));
     const n = readSize(pool);
     /* 每类轮转的起点逐轮后移：题量小于考点数时（20 题对 21 类），
        固定顺序会让末尾的构词法/非谓语永远轮不到，偏移一位就能几轮转完 */
