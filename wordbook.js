@@ -90,18 +90,19 @@
   function say(word) {
     if (!word) return;
     stopSay();
-    if (word.a) {
-      audioEl = new Audio("audio/w/" + word.a + ".mp3");
-      audioEl.play().catch(() => tts(word.w));
-      return;
-    }
     const src = EXTRA.words[normKey(word.w)];
-    if (src) {
+    const playExtra = () => {
+      if (!src) { tts(word.w); return; }
       audioEl = new Audio("audio/" + src);
       audioEl.play().catch(() => tts(word.w));
+    };
+    if (word.a) {
+      // a 指向的真人录音可能缺文件（word-atlas 映射悬空）→ 合成音 → 系统 TTS
+      audioEl = new Audio("audio/w/" + word.a + ".mp3");
+      audioEl.play().catch(playExtra);
       return;
     }
-    tts(word.w);
+    playExtra();
   }
 
   /* ---------- 队列 ---------- */

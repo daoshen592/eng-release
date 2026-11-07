@@ -189,18 +189,26 @@
   }
   function playWord(word, rate = 1) {
     const key = normKey(word.t);
+    const fallback = () => {
+      const f2 = EXTRA.words[key];
+      if (f2) playFile("audio/" + f2, rate);
+      else speak(word.t.replace(/[^A-Za-z']/g, ""), 0.85);
+    };
     // 只有录音文件名与词形完全一致才敢用真人录音：
     // teacher→teach、summer→sum、it's→it 这类旧映射点了会读成别的词，优先用重录的音
-    if (word.a && word.a === key) { playFile("audio/w/" + word.a + ".mp3", rate); return; }
+    if (word.a && word.a === key) {
+      playFile("audio/w/" + word.a + ".mp3", rate, fallback); // 文件缺失→合成音→TTS
+      return;
+    }
     const f = EXTRA.words[key];
     if (f) {
       playFile("audio/" + f, rate, () => {
-        if (word.a) playFile("audio/w/" + word.a + ".mp3", rate);
+        if (word.a) playFile("audio/w/" + word.a + ".mp3", rate, () => speak(word.t.replace(/[^A-Za-z']/g, ""), 0.85));
         else speak(word.t.replace(/[^A-Za-z']/g, ""), 0.85);
       });
       return;
     }
-    if (word.a) { playFile("audio/w/" + word.a + ".mp3", rate); return; }
+    if (word.a) { playFile("audio/w/" + word.a + ".mp3", rate, () => speak(word.t.replace(/[^A-Za-z']/g, ""), 0.85)); return; }
     speak(word.t.replace(/[^A-Za-z']/g, ""), 0.85); // 再不行才用系统 TTS
   }
   /* 兜底：TTS 不出声时，按词序逐个播真人录音（没录音的虚词跳过），
