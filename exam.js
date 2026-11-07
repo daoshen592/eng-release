@@ -801,6 +801,7 @@
       b.addEventListener("click", () => {
         if (S.etype === k) return;
         S.etype = k;
+        S.kind = "";   // 换入口就回到「全部」，不残留上次选的考点
         saveEtype();
         start();
       });

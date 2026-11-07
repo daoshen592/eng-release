@@ -1839,6 +1839,17 @@
    "t": "There be 句型中 be 动词与后面紧跟的名词保持一致（就近原则），单数用 is/was，复数用 are/were。"
   },
   {
+   "id": "sy15-q_wh",
+   "l": "primary",
+   "s": "___ is my schoolbag?",
+   "zh": "我的书包在哪里？",
+   "b": "",
+   "z": "",
+   "k": "q_wh",
+   "a": "Where",
+   "t": "特殊疑问句用疑问词开头，后接一般疑问句语序，针对具体内容提问。"
+  },
+  {
    "id": "sy17-num",
    "l": "primary",
    "s": "There are ___ books on the desk.",
@@ -1861,6 +1872,138 @@
    "t": "There be 句型中 be 动词与后面紧跟的名词保持一致（就近原则），单数用 is/was，复数用 are/were。"
   },
   {
+   "id": "sy2235-q_gen",
+   "l": "primary",
+   "s": "___ you know this English word?",
+   "zh": "你认识这个英语单词吗？",
+   "b": "",
+   "z": "",
+   "k": "q_gen",
+   "a": "Do",
+   "t": "一般疑问句把助动词/be 动词/情态动词提到句首，用 yes/no 回答。"
+  },
+  {
+   "id": "sy2299-q_gen",
+   "l": "primary",
+   "s": "___ you like some tea or coffee?",
+   "zh": "你想要茶还是咖啡？",
+   "b": "",
+   "z": "",
+   "k": "q_gen",
+   "a": "Would",
+   "t": "一般疑问句把助动词/be 动词/情态动词提到句首，用 yes/no 回答。"
+  },
+  {
+   "id": "sy2310-q_gen",
+   "l": "primary",
+   "s": "___ I use your eraser, please?",
+   "zh": "我可以用一下你的橡皮吗？",
+   "b": "",
+   "z": "",
+   "k": "q_gen",
+   "a": "May",
+   "t": "一般疑问句把助动词/be 动词/情态动词提到句首，用 yes/no 回答。"
+  },
+  {
+   "id": "sy24-q_wh",
+   "l": "primary",
+   "s": "___ bag is this?",
+   "zh": "这是谁的包？",
+   "b": "",
+   "z": "",
+   "k": "q_wh",
+   "a": "Whose",
+   "t": "特殊疑问句用疑问词开头，后接一般疑问句语序，针对具体内容提问。"
+  },
+  {
+   "id": "sy2766-excl",
+   "l": "primary",
+   "s": "___ a nice dog!",
+   "zh": "多好的一只狗啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "What",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy2767-excl",
+   "l": "primary",
+   "s": "___ nice!",
+   "zh": "真好啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "How",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy2768-excl",
+   "l": "primary",
+   "s": "___ a big apple!",
+   "zh": "好大的一个苹果啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "What",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy2769-excl",
+   "l": "primary",
+   "s": "___ happy we are!",
+   "zh": "我们多么幸福啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "How",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy2770-excl",
+   "l": "primary",
+   "s": "___ beautiful!",
+   "zh": "真美啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "How",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy2771-excl",
+   "l": "primary",
+   "s": "___ a tall tree!",
+   "zh": "好高的一棵树啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "What",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy2772-excl",
+   "l": "primary",
+   "s": "___ cold it is!",
+   "zh": "天真冷啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "How",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy2773-excl",
+   "l": "primary",
+   "s": "___ a lovely cat!",
+   "zh": "多可爱的一只猫啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "What",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
    "id": "sy289-num",
    "l": "primary",
    "s": "How old are you? I am ___.",
@@ -1870,6 +2013,39 @@
    "k": "num",
    "a": "nine",
    "t": "数词注意基数词与序数词的用法，时间表达用 at + 时刻。"
+  },
+  {
+   "id": "sy295-q_gen",
+   "l": "primary",
+   "s": "___ I come in, please?",
+   "zh": "我可以进来吗？",
+   "b": "",
+   "z": "",
+   "k": "q_gen",
+   "a": "May",
+   "t": "一般疑问句把助动词/be 动词/情态动词提到句首，用 yes/no 回答。"
+  },
+  {
+   "id": "sy301-q_gen",
+   "l": "primary",
+   "s": "___ I borrow your pen?",
+   "zh": "我可以借你的钢笔吗？",
+   "b": "",
+   "z": "",
+   "k": "q_gen",
+   "a": "Can",
+   "t": "一般疑问句把助动词/be 动词/情态动词提到句首，用 yes/no 回答。"
+  },
+  {
+   "id": "sy303-q_wh",
+   "l": "primary",
+   "s": "___ book is on the desk?",
+   "zh": "桌子上是谁的书？",
+   "b": "",
+   "z": "",
+   "k": "q_wh",
+   "a": "Whose",
+   "t": "特殊疑问句用疑问词开头，后接一般疑问句语序，针对具体内容提问。"
   },
   {
    "id": "sy305-there",
@@ -1927,6 +2103,17 @@
    "t": "There be 句型中 be 动词与后面紧跟的名词保持一致（就近原则），单数用 is/was，复数用 are/were。"
   },
   {
+   "id": "sy337-q_gen",
+   "l": "primary",
+   "s": "___ you cook noodles?",
+   "zh": "你会煮面条吗？",
+   "b": "",
+   "z": "",
+   "k": "q_gen",
+   "a": "Can",
+   "t": "一般疑问句把助动词/be 动词/情态动词提到句首，用 yes/no 回答。"
+  },
+  {
    "id": "sy348-there",
    "l": "primary",
    "s": "There ___ twelve months in a year.",
@@ -1936,6 +2123,39 @@
    "k": "there",
    "a": "are",
    "t": "There be 句型中 be 动词与后面紧跟的名词保持一致（就近原则），单数用 is/was，复数用 are/were。"
+  },
+  {
+   "id": "sy351-q_wh",
+   "l": "primary",
+   "s": "___ time is it now?",
+   "zh": "现在几点了？",
+   "b": "",
+   "z": "",
+   "k": "q_wh",
+   "a": "What",
+   "t": "特殊疑问句用疑问词开头，后接一般疑问句语序，针对具体内容提问。"
+  },
+  {
+   "id": "sy360-q_wh",
+   "l": "primary",
+   "s": "___ can I get to the zoo?",
+   "zh": "我怎样才能到动物园？",
+   "b": "",
+   "z": "",
+   "k": "q_wh",
+   "a": "How",
+   "t": "特殊疑问句用疑问词开头，后接一般疑问句语序，针对具体内容提问。"
+  },
+  {
+   "id": "sy366-q_gen",
+   "l": "primary",
+   "s": "___ I have a look at that bag?",
+   "zh": "我可以看看那个包吗？",
+   "b": "",
+   "z": "",
+   "k": "q_gen",
+   "a": "Can",
+   "t": "一般疑问句把助动词/be 动词/情态动词提到句首，用 yes/no 回答。"
   },
   {
    "id": "sy44-num",
@@ -1982,6 +2202,17 @@
    "t": "There be 句型中 be 动词与后面紧跟的名词保持一致（就近原则），单数用 is/was，复数用 are/were。"
   },
   {
+   "id": "sy47-q_wh",
+   "l": "primary",
+   "s": "___ much is this pencil?",
+   "zh": "这支铅笔多少钱？",
+   "b": "",
+   "z": "",
+   "k": "q_wh",
+   "a": "How",
+   "t": "特殊疑问句用疑问词开头，后接一般疑问句语序，针对具体内容提问。"
+  },
+  {
    "id": "sy48-num",
    "l": "primary",
    "s": "I go to bed at ___.",
@@ -2004,6 +2235,28 @@
    "t": "数词注意基数词与序数词的用法，时间表达用 at + 时刻。"
   },
   {
+   "id": "sy5-q_wh",
+   "l": "primary",
+   "s": "___'s your name?",
+   "zh": "你叫什么名字？",
+   "b": "",
+   "z": "",
+   "k": "q_wh",
+   "a": "What",
+   "t": "特殊疑问句用疑问词开头，后接一般疑问句语序，针对具体内容提问。"
+  },
+  {
+   "id": "sy51-q_gen",
+   "l": "primary",
+   "s": "___ you like some bread?",
+   "zh": "你想要一些面包吗？",
+   "b": "",
+   "z": "",
+   "k": "q_gen",
+   "a": "Would",
+   "t": "一般疑问句把助动词/be 动词/情态动词提到句首，用 yes/no 回答。"
+  },
+  {
    "id": "sy55-impy",
    "l": "primary",
    "s": "___ pass me the chopsticks.",
@@ -2024,6 +2277,17 @@
    "k": "impy",
    "a": "Go",
    "t": "祈使句以动词原形开头，否定在句首加 Don't，表示请求或命令。"
+  },
+  {
+   "id": "sy70-q_wh",
+   "l": "primary",
+   "s": "___ is the cinema?",
+   "zh": "电影院在哪里？",
+   "b": "",
+   "z": "",
+   "k": "q_wh",
+   "a": "Where",
+   "t": "特殊疑问句用疑问词开头，后接一般疑问句语序，针对具体内容提问。"
   },
   {
    "id": "sy79-there",
@@ -5412,6 +5676,17 @@
    "l": "g7",
    "s": "___ an exciting game!",
    "zh": "多么激动人心的一场比赛啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "What",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy2780-excl",
+   "l": "g7",
+   "s": "___ beautiful flowers!",
+   "zh": "多么漂亮的花啊！",
    "b": "",
    "z": "",
    "k": "excl",
@@ -10941,6 +11216,17 @@
    "t": "used to 表示过去常常做某事或过去的状态，后接动词原形。"
   },
   {
+   "id": "sy3055-excl",
+   "l": "g8",
+   "s": "___ wonderful the show is!",
+   "zh": "这场演出多么精彩啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "How",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
    "id": "sy477-freq",
    "l": "g8",
    "s": "Have you ___ been to the Great Wall?",
@@ -16324,6 +16610,28 @@
    "l": "g9",
    "s": "___ careful the doctor is!",
    "zh": "这位医生多么细心啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "How",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy3052-excl",
+   "l": "g9",
+   "s": "___ great progress you have made!",
+   "zh": "你取得了多么大的进步啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "What",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy3053-excl",
+   "l": "g9",
+   "s": "___ exciting the football match was!",
+   "zh": "这场足球赛多么激动人心啊！",
    "b": "",
    "z": "",
    "k": "excl",
