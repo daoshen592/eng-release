@@ -1,12 +1,12 @@
 /**
- * 专项练习 · 三题型
- *   grammar 语法填空——把句中已有的正确变形挖空，括号里给原形（data/forms.js）
- *   first   首字母填空——同一题库，只给首字母和中文提示（多词答案除外）
+ * 专项练习 · 三入口
+ *   lex     词法——把句中已有的正确变形挖空，括号里给原形（data/forms.js 的词法类考点）
+ *   syntax  句法句型——同一题库，挖功能词/结构词（data/forms.js 的句法类考点）
  *   order   连词成句——句库语块打乱拖拽排序（data/sentences.js 的 chunks）
  * 难度 / 题量 / 抽题规则全部沿用首页设置（Store 的 level / size）。
  *
  * ── 契约 ─────────────────────────────────────────────
- * 依赖：window.SENTENCES（order 题源）· window.FORMS（grammar/first 题源）· window.Store
+ * 依赖：window.SENTENCES（order 题源）· window.FORMS（lex/syntax 题源）· window.Store
  *       window.WORDS 可选（词信息兜底，缺失不报错）
  * 导出：window.__EXAM（调试 / 冒烟测试句柄）
  * 加载序：Store 之后即可；入口按钮 #openExam（首页）
@@ -16,7 +16,7 @@
   const ITEMS = (window.FORMS && window.FORMS.items) || [];
   const SENT = (window.SENTENCES && window.SENTENCES.sentences) || [];
   const KEY = "examprog";
-  const ETYPES = [["grammar", "语法填空"], ["first", "首字母填空"], ["order", "连词成句"]];
+  const ETYPES = [["lex", "词法"], ["syntax", "句法句型"], ["order", "连词成句"]];
   const WHY_ORDER = "先找主语和谓语搭出主干，再按中文意思把修饰语挂上去；标点跟着它所在的语块走。";
 
   /* ---- 复习调度（与首页同一套 FSRS，参数一致）----
@@ -87,7 +87,7 @@
   }
 
   const S = { list: [], i: 0, ok: 0, bad: 0, phase: "ask", prog: {}, wrongIds: [], kind: "",
-    etype: "grammar", order: [], pick: -1 };
+    etype: "lex", order: [], pick: -1 };
 
   /* 考点中文名与展示顺序（无提示题在前，主干在前，补充考点在后） */
   const KIND_NAME = {
@@ -109,17 +109,23 @@
     "adv", "be", "po", "pa", "pn", "poss", "ord", "refl", "indef", "freq", "num", "inf", "der",
     "there", "impy", "excl", "q_gen", "q_wh", "future", "conj", "mod",
     "cl_o", "cl_r", "cl_a", "so_that", "too_to", "usedto", "it", "q_tag"];
-  /* 考点分组：词法(语法项目) / 句法(句法句型) */
+  /* 考点分组：句法句型（其余 KIND_ORDER 里的都是词法类） */
   const SYNTAX_KINDS = new Set(["there", "impy", "excl", "q_gen", "q_wh", "future",
     "conj", "mod", "cl_o", "cl_r", "cl_a", "so_that", "too_to",
     "usedto", "it", "q_tag"]);
+  /* 当前入口只出哪一类考点：lex 取词法、syntax 取句法、order 不适用 */
+  function kindInEtype(k) {
+    if (S.etype === "syntax") return SYNTAX_KINDS.has(k);
+    if (S.etype === "lex") return !SYNTAX_KINDS.has(k);
+    return true;
+  }
 
   function readEtype() {
     try {
       const v = window.Store && Store.get("etype");
       if (ETYPES.some(([k]) => k === v)) return v;
     } catch (e) { /* 忽略 */ }
-    return "grammar";
+    return "lex";
   }
 
   function saveEtype() {
@@ -166,7 +172,7 @@
 
   function currentPool() {
     let base = levelPool();
-    if (S.etype === "first") base = base.filter((it) => !it.a.includes(" "));
+    if (S.etype !== "order") base = base.filter((it) => kindInEtype(it.k));
     return S.kind ? base.filter((it) => it.k === S.kind) : base;
   }
 
@@ -191,7 +197,7 @@
   function renderKinds(pool) {
     if (S.etype === "order") { $("exKinds").hidden = true; return; }
     $("exKinds").hidden = false;
-    const base = pool || levelPool();
+    const base = pool || levelPool().filter((it) => kindInEtype(it.k));
     const cnt = new Map();
     base.forEach((it) => cnt.set(it.k, (cnt.get(it.k) || 0) + 1));
     if (S.kind && !cnt.get(S.kind)) S.kind = "";
@@ -214,17 +220,8 @@
       box.append(b);
     };
     add("", "全部", base.length);
-    // 分组标题：语法项目（词法）在前，句法句型（句法）在后
-    const addHead = (label) => {
-      const h = document.createElement("span");
-      h.className = "ekind-head";
-      h.textContent = label;
-      box.append(h);
-    };
-    let inSyntax = false;
     KIND_ORDER.forEach((k) => {
       if (!cnt.get(k)) return;
-      if (SYNTAX_KINDS.has(k) && !inSyntax) { addHead("句法句型"); inSyntax = true; }
       add(k, KIND_NAME[k] || k, cnt.get(k));
     });
   }
@@ -418,11 +415,10 @@
     input.setAttribute("inputmode", "latin");
     input.setAttribute("enterkeyhint", "go"); // 手机键盘右下角显示「前往」而非「换行」
     input.setAttribute("aria-label", it.b ? "填入单词的正确形式" : "填入合适的词");
-    /* 框宽：ch 单位按数字 0 量宽，特粗体的大写 M/W 实际接近 1.7ch，首字母预填的
-       常是大写字母，按 len+1ch 给框必窄；且居中对齐下一旦超宽两端同时被裁（吞字观感）。
+    /* 框宽：ch 单位按数字 0 量宽，特粗体的大写 M/W 实际接近 1.7ch，按 len+1ch 给框必窄；
+       且居中对齐下一旦超宽两端同时被裁（吞字观感）。
        改用 0.8em/字符估宽并随输入自动加宽；无提示题保底 4 字符宽度，不泄露答案长度 */
-    const firstMode = S.etype === "first";
-    const minLen = firstMode || it.b ? it.a.length : 4;
+    const minLen = it.b ? it.a.length : 4;
     const fit = () => {
       input.style.width = (Math.max(input.value.length, minLen) * 0.8 + 1.6) + "em";
     };
@@ -441,10 +437,7 @@
     });
     p.append(input);
     const base = document.createElement("span");
-    if (firstMode) {
-      base.className = "ebase";
-      base.textContent = " (" + it.a[0] + "…" + (it.z ? " · " + it.z : "") + ")";
-    } else if (it.b) {
+    if (it.b) {
       base.className = "ebase";
       base.textContent = " (" + it.b + ")";
     } else if (it.z) {
@@ -457,18 +450,13 @@
     }
     p.append(base);
     putTokens(after);
-    if (firstMode) input.value = it.a[0];
 
     $("exCheck").hidden = false;
     $("exNext").hidden = true;
     $("exWhy").hidden = true;
-    /* 首字母模式预填了首字母：部分手机浏览器 focus() 会把光标放到最前面，
-       孩子打的字全插到预填字母前面，看起来就是「吞字/乱序」——强制钉到末尾 */
     setTimeout(() => {
       if (!input) return;
       input.focus();
-      const n = input.value.length;
-      try { input.setSelectionRange(n, n); } catch (e) { /* 某些类型不支持时忽略 */ }
     }, 30);
   }
 
@@ -738,9 +726,7 @@
     }
     $("exHintBar").textContent = S.kind
       ? `只练：${KIND_NAME[S.kind] || S.kind}　${n}`
-      : S.etype === "first"
-        ? `按首字母和中文提示填出整词　难度/题量沿用首页设置　${n}`
-        : `括号里给原形的填正确形式，没括号的填合适的词　${n}`;
+      : `括号里给原形的填正确形式，没括号的填合适的词　${n}`;
   }
 
   function start() {

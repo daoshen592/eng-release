@@ -1055,7 +1055,7 @@ h1 {
 }
 
 
-/* 题型切换条：语法填空 / 首字母填空 / 连词成句（复用考点章胶囊样式） */
+/* 入口切换条：词法 / 句法句型 / 连词成句（复用考点章胶囊样式） */
 .etypes { justify-content: center; }
 .etype { color: var(--text); font-weight: 700; }
 .etype.on { border-color: var(--amber); color: var(--amber); background: rgba(255, 181, 69, 0.08); }
@@ -1125,21 +1125,6 @@ h1 {
   background: rgba(255, 181, 69, 0.1);
 }
 .ekind.on b { color: var(--amber); }
-/* 考点分组小标题：语法项目 / 句法句型 */
-.ekind-head {
-  flex: 0 0 100%;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: var(--dim);
-  opacity: 0.7;
-  margin-top: 8px;
-  padding-left: 2px;
-}
-.ekind-head:first-of-type { margin-top: 0; }
-@media (max-width: 620px) {
-  .ekind-head { flex: 0 0 auto; margin-top: 0; margin-right: 2px; align-self: center; }
-}
-
 /* ---------- 子页面左上角返回 ---------- */
 .hud-back {
   display: inline-grid; place-items: center;
