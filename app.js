@@ -34,7 +34,6 @@
     levels: ["primary"],
     size: "20",
     order: "smart",
-    gtag: "all",
     typed: "",
     target: "",
     chars: [],
@@ -636,49 +635,6 @@
     return state.data.filter((s) => set.has(s.level));
   }
 
-  /* 语法点筛选（src/grammar_tag.py 打的 g 字段）：默认不筛，选了就按标签过池子 */
-  const GTAGS = [
-    ["all", "全部句子"], ["clause_o", "宾语从句"], ["clause_r", "定语从句"],
-    ["clause_adv", "状语从句"], ["there", "There be"], ["imp", "祈使句"],
-    ["excl", "感叹句"], ["modal", "情态动词"], ["comp", "比较等级"],
-  ];
-  function readGtag() {
-    const v = Store.get("gtag");
-    return GTAGS.some(([k]) => k === v) ? v : "all";
-  }
-  function gtagName() {
-    const f = GTAGS.find(([k]) => k === state.gtag);
-    return f && f[0] !== "all" ? f[1] : "";
-  }
-  function gtagPool() {
-    const p = levelPool();
-    if (state.gtag === "all") return p;
-    return p.filter((s) => (s.g || []).includes(state.gtag));
-  }
-  function renderGtagOptions() {
-    const menu = $("gtags");
-    const btn = $("gselBtn");
-    if (!menu || !btn) return;
-    const base = levelPool();
-    const cnt = {};
-    base.forEach((s) => (s.g || []).forEach((t) => (cnt[t] = (cnt[t] || 0) + 1)));
-    // 选中项在当前难度下没题 → 回到全部（避免抽到空池）
-    if (state.gtag !== "all" && !cnt[state.gtag]) {
-      state.gtag = "all";
-      Store.set("gtag", "all");
-    }
-    menu.innerHTML = GTAGS.map(([k, label]) => {
-      const n = k === "all" ? base.length : cnt[k] || 0;
-      const dis = k !== "all" && !n ? " disabled" : "";
-      const cur = k === state.gtag ? " is-on" : "";
-      return `<button type="button" class="gitem${cur}" data-g="${k}"${dis}>${label} · ${n}</button>`;
-    }).join("");
-    // 触发按钮文字 = 当前选中项 + 数量
-    const curLabel = (GTAGS.find(([k]) => k === state.gtag) || GTAGS[0])[1];
-    const curN = state.gtag === "all" ? base.length : cnt[state.gtag] || 0;
-    btn.textContent = `${curLabel} · ${curN}`;
-  }
-
   function levelName() {
     if (state.levels.includes("all")) return "所有";
     return state.levels
@@ -710,7 +666,8 @@
 
   function pickQueue(pool, take) {
     if (state.order === "seq") {
-      const key = `cursor.${state.levels.join("+")}.${state.gtag}`;
+      // 末段固定 all：旧版键里存的是语法筛选值，保留它才不会让老用户「接着上次」的进度归零
+      const key = `cursor.${state.levels.join("+")}.all`;
       let pos = Number(Store.get(key) || 0);
       if (!(pos >= 0 && pos < pool.length)) pos = 0;
       const out = [];
@@ -753,26 +710,24 @@
 
   function updateBegin() {
     if (!state.data.length || !$("begin")) return;
-    renderGtagOptions();
-    const n = gtagPool().length;
+    const n = levelPool().length;
     $("begin").disabled = n === 0;
     if (!n) {
-      $("begin").textContent = state.gtag === "all" ? `该难度暂时没有例句` : `该语法点下暂时没有例句`;
+      $("begin").textContent = `该难度暂时没有例句`;
       return;
     }
     const take = state.size === "all" ? n : Math.min(Number(state.size) || 20, n);
     const tag = state.order === "seq" ? " · 接着上次" : "";
-    const gname = gtagName() ? ` · ${gtagName()}` : "";
     $("begin").textContent =
       state.size === "all"
-        ? `开始 · 全部 ${take} 句（${levelName()}${gname}${tag}）`
-        : `开始 · ${take} 句（${levelName()}${gname} ${n} 句${tag}）`;
+        ? `开始 · 全部 ${take} 句（${levelName()}${tag}）`
+        : `开始 · ${take} 句（${levelName()} ${n} 句${tag}）`;
   }
 
   function renderSrsInfo() {
     const el = $("srsInfo");
     if (!el || !state.data.length) return;
-    const pool = gtagPool();
+    const pool = levelPool();
     const all = srsAll();
     const today = dayNum();
     let done = 0;
@@ -787,11 +742,11 @@
       done++;
       if (dueDay(r) <= today) due++;
     });
-    el.textContent = `${levelName()}${gtagName() ? " · " + gtagName() : ""} 共 ${pool.length} 句 · 已练 ${done} · 待复习 ${due} · 未练 ${fresh}`;
+    el.textContent = `${levelName()} 共 ${pool.length} 句 · 已练 ${done} · 待复习 ${due} · 未练 ${fresh}`;
   }
 
   function start() {
-    const pool = gtagPool().slice().sort((a, b) => a.id - b.id);
+    const pool = levelPool().slice().sort((a, b) => a.id - b.id);
     state.pool = pool.length ? pool : state.data;
     const take = state.size === "all" ? state.pool.length : Math.min(Number(state.size) || 20, state.pool.length);
     state.queue = pickQueue(state.pool, take);
@@ -1018,34 +973,6 @@
     });
   });
 
-  /* 自绘语法点下拉：按钮开合、菜单点选、点外部/Esc 关闭 */
-  $("gselBtn").addEventListener("click", (e) => {
-    e.stopPropagation();
-    const menu = $("gtags");
-    menu.hidden = !menu.hidden;
-  });
-  $("gtags").addEventListener("click", (e) => {
-    const item = e.target.closest(".gitem");
-    if (!item || item.disabled) return;
-    const v = item.dataset.g;
-    if (!GTAGS.some(([k]) => k === v)) return;
-    state.gtag = v;
-    Store.set("gtag", state.gtag);
-    $("gtags").hidden = true;
-    updateBegin();      // 内部会重渲染菜单（数量随难度变）
-    renderSrsInfo();
-  });
-  document.addEventListener("click", (e) => {
-    const menu = $("gtags");
-    if (!menu || menu.hidden) return;
-    if (!e.target.closest("#gselWrap")) menu.hidden = true;
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      const menu = $("gtags");
-      if (menu && !menu.hidden) menu.hidden = true;
-    }
-  });
   $("begin").addEventListener("click", start);
   $("sizes").addEventListener("click", (e) => {
     const btn = e.target.closest(".chip");
@@ -1283,7 +1210,6 @@
     state.levels = readLevels();
     state.size = readSize();
     state.order = readOrder();
-    state.gtag = readGtag();
     state.kbdSound = Store.get("kbdSound") !== "0";
     renderKbdBtn();
     syncProfileUI();
@@ -1318,7 +1244,6 @@
       state.levels = readLevels();
       state.size = readSize();
       state.order = readOrder();
-      state.gtag = readGtag();
       syncProfileUI();
       renderMode();
       renderSizes();
