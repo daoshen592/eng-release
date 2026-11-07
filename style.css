@@ -49,6 +49,9 @@ body {
 .screen {
   position: fixed;
   inset: 0;
+  /* iOS 键盘弹出时布局视口不缩，底部会被键盘盖住：app.js 监听 visualViewport
+     把键盘高度写进 --kb，底边上抬让内容回到可视区（Android 视口自己缩，--kb 恒 0） */
+  bottom: var(--kb, 0px);
   display: none;
   flex-direction: column;
   align-items: center;
@@ -781,7 +784,8 @@ h1 {
   .combo em { font-size: 22px; }
   .blocks { gap: 10px 12px; }
   .words { border-radius: 10px; }
-  .zhs { display: none; }
+  /* 词块中文释义：手机端也显示，小一号（11px）省空间；之前整体隐藏导致手机看不到 */
+  .zhs span { font-size: 11px; }
   .tags span { padding: 2px 7px; }
   .tips .kbd { display: none; }
 
@@ -845,6 +849,7 @@ h1 {
 
 .lockmask {
   position: fixed; inset: 0;
+  bottom: var(--kb, 0px); /* 同 .screen：iOS 键盘弹出时密码框不被盖住 */
   z-index: 60;
   display: grid; place-items: center;
   padding: 24px;

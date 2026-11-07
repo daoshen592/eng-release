@@ -247,6 +247,18 @@
     else playSeq(group);
   }
 
+  /* iOS 键盘遮挡处理：布局视口不随键盘缩小，用 visualViewport 差值写 --kb，
+     .screen / .lockmask 的 bottom 据此上抬（Android 视口自己缩，差值≈0 不生效） */
+  if (window.visualViewport) {
+    const vv = window.visualViewport;
+    const applyKb = () => {
+      const kb = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+      document.documentElement.style.setProperty("--kb", kb + "px");
+    };
+    vv.addEventListener("resize", applyKb);
+    vv.addEventListener("scroll", applyKb);
+  }
+
   /* ---------------- 渲染 ---------------- */
   function renderSentence(s) {
     const blocks = $("blocks");
@@ -417,6 +429,10 @@
     state.lastLen = typed.length;
     state.typed = typed;
     paint();
+    /* 长句 + 小屏 + 键盘遮挡：把正在打的词块滚进可视区（已可见时 nearest 不滚动） */
+    const sp = state.chars[state.typed.length];
+    const ck = sp && sp.closest ? sp.closest(".chunk") : null;
+    if (ck && ck.scrollIntoView) ck.scrollIntoView({ block: "nearest" });
 
     if (typed.length >= state.target.length) {
       if (typed === state.target) complete();
