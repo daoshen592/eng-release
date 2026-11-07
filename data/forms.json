@@ -959,17 +959,6 @@
    "t": "goose 的复数是不规则变化 goose→geese，要单独记"
   },
   {
-   "id": "f2988",
-   "l": "primary",
-   "s": "There are two ___ of the apple.",
-   "zh": "苹果有两半。",
-   "b": "half",
-   "z": "一半",
-   "k": "s",
-   "a": "halves",
-   "t": "half 的复数是不规则变化 half→halves，要单独记"
-  },
-  {
    "id": "f2989",
    "l": "primary",
    "s": "There are many ___ in big cities.",
@@ -1001,6 +990,17 @@
    "k": "be",
    "a": "are",
    "t": "主语是 you，be 动词一律用 are"
+  },
+  {
+   "id": "f3057",
+   "l": "primary",
+   "s": "The apple is in two ___.",
+   "zh": "苹果被切成两半。",
+   "b": "half",
+   "z": "一半",
+   "k": "s",
+   "a": "halves",
+   "t": "half 的复数是不规则变化 half→halves，要单独记"
   },
   {
    "id": "f310",
@@ -11205,17 +11205,6 @@
    "t": "used to 表示过去常常做某事或过去的状态，后接动词原形。"
   },
   {
-   "id": "sy3017-usedto",
-   "l": "g8",
-   "s": "He ___ to be very shy before.",
-   "zh": "他以前很害羞。",
-   "b": "",
-   "z": "",
-   "k": "usedto",
-   "a": "used",
-   "t": "used to 表示过去常常做某事或过去的状态，后接动词原形。"
-  },
-  {
    "id": "sy3055-excl",
    "l": "g8",
    "s": "___ wonderful the show is!",
@@ -11225,6 +11214,17 @@
    "k": "excl",
    "a": "How",
    "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
+  },
+  {
+   "id": "sy3058-usedto",
+   "l": "g8",
+   "s": "He ___ to be very shy.",
+   "zh": "他以前很害羞。",
+   "b": "",
+   "z": "",
+   "k": "usedto",
+   "a": "used",
+   "t": "used to 表示过去常常做某事或过去的状态，后接动词原形。"
   },
   {
    "id": "sy477-freq",
@@ -14549,17 +14549,6 @@
    "t": "主语是第三人称单数，一般现在时动词加 -s：email→emails"
   },
   {
-   "id": "f3047",
-   "l": "g9",
-   "s": "How fast the time ___!",
-   "zh": "时间过得真快啊！",
-   "b": "fly",
-   "z": "飞行；放飞（风筝等）；苍蝇",
-   "k": "3",
-   "a": "flies",
-   "t": "主语是第三人称单数，辅音 + y 结尾变 y 为 i 加 -es：fly→flies"
-  },
-  {
    "id": "f3050",
    "l": "g9",
    "s": "What a ___ idea it is!",
@@ -14569,6 +14558,17 @@
    "k": "der",
    "a": "wonderful",
    "t": "名词加 -ful 构成形容词（充满……的）：wonder→wonderful"
+  },
+  {
+   "id": "f3060",
+   "l": "g9",
+   "s": "How fast time ___!",
+   "zh": "时间过得真快啊！",
+   "b": "fly",
+   "z": "飞行；放飞（风筝等）；苍蝇",
+   "k": "3",
+   "a": "flies",
+   "t": "主语是第三人称单数，辅音 + y 结尾变 y 为 i 加 -es：fly→flies"
   },
   {
    "id": "f554",
@@ -16562,17 +16562,6 @@
    "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
   },
   {
-   "id": "sy3047-excl",
-   "l": "g9",
-   "s": "___ fast the time flies!",
-   "zh": "时间过得真快啊！",
-   "b": "",
-   "z": "",
-   "k": "excl",
-   "a": "How",
-   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
-  },
-  {
    "id": "sy3048-excl",
    "l": "g9",
    "s": "___ an important lesson we have learned!",
@@ -16639,15 +16628,26 @@
    "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
   },
   {
-   "id": "sy3054-cl_r",
+   "id": "sy3059-cl_r",
    "l": "g9",
-   "s": "The house ___ looks very old is on the hill.",
+   "s": "The house ___ is on the hill looks very old.",
    "zh": "坐落在山上的那座房子看起来很古老。",
    "b": "",
    "z": "",
    "k": "cl_r",
    "a": "which",
    "t": "定语从句用 who/which/that/whose 等关系词引导，修饰前面的名词。"
+  },
+  {
+   "id": "sy3060-excl",
+   "l": "g9",
+   "s": "___ fast time flies!",
+   "zh": "时间过得真快啊！",
+   "b": "",
+   "z": "",
+   "k": "excl",
+   "a": "How",
+   "t": "感叹句用 What + 名词或 How + 形容词/副词开头，表达强烈情感。"
   },
   {
    "id": "sy539-q_wh",
