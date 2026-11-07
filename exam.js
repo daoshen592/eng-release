@@ -538,14 +538,17 @@
     S.phase = "done";
     const card = document.querySelector("#exam .ecard");
     card.classList.add(good ? "is-ok" : "is-bad");
+    /* 检查后焦点会滚到「下一题」按钮，语块区（英文）常被推出屏幕外——
+       反馈行必须自带完整英文句，否则屏幕里只剩讲评和中文翻译 */
+    const sentText = it.a.join(" ");
     if (good) {
       S.ok += 1;
-      $("exFeed").textContent = "✅ 正确";
+      $("exFeed").textContent = "✅ 正确：" + sentText;
       $("exChips").querySelectorAll(".echunk").forEach((c) => c.classList.add("ok"));
     } else {
       S.bad += 1;
       S.wrongIds.push(it.id);
-      $("exFeed").textContent = "❌ 顺序不对，正确语序如下";
+      $("exFeed").textContent = "❌ 正确答案：" + sentText;
       S.order = it.a.slice();
       renderChips();
       $("exChips").querySelectorAll(".echunk").forEach((c) => c.classList.add("bad"));
