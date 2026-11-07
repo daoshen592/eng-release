@@ -303,6 +303,12 @@
     $("exNext").hidden = true;
     $("exSent").hidden = S.etype === "order";
     $("exChips").hidden = S.etype !== "order";
+    /* footer 文案随题型/答案变化：多词答案（to help 类）空格是正常输入，
+       不能再引导孩子「按空格提示」——那会把空格劫持成提示、永远拼不出来 */
+    $("exFoot").textContent =
+      S.etype === "order" ? "拖动或点击词块排好语序，按 Enter 检查"
+      : it.a.includes(" ") ? "答案含空格：空格直接打进框里，提示用右下按钮"
+      : "填完按 Enter 检查；不会就按空格提示";
 
     if (S.etype === "order") {
       renderOrder(it);
@@ -348,6 +354,17 @@
     };
     fit();
     input.addEventListener("input", fit);
+    /* 失焦自动回焦（对齐一屏一句）：手机上点到别处输入框失灵是常见卡壳点。
+       刚点了按钮/已判分/已退出时不抢焦点 */
+    input.addEventListener("blur", () => {
+      setTimeout(() => {
+        if (!input || S.phase !== "ask") return;
+        if (!$("exam").classList.contains("is-on")) return;
+        const act = document.activeElement;
+        if (act && (act.tagName === "BUTTON" || act.tagName === "INPUT")) return;
+        try { input.focus({ preventScroll: true }); } catch (e) { input.focus(); }
+      }, 120);
+    });
     p.append(input);
     const base = document.createElement("span");
     if (firstMode) {
