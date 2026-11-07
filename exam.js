@@ -549,9 +549,11 @@
       S.bad += 1;
       S.wrongIds.push(it.id);
       $("exFeed").textContent = "❌ 正确答案：" + sentText;
-      S.order = it.a.slice();
-      renderChips();
-      $("exChips").querySelectorAll(".echunk").forEach((c) => c.classList.add("bad"));
+      /* 保留孩子自己的排列：放对位置的语块标绿、放错的标红——原来整句替换成
+         正确语序再全涂红，红块明明是正确答案，语义却像「全错」，也看不出错在哪 */
+      $("exChips").querySelectorAll(".echunk").forEach((c, i) => {
+        c.classList.add(S.order[i] === it.a[i] ? "ok" : "bad");
+      });
     }
     $("exFeed").hidden = false;
     const why = $("exWhy");
