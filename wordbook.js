@@ -122,6 +122,27 @@
     return txt || "小学";
   }
 
+  /* 卡片的有效年级：归属学段 + 出处里出现过的册次
+     （三上…六下 → 小学，七上/七下 → 初一，八上/八下 → 初二，九上/九下 → 初三）。
+     一个词四年级学过、八年级教材里又出现，那么只选「小学」或只选「初二」都该刷到它。
+     进度按词 key 存，同词进多个池共用一条复习记录，不会重复计数。 */
+  const BOOK_LV = {
+    "三": "primary", "四": "primary", "五": "primary", "六": "primary",
+    "七": "g7", "八": "g8", "九": "g9",
+  };
+  function levelSetOf(w) {
+    const set = new Set();
+    if (w.l) set.add(w.l);
+    const u = w.u || "";
+    const re = /([三四五六七八九])([上下])[US]?\d+/g;
+    let m;
+    while ((m = re.exec(u))) {
+      const lv = BOOK_LV[m[1]];
+      if (lv) set.add(lv);
+    }
+    return set;
+  }
+
   function poolWords(lv) {
     const all = (window.WORDS && window.WORDS.words) || [];
     const keys = Array.isArray(lv) ? lv : [lv];
@@ -129,13 +150,16 @@
     if (keys.includes("all")) {
       return all.filter((w) => (seen.has(w.k) ? false : (seen.add(w.k), true)));
     }
-    if (keys.length === 1) return all.filter((w) => w.l === keys[0]);
     const set = new Set(keys);
     const out = [];
     all.forEach((w) => {
-      if (!set.has(w.l) || seen.has(w.k)) return;
-      seen.add(w.k);
-      out.push(w);
+      if (seen.has(w.k)) return;
+      for (const l of levelSetOf(w)) {
+        if (!set.has(l)) continue;
+        seen.add(w.k);
+        out.push(w);
+        return;
+      }
     });
     return out;
   }
