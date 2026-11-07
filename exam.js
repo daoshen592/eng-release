@@ -221,6 +221,10 @@
 
   function norm(s) {
     return String(s || "")
+      .replace(/[\u200b-\u200f\ufeff]/g, "")      // 零宽字符：复制粘贴/输入法夹带，肉眼不可见却必判错
+      .replace(/[\uff01-\uff5e]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0))
+                                                  // 全角字母数字→半角：中文输入法全角模式打出 ｌｅａｒｎｉｎｇ 肉眼难辨
+      .replace(/[\u2018\u2019]/g, "'")            // 中文弯引号→英文直引号（teacher's 类答案）
       .trim()
       .toLowerCase()
       .replace(/\s+/g, " ")                       // "to  buy" 这类多空格归一再比
@@ -680,6 +684,11 @@
       return;
     }
     if (e.key === " " && document.activeElement === input) {
+      /* 空格键 = 逐字母提示，是给「无提示语法题」的福利；但答案本身带空格时
+         （to help / teacher's 短语类），孩子必须能打进空格，否则永远拼不出来
+         ——原版一律 preventDefault 劫持空格，多词答案必错 */
+      const curIt = S.list[S.i];
+      if (curIt && curIt.a.includes(" ")) return;
       e.preventDefault();
       hint();
       return;
