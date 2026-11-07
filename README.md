@@ -225,7 +225,10 @@ build_cloze.py           完形填空：src/cloze/*.json → data/clozes.js（27
   词典式释义（I「碘元素；英语字母I」、hello「表示问候；惊奇或唤起注意时的用语」）统一回教材首现义，
   并修正词性与释义错配（deep 标成名词、Miss 标成动词等）；已挂进 `build_words.py` 末尾，重建不丢。
 - 背单词数据会过滤人名、无释义与残缺条目（sth./sb./省略号写法），并拼接词组音标。
-- 全量音标按**英式发音**统一（构建期校验美式残留），多读音词按句中词性选读音。
+- 全量音标按**英式发音（DJ 音标，与教材书末 Vocabulary 一致）**统一：LOT=ɒ（hot /hɒt/、long /lɒŋ/）、
+  BATH=ɑː（class /klɑːs/、past /pɑːst/、dance /dɑːns/）、无卷舌 r（park /pɑːk/）、保留 yod（student /ˈstjuːdənt/）。
+  工具 `python tools/ipa_uk.py`（默认 dry-run，`--apply` 写入），基准取自 `../word-atlas` 的 uk 字段；
+  多读音词按句中词性选读音。
 
 ## 🔧 扩充
 
