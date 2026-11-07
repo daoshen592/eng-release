@@ -96,22 +96,22 @@
     pp: "被动语态", perf: "完成时",
     r: "比较级", t: "最高级", adv: "形容词变副词",
     po: "代词宾格", pa: "形容词性物主", pn: "名词性物主", poss: "名词所有格", ord: "序数词",
-    refl: "反身代词", inf: "非谓语 to do", der: "构词法派生", be: "be 动词",
+    refl: "反身代词", indef: "不定代词", freq: "频度副词", num: "数词与时间",
+    inf: "非谓语 to do", der: "构词法派生", be: "be 动词",
     /* 句法句型：练句子怎么搭、结构词怎么用 */
     there: "There be", impy: "祈使句", excl: "感叹句", q_gen: "一般疑问句",
     q_wh: "特殊疑问句", future: "一般将来时", conj: "并列句", mod: "情态动词",
     cl_o: "宾语从句", cl_r: "定语从句", cl_a: "状语从句",
-    indef: "不定代词", freq: "频度副词", num: "数词与时间",
     so_that: "so…that", too_to: "too…to", usedto: "used to", it: "it 形式主语",
     q_tag: "反意疑问句",
   };
   const KIND_ORDER = ["art", "prep", "s", "3", "ing", "ger", "p", "pp", "perf", "r", "t",
-    "adv", "be", "po", "pa", "pn", "poss", "ord", "refl", "inf", "der",
+    "adv", "be", "po", "pa", "pn", "poss", "ord", "refl", "indef", "freq", "num", "inf", "der",
     "there", "impy", "excl", "q_gen", "q_wh", "future", "conj", "mod",
-    "cl_o", "cl_r", "cl_a", "indef", "freq", "num", "so_that", "too_to", "usedto", "it", "q_tag"];
+    "cl_o", "cl_r", "cl_a", "so_that", "too_to", "usedto", "it", "q_tag"];
   /* 考点分组：词法(语法项目) / 句法(句法句型) */
   const SYNTAX_KINDS = new Set(["there", "impy", "excl", "q_gen", "q_wh", "future",
-    "conj", "mod", "cl_o", "cl_r", "cl_a", "indef", "freq", "num", "so_that", "too_to",
+    "conj", "mod", "cl_o", "cl_r", "cl_a", "so_that", "too_to",
     "usedto", "it", "q_tag"]);
 
   function readEtype() {
