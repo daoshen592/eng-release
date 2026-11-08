@@ -629,7 +629,7 @@
     /* footer 文案随题型/答案变化：多词答案（to help 类）空格是正常输入，
        不能再引导孩子「按空格提示」——那会把空格劫持成提示、永远拼不出来 */
     $("exFoot").textContent =
-      S.etype === "order" ? "拖动或点击词块排好语序，按 Enter 检查"
+      S.etype === "order" ? "拖动或点击词块排好语序，按 Enter 检查；不会就按空格提示"
       : it.a.includes(" ") ? "答案含空格：空格直接打进框里，提示用右下按钮"
       : "填完按 Enter 检查；不会就按空格提示";
 
@@ -954,6 +954,12 @@
       }
       S.pick = -1;
       renderChips();
+      /* 提示后必须给个回声：只挪一块语块、颜色又随位置轮换，孩子容易觉得
+         「点了没反应」。用 footer 报剩余错位数 */
+      const left = it.a.reduce((n, t, i) => n + (S.order[i] === t ? 0 : 1), 0);
+      $("exFoot").textContent = left
+        ? `已提示一块，还有 ${left} 块位置不对；不会就继续按空格`
+        : "语序已经排好了，按 Enter 检查";
       return;
     }
     if (!input) return;
@@ -1035,12 +1041,14 @@
       toggleZh();
       return;
     }
-    if (e.key === " " && document.activeElement === input) {
-      /* 空格键 = 逐字母提示，是给「无提示语法题」的福利；但答案本身带空格时
-         （to help / teacher's 短语类），孩子必须能打进空格，否则永远拼不出来
-         ——原版一律 preventDefault 劫持空格，多词答案必错 */
+    /* 空格 = 提示。原判定只认 activeElement === input，而连词成句根本没有
+       输入框（按钮上却写着「💡 提示 · 空格」），order 模式下按空格彻底没反应
+       → order 单独放行，焦点在语块或按钮上都当提示 */
+    if (e.key === " " && (S.etype === "order" || document.activeElement === input)) {
+      /* 词法/句法：答案本身带空格时（to help / teacher's 短语类），孩子必须
+         能打进空格，否则永远拼不出来——这种情况不劫持 */
       const curIt = S.list[S.i];
-      if (curIt && curIt.a.includes(" ")) return;
+      if (S.etype !== "order" && curIt && curIt.a.includes(" ")) return;
       e.preventDefault();
       hint();
       return;
