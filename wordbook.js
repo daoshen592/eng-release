@@ -117,6 +117,18 @@
     playExtra();
   }
 
+  /* 拼写模式把焦点还给输入框：点「听一遍」「提示」这类按钮后别让键盘收起来。
+     移动端要在 click 手势内同步调用才允许唤起键盘，所以别放进 setTimeout。 */
+  function focusSpell() {
+    if (mode !== "spell") return;
+    const inp = $("wInput");
+    if (inp && !inp.disabled) {
+      try {
+        inp.focus({ preventScroll: true });
+      } catch (_) {}
+    }
+  }
+
   /* ---------- 队列 ---------- */
   function shuffle(a) {
     const x = a.slice();
@@ -747,27 +759,21 @@
   });
   $("wTip").addEventListener("click", () => {
     hintSpell();
-    const inp = $("wInput");
-    if (inp && !inp.disabled) {
-      try {
-        inp.focus({ preventScroll: true });
-      } catch (_) {}
-    }
+    focusSpell();
   });
   $("wNext").addEventListener("click", nextSpell);
   $("wReveal").addEventListener("click", reveal);
-  $("wSay").addEventListener("click", () => say(cur));
+  /* 听一遍：鼠标按下时不让按钮抢焦点（否则拼写模式的输入框立刻失焦），
+     点完再兜一次底——移动端 tap 不走 mousedown，靠这里在手势内把焦点要回来 */
+  $("wSay").addEventListener("mousedown", (e) => e.preventDefault());
+  $("wSay").addEventListener("click", () => {
+    say(cur);
+    focusSpell();
+  });
   $("wCard").addEventListener("click", (e) => {
     if (mode === "spell") {
       // 拼写模式点卡片（不是按钮）只是重新聚焦输入框，别把答案翻出来
-      if (!e.target.closest("button, input")) {
-        const inp = $("wInput");
-        if (inp && !inp.disabled) {
-          try {
-            inp.focus({ preventScroll: true });
-          } catch (_) {}
-        }
-      }
+      if (!e.target.closest("button, input")) focusSpell();
       return;
     }
     reveal();
@@ -834,6 +840,18 @@
         e.preventDefault();
         if (spell && spell.checked) nextSpell();
         else checkSpell();
+        return;
+      }
+      /* 焦点万一被抢走（点了页面别处之类），直接敲字母也能接上：
+         keydown 里再聚焦，字符不会自动落到新焦点元素，所以手动补一位 */
+      if (/^[A-Za-z]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        const inp = $("wInput");
+        if (inp && !inp.disabled && spell && !spell.checked && !$("wCard").classList.contains("done")) {
+          e.preventDefault();
+          focusSpell();
+          inp.value = (String(inp.value || "") + e.key).slice(0, spell.pos.length);
+          inp.dispatchEvent(new Event("input", { bubbles: true }));
+        }
       }
       return;
     }
