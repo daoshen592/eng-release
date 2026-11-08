@@ -35,6 +35,8 @@
   let spell = null; // 当前拼写题：{ chars, pos, answer, typed, checked }
   let missed = []; // 本轮拼错的词
   // 有配图的词名单（data/wordimg.js 生成，图在 img/w/<k>.webp）
+  // IMGVER：配图内容重画但文件名不变，靠这个查询串让浏览器/HTTP 缓存换新；图有更新就改这里
+  const IMGVER = "20261108a";
   let IMGSET = null;
   try {
     if (window.WORDIMG) IMGSET = new Set(window.WORDIMG.split(","));
@@ -285,7 +287,7 @@
         $("wCard").classList.remove("has-img");
       };
       img.alt = cur.w;
-      img.src = "img/w/" + encodeURIComponent(cur.k) + ".webp";
+      img.src = "img/w/" + encodeURIComponent(cur.k) + ".webp?v=" + IMGVER;
       img.hidden = false;
       $("wCard").classList.add("has-img");
     } else {
