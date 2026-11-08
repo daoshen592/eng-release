@@ -449,8 +449,8 @@
     $("wTip").textContent = "💡 提示 · 补一个字母";
     $("wFeed").className = "wfeed";
     $("wFeed").textContent = `${spell.pos.length} 个字母待补全`;
-    $("wHint").textContent = "补全缺少的字母，按 Enter 检查";
-    $("wKbd").textContent = "Enter 检查 / 下一题 · Ctrl+H 提示 · Esc 退出";
+    $("wHint").textContent = "补全缺少的字母，按 Enter 检查，空格补一个字母";
+    $("wKbd").textContent = "Enter 检查 / 下一题 · 空格 提示 · Esc 退出";
     stopSay();
     autoTimer = setTimeout(() => say(cur), 500);
     setTimeout(() => {
@@ -751,6 +751,12 @@
       else checkSpell();
       return;
     }
+    // 空格 = 补一个字母（手机小键盘上比 Ctrl+H 好按）
+    if (e.key === " " || e.code === "Space" || e.key === "Spacebar") {
+      e.preventDefault();
+      hintSpell();
+      return;
+    }
     // Ctrl+H / F1 也能叫提示，手不用离开键盘
     if (e.key === "F1" || (e.ctrlKey && String(e.key).toLowerCase() === "h")) {
       e.preventDefault();
@@ -840,6 +846,13 @@
         e.preventDefault();
         if (spell && spell.checked) nextSpell();
         else checkSpell();
+        return;
+      }
+      /* 空格 = 补一个字母。焦点落在按钮上时也要拦，否则浏览器会当成点击按钮 */
+      if (e.key === " " || e.code === "Space" || e.key === "Spacebar") {
+        e.preventDefault();
+        hintSpell();
+        focusSpell();
         return;
       }
       /* 焦点万一被抢走（点了页面别处之类），直接敲字母也能接上：
