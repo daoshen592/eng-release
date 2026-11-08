@@ -1424,3 +1424,29 @@ h1 {
   -webkit-tap-highlight-color: transparent;
 }
 #swToast:active { transform: translateX(-50%) scale(0.97); }
+
+/* ---------- 专项练习：入口类别条 / 提示条 / 语块 字号上调 ----------
+   原字号偏小（类别 13.5px、提示 12.5px、语块手机 19px），家长和孩子都说看不清。
+   这段放文件末尾，有意覆盖前面同特异性的旧声明（.echunk 基础定义在 media 之后，
+   旧 media 里的字号其实一直被后面的基础值盖掉）。 */
+.etype { height: 38px; padding: 0 18px; font-size: 15px; }
+.ekind { font-size: 13.5px; padding: 8px 13px; }
+.exhint { font-size: 14px; letter-spacing: 0.06em; line-height: 1.65; }
+.echunk { font-size: 28px; }
+#exam .tips { font-size: 14px; }
+
+@media (max-width: 620px) {
+  .etype { height: 36px; padding: 0 16px; font-size: 14.5px; }
+  .ekind { font-size: 13px; padding: 7px 11px; }
+  .exhint { font-size: 13.5px; }
+  .echunk { font-size: 23px; }
+  #exam .tips { font-size: 12.5px; }
+}
+
+@media (min-width: 621px) {
+  .etype { font-size: 16px; }
+  .ekind { font-size: 14px; }
+  .exhint { font-size: 16px; }
+  .echunk { font-size: 32px; }
+  #exam .tips { font-size: 14px; }
+}
