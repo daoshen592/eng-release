@@ -16,7 +16,17 @@
     F.generatorParameters({ enable_fuzz: true, enable_short_term: false, request_retention: 0.9 })
   );
   const MAX_IVAL = 365; // 天封顶：再熟的词一年也要回来见一面
-  const ROUND = 20;
+  /* 一轮多少词：跟随首页「本轮数量」（Store 的 size：20 / 50 / all）。
+     2026-11-08 之前这里是写死的 20，用户要求与首页一致。 */
+  function roundSize() {
+    let v = "20";
+    try {
+      v = Store.get("size") || "20";
+    } catch (_) { /* 无 Store 时按 20 */ }
+    if (v === "all") return Infinity;
+    const n = Number(v);
+    return n > 0 ? n : 20;
+  }
   const LEVEL_CN = {
     all: "所有", primary: "小学", g7: "初一", g8: "初二", g9: "初三",
     g10: "高一", g11: "高二", g12: "高三",
@@ -167,6 +177,7 @@
   }
 
   function buildQueue(lv, onlyDue) {
+    const ROUND = roundSize();
     const all = poolWords(lv);
     const store = readStore();
     const due = [];
@@ -194,6 +205,7 @@
     }
   }
   function freshQ(fresh) {
+    const ROUND = roundSize();
     if (!freqOn()) return shuffle(fresh).slice(0, ROUND);
     const byF = new Map();
     fresh.forEach((w) => {
