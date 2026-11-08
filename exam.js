@@ -32,10 +32,18 @@
   const SRS_KEY = "exam.srs";
 
   function dayNum() { return Math.floor(Date.now() / 86400000); }
+  /* 存档解析结果缓存：抽题排序时每比较一次就要问一次优先级，原来每次都
+     Store.get + JSON.parse 整份存档（几百张卡 = 200KB），2800 句排序下来
+     JSON.parse 被调用 5 万多次 —— 进连词成句会卡住好几秒（手机更久）。
+     现在整份存档只解析一次，随时取用；写入时直接改这份对象，无需失效。 */
+  let SRS_CACHE = null;
   function srsAll() {
-    try { return JSON.parse((window.Store && Store.get(SRS_KEY)) || "{}") || {}; }
-    catch (e) { return {}; }
+    if (SRS_CACHE) return SRS_CACHE;
+    try { SRS_CACHE = JSON.parse((window.Store && Store.get(SRS_KEY)) || "{}") || {}; }
+    catch (e) { SRS_CACHE = {}; }
+    return SRS_CACHE;
   }
+  function srsForget() { SRS_CACHE = null; }
   function reviveCard(c) {
     c.due = new Date(c.due);
     if (c.last_review) c.last_review = new Date(c.last_review);
@@ -63,15 +71,29 @@
     all[id] = next;
     if (window.Store) Store.set(SRS_KEY, JSON.stringify(all));
   }
-  /* 抽题优先级（与首页 smartPick 一致）：错题 > 新题 > 到期复习 > 未到期 */
-  function srsHeat(it) {
+  /* 抽题优先级（与首页 smartPick 一致）：错题 > 新题 > 到期复习 > 未到期。
+     一次算整池（Map<id, 热度>），排序时只查表，不做重复计算。 */
+  function heatMap(pool) {
     const all = srsAll();
     const today = dayNum();
-    const r = all[it.id];
-    if (!r) return 1;                                    // 新题：次高优先
-    if (dueDay(r) <= today && r.miss) return 0;          // 错题：最高优先
-    if (dueDay(r) <= today) return 2;                    // 到期复习
-    return 3;                                            // 未到期
+    const m = new Map();
+    for (const it of pool) {
+      const r = all[it.id];
+      m.set(it.id, !r ? 1
+        : dueDay(r) <= today ? (r.miss ? 0 : 2) : 3);
+    }
+    return m;
+  }
+  function srsHeat(it) {
+    return heatMap([it]).get(it.id);
+  }
+  /* 打散 + 按热度稳定排序：先随机再排（同热度内部顺序即被保留），
+     避免在比较器里摇随机数导致排序结果不稳定、V8 反复比较 */
+  function pickByHeat(pool) {
+    const h = heatMap(pool);
+    const arr = pool.map((it) => ({ it, r: Math.random() }));
+    arr.sort((a, b) => (h.get(a.it.id) - h.get(b.it.id)) || (a.r - b.r));
+    return arr.map((x) => x.it);
   }
   /* 一轮多少题不单独设，跟首页「本轮题量」（20 句 / 50 句 / 全部）保持一致 */
   function readSize(pool) {
@@ -176,9 +198,15 @@
     return S.kind ? base.filter((it) => it.k === S.kind) : base;
   }
 
-  /* 连词成句池：语块数 4–10，且语块拼回来必须等于原句（防止 build 断块异常） */
+  /* 连词成句池：语块数 4–10，且语块拼回来必须等于原句（防止 build 断块异常）。
+     结果按「难度档组合」缓存：每次进练习都要用，重复算 2800 句的归一化没必要。
+     返回的数组只读（抽题走 pickByHeat，不会改动它）。 */
+  let ORDER_POOL = null;
+  let ORDER_POOL_KEY = "";
   function orderPool() {
     const levels = readLevels();
+    const lk = levels.slice().sort().join(",");
+    if (ORDER_POOL && ORDER_POOL_KEY === lk) return ORDER_POOL;
     const out = [];
     for (const st of SENT) {
       if (!(levels.includes("all") || levels.includes(st.level))) continue;
@@ -194,6 +222,8 @@
         ps: st.chunks.map((g) => (g.length && g[0].pos) || ""),
       });
     }
+    ORDER_POOL = out;
+    ORDER_POOL_KEY = lk;
     return out;
   }
 
@@ -483,9 +513,7 @@
     const pool = orderPool();
     if (!pool.length) return [];
     const n = readSize(pool);
-    return pool.slice().sort((a, b) => srsHeat(a) - srsHeat(b) || Math.random() - 0.5)
-      .slice(0, n)
-      .sort(() => Math.random() - 0.5);
+    return pickByHeat(pool).slice(0, n).sort(() => Math.random() - 0.5);
   }
 
   function buildRound() {
@@ -500,7 +528,14 @@
       groups.set(it.k, arr);
     });
     // 组内按 FSRS 优先级排序（错题>新题>到期>未到期），同优先级随机打散
-    groups.forEach((arr) => arr.sort((a, b) => srsHeat(a) - srsHeat(b) || Math.random() - 0.5));
+    const heat = heatMap(pool);          // 整池一次算完，排序时只查表
+    groups.forEach((arr) => {
+      for (let i = arr.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      arr.sort((a, b) => heat.get(a.id) - heat.get(b.id));
+    });
     const n = readSize(pool);
     /* 每类轮转的起点逐轮后移：题量小于考点数时（20 题对 21 类），
        固定顺序会让末尾的构词法/非谓语永远轮不到，偏移一位就能几轮转完 */
@@ -1006,6 +1041,7 @@
       return;
     }
     loadProg();
+    srsForget();          // 切档案 / 别的页面改过存档时，重进练习重新读一次
     renderTypes();
     renderKinds();
     S.list = buildRound();
