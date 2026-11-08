@@ -188,9 +188,262 @@
       out.push({
         id: "o" + st.id, l: st.level, s: st.en, zh: st.zh,
         a: words, k: "order", b: "", t: WHY_ORDER,
+        /* 讲评要用：语法标签（imp/excl/there/modal/comp/clause_*）
+           与每块首词词性（v./aux./det./prep.…），据此判断句型与成分位置 */
+        g: Array.isArray(st.g) ? st.g : [],
+        ps: st.chunks.map((g) => (g.length && g[0].pos) || ""),
       });
     }
     return out;
+  }
+
+  /* ---------- 连词成句讲评 ----------
+     原来每道题共用一句 WHY_ORDER（"先找主语和谓语搭出主干…"），做两道就麻木了。
+     这里按每句话自己的结构现算「句型 + 本题 + 差在」三段：
+       句型 —— 这类句子为什么这样排（规则）
+       本题 —— 这句话的抓手：谁是主语谓语，状语该挂哪儿
+       差在 —— 答错时指出第一处错位，能判定成两块互换就直接说互换
+     判断依据是句子自带的语法标签 g（imp/excl/there/modal/comp/clause_*）
+     与每块首词的词性 ps（v./aux./det./prep.…），不靠猜。 */
+  const esc = (s) =>
+    String(s == null ? "" : s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const B = (s) => "<b>" + esc(String(s == null ? "" : s).replace(/[\s.,!?;:]+$/, "")) + "</b>";
+
+  /* 句库里有少量「句子」其实是两句连写（How are you? I'm fine.）——
+     句型按第一句判，讲评先讲第一句，避免把 How 当主语这种笑话。
+     缩写（Mr. / Mrs. / Dr.）用词表挡住，别把它当成句子结束。 */
+  const O_ABBR = /^(mr|mrs|ms|dr|st|prof|sr|jr|no|etc|vs|mt)$/i;
+  /* a.m. / p.m. 里的句点不是句末，切句前先打码 */
+  const maskAmPm = (s) => String(s || "").replace(/\b([ap])\.m\./gi, "$1·m·");
+  function orderHead(s) {
+    const t = String(s || "").trim();
+    const m = t.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    return (m ? m[0] : t).trim();
+  }
+  function orderSegs(s) {
+    const parts = maskAmPm(String(s || "").trim()).match(/[^.!?]+[.!?]*/g) || [];
+    const segs = [];
+    let pend = "";
+    for (const p of parts) {
+      const t = p.trim();
+      if (!t) continue;
+      if (O_ABBR.test(t.replace(/[.!?]+$/, ""))) { pend += t + " "; continue; }
+      segs.push((pend + t).trim());
+      pend = "";
+    }
+    if (pend) {
+      if (segs.length) segs[segs.length - 1] += " " + pend.trim();
+      else segs.push(pend.trim());
+    }
+    return segs;
+  }
+  function orderSegCount(s) { return orderSegs(s).length; }
+
+  /* 句型 → [名称, 规则]。一句话说清「为什么这样排」，控制在 40 字以内，手机上不占屏 */
+  const OTYPE = {
+    stmt: ["陈述句", "按「主语 → 谓语 → 宾语 → 地点 → 时间」排；中文先说时间地点，英语都甩到句末。"],
+    ynq: ["一般疑问句", "be / 助动词 / 情态提到主语前面，实义动词用原形，句末问号。"],
+    whq: ["特殊疑问句", "疑问词 + 一般疑问句语序：疑问词打头，be / 助动词再提到主语前。"],
+    imp: ["祈使句", "省略主语 you，动词原形打头；否定用 Don't / Never 起句。"],
+    excl: ["感叹句", "What 管名词（What a nice day!），How 管形容词和副词（How nice!）。"],
+    there: ["There be 句型", "There + be + 名词 + 地点；be 跟后面第一个名词一致（就近原则）。"],
+    comp: ["含比较级", "A + be / 动词 + 比较级 + than + B，than 后面必须跟对比对象。"],
+    prog: ["含现在进行时", "be + 现在分词，be 在前、doing 在后，中间不插别的成分。"],
+    perf: ["含现在完成时", "have / has + 过去分词，have / has 跟主语的人称和数变。"],
+    modal: ["含情态动词", "情态动词 + 动词原形，放在主语之后、实义动词之前。"],
+    clause: ["含状语从句", "先搭主句，从句由连词引导、整块放在后面。"],
+    dobj: ["含双宾语", "动词 + 人 + 物；物提前时要用 to / for 引出人。"],
+    inf: ["含不定式", "to + 动词原形，跟在动词后面表目的或作宾语。"],
+    freq: ["含频率副词", "频率副词放实义动词前、be 和助动词后。"],
+    be: ["be 动词句", "主语 + be（am / is / are）+ 表语；be 跟主语的人称和数变。"],
+    past: ["一般过去时", "谓语用过去式（-ed 或不规则变化），时间状语放句末。"],
+    greet: ["日常寒暄 / 固定说法", "固定说法整块记（Good morning. / Nice to meet you.），不用拆主谓。"],
+  };
+
+  const O_TIME = /^(yesterday|today|tomorrow|now|soon|then|tonight|last |next |this (morning|afternoon|evening|week|month|year|spring|summer|autumn|winter|sunday|monday|tuesday|wednesday|thursday|friday|saturday)|every |once |twice |three times|at (\d|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|half)|in the (morning|afternoon|evening)|on (sunday|monday|tuesday|wednesday|thursday|friday|saturday)|in \d{4}|ago|\d+ (o'clock|years|months|weeks|days|minutes|hours)|after (school|lunch|dinner|class|breakfast))/i;
+  const O_PREP = /^((in|at|on|under|behind|near|beside|between|next to|in front of|across|around|over|with) |to (the|a|an|my|his|her|their|our|your|school|bed|work)\b)/i;
+  const O_FREQ = /^(always|usually|often|sometimes|never|seldom|hardly|ever|once|twice)$/i;
+  /* 以 -ed 结尾但不是过去式的原形（need / feed…），判时态时先排除 */
+  const ED_BASE = /^(need|feed|seed|speed|bleed|breed|succeed|proceed|exceed|bed|red)$/i;
+
+  function orderTypeOf(it) {
+    const g = it.g || [];
+    const has = (k) => g.indexOf(k) >= 0;
+    const head = orderHead(it.s);            // 多句连写的取第一句判句型
+    const txt = " " + norm(head) + " ";
+    const end = head.slice(-1);
+    const first = norm(it.a[0] || "").split(" ")[0];
+    const ps = it.ps || [];
+    const vi = ps.findIndex((p) => p === "v." || p === "aux.");
+    const verb = vi >= 0 ? norm(it.a[vi]).split(" ")[0] : "";
+    if (end === "?") {
+      return /^(what|where|when|who|whose|which|why|how)$/.test(first) ? "whq" : "ynq";
+    }
+    /* 多句里的寒暄首句（Hello! / Good morning.）不套主谓宾规则 */
+    if (orderSegs(it.s).length > 1 && /^(hello|hi|good morning|good afternoon|good evening|goodbye|bye|thanks|thank you|sorry|excuse me|ok|okay|nice to meet you|see you)\b/.test(norm(head))) {
+      return "greet";
+    }
+    if (has("excl")) return "excl";
+    if (has("imp")) return "imp";
+    if (has("there")) return "there";
+    if (has("comp")) return "comp";
+    if (/\b(is|are|am|was|were) \w+ing\b/.test(txt)) return "prog";
+    if (/\b(have|has) \w+(ed|en)\b/.test(txt)) return "perf";
+    if (has("modal")) return "modal";
+    if (has("clause_adv")) return "clause";
+    if (/\b(give|gives|gave|show|shows|showed|tell|tells|told|buy|buys|bought|send|sends|sent|bring|brings|brought|pass|passes|passed|lend|lends|lent) (me|him|her|us|them|you)\b/.test(txt)) return "dobj";
+    if (/^(i|we|they|you) (want|hope|need|try|like|plan|decide|begin|start) to\b/.test(txt)) return "inf";
+    if (it.a.some((x) => O_FREQ.test(norm(x)))) return "freq";
+    /* be 动词句与一般过去时：把最常见的两类陈述句拆出来，规则话术不再千篇一律 */
+    if (/^(is|am|are|was|were)$/.test(verb)) return "be";
+    if (ED_BASE.test(verb)) return "stmt";           // need / feed 这类以 -ed 结尾的原形，不是过去式
+    if (/ed$/.test(verb) && verb.length > 4) return "past";
+    if (it.a.some((x) => /(yesterday|last (night|week|month|year)|ago)$/i.test(norm(x)))) return "past";
+    return "stmt";
+  }
+
+  /* 「本题」段：把这句话的骨架点名，最多 3 条 */
+  function orderHand(it, type) {
+    const A = it.a, ps = it.ps || [], W = A.map((x) => norm(x));
+    const out = [];
+    /* 多句连写时，所有成分只在第一句里找（否则会把第二句的 am 当成提前的助动词） */
+    const segs = orderSegs(it.s);
+    const flat = (s) => norm(s).replace(/[^a-z0-9' ]/g, " ").replace(/\s+/g, " ").trim();
+    const headN = flat(orderHead(it.s));
+    let hi = A.length - 1;
+    if (segs.length > 1) {
+      let acc = "";
+      for (let i = 0; i < A.length; i += 1) {
+        acc = flat(acc + " " + A[i]);
+        if (acc === headN) { hi = i; break; }
+      }
+    }
+    const vi = ps.findIndex((p, i) => i <= hi && (p === "v." || p === "aux."));
+    let time = -1, place = -1;
+    W.forEach((w, i) => {
+      if (i > hi) return;
+      if (O_TIME.test(w)) time = i;
+      else if (O_PREP.test(w) && place < 0) place = i;
+    });
+    if (segs.length > 1) {
+      const cut = orderHead(it.s).replace(/[.!?]+$/, "");
+      out.push(`这句其实是 ${segs.length} 句话拼在一起：先摆「${B(cut)}」（前 ${hi + 1} 块），剩下的接在后面。`);
+    }
+    const placeWord = /^with /i.test(W[place] || "") ? "伴随状语" : "地点状语";
+
+    if (type === "imp") {
+      const f = W[0];
+      if (/^(don't|do not|never)$/.test(f)) out.push(`否定祈使句：${B(A[0])} 打头，后面接动词原形。`);
+      else if (/^please$/.test(f)) out.push(`${B(A[0])} 放句首后面直接跟动词原形；放句末时前面要加逗号。`);
+      else if (/^(let's|let us)$/.test(f)) out.push(`${B(A[0])} 后面跟动词原形，表示建议。`);
+      else out.push(`句首 ${B(A[0])} 就是动词原形 —— 祈使句没有主语，直接接宾语或状语。`);
+      if (time >= 0) out.push(`时间状语 ${B(A[time])} 放句末。`);
+      return out;
+    }
+    if (type === "excl") {
+      const f = W[0];
+      if (f === "what") out.push(`这里是 What 管名词：按「(a/an) + 形容词 + 名词」排，主谓放到最后。`);
+      else if (f === "how") out.push(`这里是 How 管形容词 / 副词：紧跟在 How 后面，再接主谓。`);
+      else out.push(`句首 ${B(A[0])} 是感叹中心，其余成分按正常语序接在后面。`);
+      return out;
+    }
+    if (type === "there") {
+      out.push(`句首 ${B(A[0])} 跟 be 动词连用，名词紧跟在 be 后面。`);
+      if (place >= 0 && time >= 0) out.push(`${B(A[place])} 是地点、${B(A[time])} 是时间 —— 地点永远排时间前面。`);
+      else if (place >= 0) out.push(`${B(A[place])} 是地点状语，放句末。`);
+      return out;
+    }
+    if (type === "whq") {
+      /* 疑问词后面可能先跟形容词（How old / What colour），真正提前的 be / 助动词在后面一块 */
+      const aux = ps.map((p, i) => (p === "aux." && i > 0 && i <= hi ? i : -1)).filter((i) => i >= 0).pop();
+      if (aux > 0) {
+        out.push(`疑问词 ${B(A[0])} 打头，${B(A[aux])} 提到主语 ${B(A[aux + 1] || "")} 前面 —— 这就是「疑问词 + 一般疑问句语序」。`);
+      } else {
+        out.push(`疑问词 ${B(A[0])} 直接作主语，后面按正常语序接谓语 ${B(A[1] || "")}，不用再加 do / does。`);
+      }
+      return out;
+    }
+    if (type === "ynq") {
+      /* 首块不是 be / 助动词时（回声疑问：Japan lies to the west?），不能套「提前」那套话 */
+      const auxFirst = /^(is|am|are|was|were|do|does|did|can|could|may|might|must|will|would|shall|should|have|has|had|need|dare)$/i.test(W[0]);
+      out.push(auxFirst
+        ? `${B(A[0])} 是提到句首的 be / 助动词，主语 ${B(A[1] || "")} 紧随其后，实义动词用原形。`
+        : `句末是问号，但语序还是「主语 + 谓语」—— 这是靠升调发问的回声疑问，不用倒装。`);
+      if (place >= 0) out.push(`${B(A[place])} 是地点状语，放句末。`);
+      return out;
+    }
+    if (type === "comp") {
+      const ti = W.findIndex((w, i) => i <= hi && (w === "than" || w.startsWith("than ")));
+      if (ti > 0) out.push(`${B(A[ti])} 前面是比较级 ${B(A[ti - 1])}，后面是对比对象 —— than 不能单独放句末。`);
+      else out.push(`含 than 的那一块要放在比较级后面，中间别插别的成分。`);
+      return out;
+    }
+
+    /* 陈述类：先点名主干，再说这类句子的注意点，最后是状语位置 */
+    const verb0 = vi >= 0 ? (W[vi].split(" ")[0] || "") : "";
+    /* 谓语前面紧挨的频率副词（We often play）不算主语，往前退到真正的名词块 */
+    let si = vi - 1;
+    while (si > 0 && (ps[si] === "adv." || ps[si] === "conj.")) si -= 1;
+    const subjTxt = vi > 0 ? A.slice(0, si + 1).join(" ") : "";
+    const subj0 = vi > 0 ? norm(A[0]).split(" ")[0] : "";
+    const is3rd = ps[vi] === "v." && /^[a-z]{3,}s$/.test(verb0)
+      && !/^(is|has|does|was|us|this|his|its|always|sometimes)$/.test(verb0)
+      && !/^(i|you|we|they)$/.test(subj0);
+    if (vi > 0) {
+      out.push(is3rd
+        ? `主语是 ${B(subjTxt)}，谓语 ${B(A[vi])} 是三单形式（第三人称单数加 -s / -es）。`
+        : `主语是 ${B(subjTxt)}，谓语 ${B(A[vi])} 紧跟其后。`);
+    }
+    if (type === "modal") out.push(`情态动词后面的动词一律用原形，不加 -s / -ed。`);
+    else if (type === "prog") out.push(`be 和 doing 要连在一起，中间不能插别的成分。`);
+    else if (type === "perf") out.push(`have / has 跟着主语变，后面的过去分词不变。`);
+    else if (type === "clause") out.push(`从句部分整块放，连词紧跟从句的主语，不能把连词单独留在句末。`);
+    else if (type === "be") out.push(`be 后面接名词、形容词或地点作表语，别拿 do / does 顶替。`);
+    else if (type === "past") out.push(`谓语要用过去式，别写成原形，也别加 -s。`);
+    else if (type === "freq") {
+      const fi = W.findIndex((w, i) => i < vi && O_FREQ.test(w));
+      if (fi >= 0 && fi !== si) out.push(`${B(A[fi])} 是频率副词，放在实义动词 ${B(A[vi])} 前面。`);
+    }
+    if (place >= 0 && time >= 0 && place < time) {
+      out.push(`${B(A[place])} 是${placeWord}、${B(A[time])} 是时间状语 —— 英语里地点在前、时间在后，正好和中文相反。`);
+    } else if (time >= 0) {
+      out.push(`时间状语 ${B(A[time])} 放句末：中文常把时间放句首，英语要挪到句子后面。`);
+    } else if (place >= 0) {
+      out.push(`${B(A[place])} 是${placeWord}，放句末。`);
+    }
+    /* 并列连词才讲「两边对等」；than / because / when / if 不是并列连词，别乱套 */
+    const cj = A.find((x, i) => ps[i] === "conj." && /^(and|but|or|so)$/i.test(norm(x)));
+    if (cj) out.push(`${B(cj)} 连接的两边要对等 —— 都是名词、都是动词或都是短语，不能一边长一边短。`);
+    if (!out.length) out.push(`这句只有主干，没有可挪的状语 —— 按「主语 + 谓语 + 宾语」摆就是正确语序。`);
+    return out.slice(0, segs.length > 1 ? 3 : 2);
+  }
+
+  /* 「差在」段：答错时给具体位置，两块互换就直接说互换 */
+  function orderFix(it, picked) {
+    const A = it.a, P = picked || [];
+    if (!P.length || P.length !== A.length) return "";
+    const bad = [];
+    for (let i = 0; i < A.length; i++) if (P[i] !== A[i]) bad.push(i);
+    if (!bad.length) return "";
+    if (bad.length === 2 && P[bad[0]] === A[bad[1]] && P[bad[1]] === A[bad[0]]) {
+      return `${B(A[bad[0]])} 和 ${B(A[bad[1]])} 位置调换了 —— 这两块换回来就对了。`;
+    }
+    const i = bad[0];
+    const more = bad.length > 1 ? `（另外还有 ${bad.length - 1} 处位置也不对）` : "";
+    return `第 ${i + 1} 块你放的是 ${B(P[i])}，这里应该是 ${B(A[i])}${more}。`;
+  }
+
+  function orderWhyHtml(it, good, picked) {
+    const type = orderTypeOf(it);
+    const [name, rule] = OTYPE[type] || OTYPE.stmt;
+    const rows = [`<span class="ewl"><em>句型</em>${esc(name)}：${esc(rule)}</span>`];
+    const hand = orderHand(it, type);
+    if (hand.length) rows.push(`<span class="ewl"><em>本题</em>${hand.join("　")}</span>`);
+    if (!good) {
+      const fix = orderFix(it, picked);
+      if (fix) rows.push(`<span class="ewl"><em>差在</em>${fix}</span>`);
+    }
+    return rows.join("");
   }
 
   /* 考点统计条：总题数 + 每类多少，点一下就只练这一类 */
@@ -603,12 +856,13 @@
       input.value = it.a;
     }
     $("exFeed").hidden = false;
-    // 讲评：答错时讲清规则，答对时也留一句，趁热打铁
+    // 讲评：答错时讲清规则，答对时也留一句，趁热打铁（标签与连词成句的样式统一）
     const why = $("exWhy");
     if (why) {
       if (it.t) {
-        why.textContent = (good ? "规则：" : "为什么：") + it.t;
+        why.innerHTML = `<span class="ewl"><em>${good ? "规则" : "为什么"}</em>${esc(it.t)}</span>`;
         why.classList.toggle("is-bad", !good);
+        why.classList.toggle("is-ok", good);
         why.hidden = false;
       } else {
         why.hidden = true;
@@ -649,10 +903,12 @@
       });
     }
     $("exFeed").hidden = false;
+    /* 讲评按本题结构现算：句型规则 + 本题骨架（答错再加「差在」） */
     const why = $("exWhy");
     if (why) {
-      why.textContent = (good ? "思路：" : "为什么：") + WHY_ORDER;
+      why.innerHTML = orderWhyHtml(it, good, S.order);
       why.classList.toggle("is-bad", !good);
+      why.classList.toggle("is-ok", good);
       why.hidden = false;
     }
     if (it.zh) {
@@ -868,5 +1124,7 @@
   });
 
   /* 调试 / 自动化测试句柄 */
+  S._orderPool = orderPool;     // 连词成句题池（带 g / ps）
+  S._why = orderWhyHtml;        // 讲评生成器：orderWhyHtml(it, good, picked)
   window.__EXAM = S;
 })();

@@ -1051,6 +1051,21 @@ h1 {
   border-radius: 0 6px 6px 0;
 }
 .ewhy.is-bad { color: #ffd9a0; border-left-color: var(--amber); background: rgba(255, 181, 69, 0.1); }
+/* 连词成句的三段讲评：句型 / 本题 / 差在 —— 各占一行，行首小标签 + 关键词加亮 */
+.ewhy .ewl { display: block; }
+.ewhy .ewl + .ewl { margin-top: 5px; }
+.ewhy .ewl em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--amber);
+  margin-right: 6px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.ewhy .ewl b { color: var(--text); font-weight: 700; }
+.ewhy.is-bad .ewl b { color: #fff; }
+.ewhy.is-ok { border-left-color: rgba(88, 224, 138, 0.5); background: rgba(88, 224, 138, 0.06); }
+.ewhy.is-ok .ewl em { color: var(--ok); }
 .ezh { margin-top: 10px; font-size: 14px; color: var(--dim); line-height: 1.7; text-align: center; }
 
 .eactions { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
