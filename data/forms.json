@@ -109,7 +109,7 @@
    "z": "儿童；小孩",
    "k": "s",
    "a": "Children",
-   "t": "可数名词变复数，一般直接加 -s：child→Children"
+   "t": "child 的复数是不规则变化 child→Children，要单独记"
   },
   {
    "id": "f1940",
@@ -761,6 +761,17 @@
    "t": "两者比较用比较级，常和 than 连用；单音节形容词加 -er：long→longer"
   },
   {
+   "id": "f2616",
+   "l": "primary",
+   "s": "Her hair is ___ than mine.",
+   "zh": "她的头发比我的短。",
+   "b": "short",
+   "z": "矮的；短的",
+   "k": "r",
+   "a": "shorter",
+   "t": "两者比较用比较级，常和 than 连用；单音节形容词加 -er：short→shorter"
+  },
+  {
    "id": "f2617",
    "l": "primary",
    "s": "This box is ___ than that one.",
@@ -992,10 +1003,10 @@
    "t": "主语是 you，be 动词一律用 are"
   },
   {
-   "id": "f3057",
+   "id": "f3061",
    "l": "primary",
-   "s": "The apple is in two ___.",
-   "zh": "苹果被切成两半。",
+   "s": "Cut the apple into two ___.",
+   "zh": "把苹果切成两半。",
    "b": "half",
    "z": "一半",
    "k": "s",
@@ -2804,7 +2815,7 @@
    "z": "儿童；小孩",
    "k": "s",
    "a": "Children",
-   "t": "可数名词变复数，一般直接加 -s：child→Children"
+   "t": "child 的复数是不规则变化 child→Children，要单独记"
   },
   {
    "id": "f1789-2",
@@ -9566,17 +9577,6 @@
    "t": "介词后面接动名词（-ing）作宾语；直接加 -ing：go→going"
   },
   {
-   "id": "f868",
-   "l": "g8",
-   "s": "About ten ___ cent of the students wear glasses.",
-   "zh": "大约百分之十的学生戴眼镜。",
-   "b": "pe",
-   "z": "体育",
-   "k": "r",
-   "a": "per",
-   "t": "两者比较用比较级，常和 than 连用；以 e 结尾直接加 -er：pe→per"
-  },
-  {
    "id": "f874",
    "l": "g8",
    "s": "My answer is different from ___.",
@@ -13050,7 +13050,7 @@
    "z": "儿童；小孩",
    "k": "s",
    "a": "Children",
-   "t": "可数名词变复数，一般直接加 -s：child→Children"
+   "t": "child 的复数是不规则变化 child→Children，要单独记"
   },
   {
    "id": "f1502",
