@@ -436,7 +436,7 @@
     $("wFeed").className = "wfeed";
     $("wFeed").textContent = `${spell.pos.length} 个字母待补全`;
     $("wHint").textContent = "补全缺少的字母，按 Enter 检查，空格补一个字母";
-    $("wKbd").textContent = "Enter 检查 / 下一题 · 空格 提示 · Esc 退出";
+    $("wKbd").textContent = "Enter 检查 · Tab 听一遍 · 空格 补字母 · Esc 退出";
     stopSay();
     autoTimer = setTimeout(() => say(cur), 500);
     setTimeout(() => {
@@ -493,6 +493,7 @@
       ? `${usedHint ? "✓ 拼对了 · 用过提示，下次还会考" : "✓ 拼对了"}`
       : "✗ 拼错了，看上面的单词";
     $("wHint").textContent = "看结果，按 Enter 下一题";
+    $("wKbd").textContent = "Enter 下一题 · 空格 听一遍 · Esc 退出";
     $("wNext").hidden = false;
 
     const key = cur.k;
@@ -742,6 +743,12 @@
       else checkSpell();
       return;
     }
+    // Tab = 听一遍（不打断输入：preventDefault 阻止焦点跳到下一个控件）
+    if (e.key === "Tab") {
+      e.preventDefault();
+      say(cur);
+      return;
+    }
     // 空格 = 补一个字母（手机小键盘上比 Ctrl+H 好按）
     if (e.key === " " || e.code === "Space" || e.key === "Spacebar") {
       e.preventDefault();
@@ -839,9 +846,21 @@
         else checkSpell();
         return;
       }
-      /* 空格 = 补一个字母。焦点落在按钮上时也要拦，否则浏览器会当成点击按钮 */
+      /* Tab = 听一遍，检查前也能重听；不拦会跳焦点 */
+      if (e.key === "Tab") {
+        e.preventDefault();
+        say(cur);
+        if (spell && !spell.checked) focusSpell();
+        return;
+      }
+      /* 空格：检查前 = 补一个字母（焦点落在按钮上也要拦，否则浏览器会当成点击按钮）；
+         翻面（已判分）后 = 听一遍 */
       if (e.key === " " || e.code === "Space" || e.key === "Spacebar") {
         e.preventDefault();
+        if (spell && spell.checked) {
+          say(cur);
+          return;
+        }
         hintSpell();
         focusSpell();
         return;
