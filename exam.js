@@ -673,6 +673,15 @@
     else render();
   }
 
+  /* 看中文：按钮和 Tab 共用同一个开关（Tab 在练习页被接管，不会跳焦点） */
+  function toggleZh() {
+    const el = $("exZh");
+    const it = S.list[S.i];
+    if (!el || !it) return;
+    el.textContent = it.zh || "";
+    el.hidden = !el.hidden;
+  }
+
   function hint() {
     if (S.phase !== "ask") return;
     if (S.etype === "order") {
@@ -764,6 +773,12 @@
       else next();
       return;
     }
+    if (e.key === "Tab") {
+      /* Tab = 看中文（默认 Tab 会跳焦点：输入框 → 检查按钮 → 提示…，练习时打断输入） */
+      e.preventDefault();
+      toggleZh();
+      return;
+    }
     if (e.key === " " && document.activeElement === input) {
       /* 空格键 = 逐字母提示，是给「无提示语法题」的福利；但答案本身带空格时
          （to help / teacher's 短语类），孩子必须能打进空格，否则永远拼不出来
@@ -831,13 +846,7 @@
       if (S.i >= S.list.length) finish();
       else render();
     });
-    reg("exZhBtn", () => {
-      const el = $("exZh");
-      const it = S.list[S.i];
-      if (!it) return;
-      el.textContent = it.zh;
-      el.hidden = !el.hidden;
-    });
+    reg("exZhBtn", toggleZh);
     reg("exQuit", quit);
     reg("exBack", () => goScreen("start")); // 左上角返回：直接回首页，不等结算
     reg("exAgain", () => {
