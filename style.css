@@ -615,6 +615,18 @@ h1 {
 .wcard.spell.done .wans { order: 6; margin: 6px 0 0; }
 .wcard.spell .wword { font-size: clamp(36px, 6.8vw, 60px); letter-spacing: 0.01em; }
 .wcard.spell.has-img .wword { font-size: clamp(30px, 5.6vw, 46px); }
+/* 判分后：不再逐格显示输入的字母，直接把正确的单词放大加粗 */
+.wcard.spell .wword.whole { font-size: clamp(54px, 11vw, 92px); font-weight: 900; letter-spacing: -0.01em; }
+.wcard.spell.has-img .wword.whole { font-size: clamp(40px, 7.8vw, 64px); }
+.wword.whole.ok { color: var(--ok); }
+.wword.whole.bad { color: var(--amber); }
+/* 长短语（含空格的多词）降档，免得 90px 的字把卡片撑爆 */
+.wcard.spell .wword.whole.sm,
+.wcard.spell.has-img .wword.whole.sm { font-size: clamp(38px, 7.4vw, 62px); letter-spacing: -0.015em; }
+.wcard.spell .wword.whole.xs,
+.wcard.spell.has-img .wword.whole.xs { font-size: clamp(30px, 5.8vw, 48px); letter-spacing: -0.02em; }
+/* 判分后收起输入框和提示按钮（结果看上面的大字单词） */
+.wspell.done #wInput, .wspell.done #wTip { display: none; }
 .wcard.spell .wsay { order: 4; margin-top: 2px; }
 .wspell { order: 3; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .wspell[hidden] { display: none; }

@@ -366,6 +366,7 @@
     if (mode === "spell") return renderSpell();
 
     $("wSpell").hidden = true;
+    $("wWord").className = "wword";
     $("wWord").textContent = cur.w;
     $("wIpa").textContent = cur.i || "";
     $("wReveal").hidden = false;
@@ -417,29 +418,14 @@
     return html;
   }
 
-  /* 判分后的题面：对的绿、错的红 */
-  function resultHtml(sp, typed) {
-    let k = 0;
-    let html = "";
-    sp.chars.forEach((c, i) => {
-      if (sp.pos.indexOf(i) < 0) {
-        html += `<span class="sl${/[A-Za-z]/.test(c) ? "" : " sep"}">${esc(c)}</span>`;
-        return;
-      }
-      const t = typed[k] || "";
-      k++;
-      const ok = t.toLowerCase() === c.toLowerCase();
-      html += `<span class="sl fill ${ok ? "good" : "bad"}">${esc(t || c)}</span>`;
-    });
-    return html;
-  }
-
   function renderSpell() {
     spell = spellOf(cur.w);
+    $("wWord").className = "wword";
     $("wWord").innerHTML = patternHtml(spell, "");
     $("wIpa").textContent = cur.i || "";
     $("wReveal").hidden = true;
     $("wSpell").hidden = false;
+    $("wSpell").classList.remove("done");
     const inp = $("wInput");
     inp.value = "";
     inp.disabled = false;
@@ -493,14 +479,19 @@
     spell.checked = true;
     const ok = val.toLowerCase() === spell.answer;
     const usedHint = spell.hints.size > 0;
-    $("wWord").innerHTML = resultHtml(spell, val);
+    /* 判分后不再逐格显示输入的字母：直接给完整的正确单词，放大加粗 */
+    const wlen = String(cur.w).length; // 长短语降一档字号，避免撑破卡片
+    const wsize = wlen >= 22 ? " xs" : wlen >= 14 ? " sm" : "";
+    $("wWord").className = "wword whole" + wsize + " " + (ok ? "ok" : "bad");
+    $("wWord").textContent = cur.w;
     $("wInput").disabled = true;
     $("wTip").disabled = true;
+    $("wSpell").classList.add("done"); // 收起输入框和提示按钮，只留反馈文字
     $("wCard").classList.add("done");
     $("wFeed").className = "wfeed " + (ok ? "ok" : "bad");
     $("wFeed").textContent = ok
-      ? `✓ 拼对了　${cur.w}${usedHint ? "（用了提示，下次还会考）" : ""}`
-      : `✗ 正确拼写是 ${cur.w}（缺的字母：${spell.answer}）`;
+      ? `${usedHint ? "✓ 拼对了 · 用过提示，下次还会考" : "✓ 拼对了"}`
+      : "✗ 拼错了，看上面的单词";
     $("wHint").textContent = "看结果，按 Enter 下一题";
     $("wNext").hidden = false;
 
