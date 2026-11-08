@@ -57,6 +57,8 @@
   const $ = (id) => document.getElementById(id);
   const esc = (s) =>
     String(s == null ? "" : s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  /* 底部提示里的按键做成小键帽（CSS 在 .tips kbd），参数只传自己写的固定文字 */
+  const K = (s) => `<kbd>${s}</kbd>`;
 
   /* ---------- 存储 ---------- */
   function readStore() {
@@ -370,8 +372,8 @@
     $("wWord").textContent = cur.w;
     $("wIpa").textContent = cur.i || "";
     $("wReveal").hidden = false;
-    $("wHint").textContent = "看清单词，按空格翻面";
-    $("wKbd").textContent = "空格 翻面 · 1 不认识 / 2 认识 · Esc 退出";
+    $("wHint").innerHTML = `看清单词，按 ${K("空格")} 翻面`;
+    $("wKbd").innerHTML = `${K("空格")} 翻面 · ${K("1")} 不认识 / ${K("2")} 认识 · ${K("Esc")} 退出`;
     stopSay();
     autoTimer = setTimeout(() => say(cur), 400);
   }
@@ -435,8 +437,8 @@
     $("wTip").textContent = "💡 提示 · 补一个字母";
     $("wFeed").className = "wfeed";
     $("wFeed").textContent = `${spell.pos.length} 个字母待补全`;
-    $("wHint").textContent = "补全缺少的字母，按 Enter 检查，空格补一个字母";
-    $("wKbd").textContent = "Enter 检查 · Tab 听一遍 · 空格 补字母 · Esc 退出";
+    $("wHint").innerHTML = `补全缺少的字母，按 ${K("Enter")} 检查，${K("Tab")} 听一遍`;
+    $("wKbd").innerHTML = `${K("Enter")} 检查 · ${K("Tab")} 听一遍 · ${K("空格")} 补字母 · ${K("Esc")} 退出`;
     stopSay();
     autoTimer = setTimeout(() => say(cur), 500);
     setTimeout(() => {
@@ -492,8 +494,8 @@
     $("wFeed").textContent = ok
       ? `${usedHint ? "✓ 拼对了 · 用过提示，下次还会考" : "✓ 拼对了"}`
       : "✗ 拼错了，看上面的单词";
-    $("wHint").textContent = "看结果，按 Enter 下一题";
-    $("wKbd").textContent = "Enter 下一题 · 空格 听一遍 · Esc 退出";
+    $("wHint").innerHTML = `看结果，按 ${K("Enter")} 下一题`;
+    $("wKbd").innerHTML = `${K("Enter")} 下一题 · ${K("Tab")} 听一遍 · ${K("Esc")} 退出`;
     $("wNext").hidden = false;
 
     const key = cur.k;
@@ -531,7 +533,7 @@
       card.classList.add("revealed");
       $("wReveal").hidden = true;
       $("wGrade").classList.add("on");
-      $("wHint").textContent = "记住了吗？按 1 不认识 · 2 认识";
+      $("wHint").innerHTML = `记住了吗？按 ${K("1")} 不认识 · ${K("2")} 认识`;
       card.classList.remove("flipping");
       card.classList.add("flip-in");
       setTimeout(() => card.classList.remove("flip-in"), 260);
@@ -635,7 +637,7 @@
       $("wActions").hidden = true;
       $("wSearch").hidden = false;
       $("wHint").textContent = "输入英文或中文，点结果打开该词的卡片";
-      $("wKbd").textContent = "Enter 打开第一条 · Esc 返回卡片";
+      $("wKbd").innerHTML = `${K("Enter")} 打开第一条 · ${K("Esc")} 返回卡片`;
       window.WordSearch && window.WordSearch.open();
       return;
     }
@@ -853,14 +855,9 @@
         if (spell && !spell.checked) focusSpell();
         return;
       }
-      /* 空格：检查前 = 补一个字母（焦点落在按钮上也要拦，否则浏览器会当成点击按钮）；
-         翻面（已判分）后 = 听一遍 */
+      /* 空格 = 补一个字母（已判分时 hintSpell 自己会忽略）；听一遍统一走 Tab */
       if (e.key === " " || e.code === "Space" || e.key === "Spacebar") {
         e.preventDefault();
-        if (spell && spell.checked) {
-          say(cur);
-          return;
-        }
         hintSpell();
         focusSpell();
         return;

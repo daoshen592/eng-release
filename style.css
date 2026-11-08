@@ -440,6 +440,24 @@ h1 {
   padding: 6px 4px 2px;
 }
 .kbd { font-variant-numeric: tabular-nums; }
+/* 提示行里的按键：小键帽（键名高亮，其余说明保持灰色） */
+.tips kbd {
+  display: inline-block;
+  min-width: 17px;
+  padding: 0 4px;
+  margin: 0 2px;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: #1b2029;
+  color: #cdd5e4;
+  font: inherit;
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  vertical-align: 1px;
+}
 
 /* 抽题规则行：两个胶囊 + 语法点下拉同排（#orders 只做 JS 重渲染容器，不参与布局） */
 .orow #orders { display: contents; }
